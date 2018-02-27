@@ -59,6 +59,27 @@ public class LinkedList {
       }
       node.next=new_node;
     }
+    /* Given a ‘key’, delete the first occurrence of this key in linked list. */
+    public void deleteKey(int new_data){
+        SListNode node = head;
+        SListNode prevNode = null;
+
+        if(node != null && node.data==new_data){
+           head=node.next;
+           return;
+        }
+
+        while(node !=null && node.data!=new_data){
+            prevNode = node;
+            node=node.next;
+        }
+
+        if (node == null){
+            System.out.println("Key not found.");
+            return;
+        }
+        prevNode.next=node.next;
+    }
 
 
     public static void main(String args[]){
@@ -75,7 +96,9 @@ public class LinkedList {
 
         ll.insertAfter(a,25);
         ll.append(70);
-
+        ll.print(ll.head);
+        System.out.println("\n");
+        ll.deleteKey(15);
         ll.print(ll.head);
     }
 
