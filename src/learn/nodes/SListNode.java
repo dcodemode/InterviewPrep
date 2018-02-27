@@ -1,6 +1,9 @@
-package com.ds.nodes;
+package learn.nodes;
 
 public class SListNode {
+    /*
+      Basic singly linked list node
+     */
 
     public SListNode next;
     public Integer data;
