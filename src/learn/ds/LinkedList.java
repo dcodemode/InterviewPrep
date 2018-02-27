@@ -14,6 +14,16 @@ public class LinkedList {
 
     }
 
+    /* Pop removes first element in the linked list*/
+    public void pop(){
+        if(head == null){
+            System.out.println("\nNo Elements to pop ");
+            return;
+        }
+        head = head.next;
+    }
+
+
     public void print(SListNode head){
         while(head != null){
             System.out.print(head.data+ " ");
@@ -27,6 +37,10 @@ public class LinkedList {
         ll.push(20);
         ll.push(30);
 
+        ll.print(ll.head);
+        ll.pop();
+
+        System.out.print("\n");
         ll.print(ll.head);
     }
 
