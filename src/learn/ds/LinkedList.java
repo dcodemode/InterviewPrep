@@ -125,6 +125,43 @@ public class LinkedList {
 
     }
 
+    /*Length of a linked list*/
+    public int length(){
+        SListNode node = head;
+        int i=0;
+        while(node!=null){
+            i++;
+            node = node.next;
+        }
+        return i;
+    }
+
+    /*Search an element in linked list iterative solution*/
+    public int search(int data){
+        SListNode temp = head;
+
+        while(temp!=null && temp.data!= data){
+            temp=temp.next;
+        }
+
+        if (temp==null){
+            return -1;
+        }
+        return 1;
+
+    }
+
+    /*Search an element in linked list recursive solution*/
+    public boolean searchRecursive(SListNode head, int data){
+       if(head==null){
+           return false;
+       }
+       if (head.data==data){
+           return true;
+       }
+       return searchRecursive(head.next,data);
+    }
+
 
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();
@@ -140,12 +177,14 @@ public class LinkedList {
 
         ll.insertAfter(a, 25);
         ll.append(70);
-        ll.print(ll.head);
+        System.out.println("Length of linked list: " + ll.length());
+        /*ll.print(ll.head);
         System.out.println("\n");
         ll.deleteKey(15);
         ll.deleteNode(ll.head);
         ll.deleteAfterPosition(7);
-        ll.print(ll.head);
+        ll.print(ll.head);*/
+        System.out.println(ll.searchRecursive(ll.head,10));
     }
 
 }
