@@ -23,7 +23,7 @@ public class LinkedList {
         head = head.next;
     }
 
-
+    /* Print elements of a linked list*/
     public void print(SListNode head){
         while(head != null){
             System.out.print(head.data+ " ");
@@ -31,16 +31,51 @@ public class LinkedList {
         }
     }
 
+    /* Insert after a given node */
+    public void insertAfter(SListNode prev, int new_data){
+
+        SListNode new_node = new SListNode(new_data);
+        SListNode temp;
+
+        if (null==prev){
+            System.out.println("Given node cant't be null");
+            return;
+        }
+        new_node.next = prev.next;
+        prev.next=new_node;
+    }
+
+    /* Add after last node */
+    public void append(int new_data){
+
+      if(head == null){
+         head =  new SListNode(new_data);
+         return;
+      }
+      SListNode new_node = new SListNode(new_data);
+      SListNode node = head;
+      while (node.next!=null){
+          node=node.next;
+      }
+      node.next=new_node;
+    }
+
+
     public static void main(String args[]){
         LinkedList ll = new LinkedList();
+        SListNode a = new SListNode(20);
+        SListNode b = new SListNode(30);
         ll.head= new SListNode(10);
-        ll.push(20);
-        ll.push(30);
 
-        ll.print(ll.head);
-        ll.pop();
+        ll.head.next = a;
+        ll.head.next.next=b;
 
-        System.out.print("\n");
+        ll.push(5);
+        ll.push(1);
+
+        ll.insertAfter(a,25);
+        ll.append(70);
+
         ll.print(ll.head);
     }
 
