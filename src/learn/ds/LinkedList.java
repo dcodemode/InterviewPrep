@@ -82,8 +82,7 @@ public class LinkedList {
         prevNode.next = node.next;
     }
 
-    /* Given a reference (pointer to pointer) to the head of a list
-       and a position, deletes the node at the given position */
+    /* Deletes the node at the given node */
     public void deleteNode(SListNode node) {
        SListNode temp =head;
        SListNode prev = null;
@@ -102,6 +101,28 @@ public class LinkedList {
            return;
        }
        prev.next=temp.next;
+    }
+
+    /* Deletes the node at the given position */
+    public void deleteAfterPosition(int position){
+       SListNode node = head;
+       SListNode prev = null;
+
+       if (position==0){
+           head = node.next;
+           return;
+       }
+
+       int i=0;
+       while(node!=null && i<=position-1){
+           prev=node;
+           node=node.next;
+           i++;
+       }
+
+       if(node == null) return;
+       prev.next=node.next;
+
     }
 
 
@@ -123,6 +144,7 @@ public class LinkedList {
         System.out.println("\n");
         ll.deleteKey(15);
         ll.deleteNode(ll.head);
+        ll.deleteAfterPosition(7);
         ll.print(ll.head);
     }
 
