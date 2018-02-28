@@ -247,22 +247,22 @@ public class LinkedList {
         ll.head.next.next.next.next.next = e;
         ll.head.next.next.next.next.next.next = f;
 
-        //ll.push(5);
-        //ll.push(1);
-
-        ll.insertAfter(a, 25);
-        ll.append(80);
-
         ll.print(ll.head);
         System.out.println("\n");
-        /*System.out.println("Length of linked list: " + ll.length());
+        /*
+        ll.push(5);
+        ll.push(1);
+        ll.append(80);
+        ll.insertAfter(a, 25);
+        System.out.println("Length of linked list: " + ll.length());
         ll.deleteKey(15);
         ll.deleteNode(ll.head);
         ll.deleteAfterPosition(7);
         ll.print(ll.head);
         System.out.println(ll.searchRecursive(ll.head,10));
         ll.swapNode(a,d);
-        ll.print(ll.head); */
+        ll.print(ll.head);
+        */
         System.out.println(ll.getNode(9));
     }
 
