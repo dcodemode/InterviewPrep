@@ -2,6 +2,8 @@ package learn.ds;
 
 import learn.nodes.SListNode;
 
+import javax.swing.plaf.SliderUI;
+
 public class LinkedList {
 
     SListNode head;
@@ -230,6 +232,18 @@ public class LinkedList {
         return node;
     }
 
+    /* Print middle element of a linked list, if even nodes print second then there would be two middle nodes,
+     we need to print second middle element */
+    public int getMiddleElement(){
+       SListNode slow = head;
+       SListNode fast = head;
+       while(fast!=null && fast.next!=null){
+           slow=slow.next;
+           fast=fast.next.next;
+       }
+       return slow.data;
+    }
+
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();
         SListNode a = new SListNode(20);
@@ -262,8 +276,10 @@ public class LinkedList {
         System.out.println(ll.searchRecursive(ll.head,10));
         ll.swapNode(a,d);
         ll.print(ll.head);
-        */
         System.out.println(ll.getNode(9));
+        */
+        System.out.println(ll.getMiddleElement());
+
     }
 
 }
