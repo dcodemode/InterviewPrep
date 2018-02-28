@@ -244,6 +244,18 @@ public class LinkedList {
        return slow.data;
     }
 
+    /* Print middle element of a linked list, if even nodes print second then there would be two middle nodes,
+  we need to print first middle element */
+    public int getMiddleElement2(){
+        SListNode slow = head;
+        SListNode fast = head;
+        while(fast.next!=null && fast.next.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow.data;
+    }
+
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();
         SListNode a = new SListNode(20);
@@ -260,13 +272,13 @@ public class LinkedList {
         ll.head.next.next.next.next = d;
         ll.head.next.next.next.next.next = e;
         ll.head.next.next.next.next.next.next = f;
+        ll.append(80);
 
         ll.print(ll.head);
         System.out.println("\n");
         /*
         ll.push(5);
         ll.push(1);
-        ll.append(80);
         ll.insertAfter(a, 25);
         System.out.println("Length of linked list: " + ll.length());
         ll.deleteKey(15);
@@ -279,6 +291,7 @@ public class LinkedList {
         System.out.println(ll.getNode(9));
         */
         System.out.println(ll.getMiddleElement());
+        System.out.println(ll.getMiddleElement2());
 
     }
 
