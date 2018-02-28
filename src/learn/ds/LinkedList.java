@@ -198,7 +198,6 @@ public class LinkedList {
             return;
         }
 
-
         //If Y is head
         if(prevY == null){
             SListNode temp = currY.next;
@@ -220,6 +219,16 @@ public class LinkedList {
 
     }
 
+    /* Write a function to get Nth node in a Linked List */
+    public SListNode getNode(int position){
+        SListNode node = head;
+        int i=0;
+        while(node!=null && i<position){
+            i++;
+            node=node.next;
+        }
+        return node;
+    }
 
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();
@@ -244,17 +253,17 @@ public class LinkedList {
         ll.insertAfter(a, 25);
         ll.append(80);
 
+        ll.print(ll.head);
+        System.out.println("\n");
         /*System.out.println("Length of linked list: " + ll.length());
         ll.deleteKey(15);
         ll.deleteNode(ll.head);
         ll.deleteAfterPosition(7);
         ll.print(ll.head);
-        System.out.println(ll.searchRecursive(ll.head,10));*/
-
-        ll.print(ll.head);
-        System.out.println("\n");
+        System.out.println(ll.searchRecursive(ll.head,10));
         ll.swapNode(a,d);
-        ll.print(ll.head);
+        ll.print(ll.head); */
+        System.out.println(ll.getNode(9));
     }
 
 }
