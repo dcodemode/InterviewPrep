@@ -8,19 +8,19 @@ import learn.ds.nodes.SListNode;
 
 public class DeleteKey {
 
-    SListNode head;
+    LinkedList ll;
 
-    public DeleteKey(SListNode head){
-        this.head=head;
+    public DeleteKey(LinkedList ll){
+        this.ll=ll;
     }
 
     /* Given a ‘key’, delete the first occurrence of this key in linked list. */
     public void deleteKey(int new_data) {
-        SListNode node = head;
+        SListNode node = ll.head;
         SListNode prevNode = null;
 
         if (node != null && node.data == new_data) {
-            head = node.next;
+            ll.head = node.next;
             return;
         }
 
@@ -38,11 +38,11 @@ public class DeleteKey {
 
     /* Deletes the node at the given node */
     public void deleteNode(SListNode node) {
-        SListNode temp =head;
+        SListNode temp = ll.head;
         SListNode prev = null;
 
         if(temp == node){
-            head=temp.next;
+            ll.head = temp.next;
             return;
         }
         while(temp != null && temp != node){
@@ -59,11 +59,11 @@ public class DeleteKey {
 
     /* Deletes the node at the given position */
     public void deleteAfterPosition(int position){
-        SListNode node = head;
+        SListNode node = ll.head;
         SListNode prev = null;
 
         if (position==0){
-            head = node.next;
+            ll.head = node.next;
             return;
         }
 
@@ -81,9 +81,8 @@ public class DeleteKey {
 
 
     public static void main(String args[]){
-        LinkedList ll = new LinkedList();
+        LinkedList ll = new LinkedList(new SListNode(10));
 
-        ll.head = new SListNode(10);
         SListNode a = new SListNode(20);
         SListNode b = new SListNode(30);
         SListNode c = new SListNode(40);
@@ -98,12 +97,12 @@ public class DeleteKey {
         ll.head.next.next.next.next.next = e;
         ll.head.next.next.next.next.next.next = f;
 
-        DeleteKey del  = new DeleteKey(ll.head);
+        DeleteKey del  = new DeleteKey(ll);
 
         ll.display();
         del.deleteKey(20);
         del.deleteNode(a);
-        del.deleteAfterPosition(7);
+        del.deleteAfterPosition(1);
         ll.display();
     }
 }

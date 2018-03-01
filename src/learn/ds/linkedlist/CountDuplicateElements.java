@@ -4,21 +4,18 @@ import learn.ds.nodes.SListNode;
 
 public class CountDuplicateElements {
 
-    SListNode head;
-
     LinkedList ll;
 
-    public CountDuplicateElements(SListNode head){
-        this.head=head;
+    public CountDuplicateElements(LinkedList ll){
+        this.ll=ll;
     }
-
 
     /*
       Write a function that counts the number of times a given int occurs in a Linked List
      */
     public int dupCount(int num){
         int i=0;
-        SListNode node = head;
+        SListNode node = ll.head;
         while(node!=null){
             if(node.data==num){
                 i++;
@@ -42,7 +39,7 @@ public class CountDuplicateElements {
     }
 
     public static void main(String args[]) {
-        LinkedList ll = new LinkedList();
+        LinkedList ll = new LinkedList(new SListNode(10));
         SListNode a = new SListNode(20);
         SListNode b = new SListNode(30);
         SListNode c = new SListNode(40);
@@ -51,7 +48,6 @@ public class CountDuplicateElements {
         SListNode f = new SListNode(70);
         ll.head = new SListNode(10);
 
-        ll.head.next = a;
         ll.head.next.next = b;
         ll.head.next.next.next = c;
         ll.head.next.next.next.next = d;
@@ -63,7 +59,7 @@ public class CountDuplicateElements {
 
         ll.display();
 
-        CountDuplicateElements cd = new CountDuplicateElements(ll.head);
+        CountDuplicateElements cd = new CountDuplicateElements(ll);
         System.out.println(cd.dupCount(10));
         System.out.println(cd.dupCount2(ll.head,10));
 

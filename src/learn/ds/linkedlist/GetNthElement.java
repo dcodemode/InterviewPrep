@@ -8,21 +8,19 @@ import learn.ds.nodes.SListNode;
 
 public class GetNthElement {
 
-    SListNode head;
-
     LinkedList ll;
 
-    public GetNthElement(SListNode head){
-        this.head=head;
+    public GetNthElement(LinkedList ll){
+        this.ll=ll;
     }
 
     /*
      Print nth node from end of linked list
     */
     public int getNthFromLast(int position){
-        SListNode node = head;
+        SListNode node = ll.head;
         int i= 1;
-        while(node!=null && i<ll.length(head)-position){
+        while(node!=null && i<ll.length(ll.head)-position){
             i++;
             node=node.next;
         }
@@ -33,9 +31,9 @@ public class GetNthElement {
       Print nth node from end of linked list two pointer approach
      */
     public int getNthFromLast2(int position){
-        if (head==null) return 0;
-        SListNode slow = head;
-        SListNode fast = head;
+        if (ll.head==null) return 0;
+        SListNode slow = ll.head;
+        SListNode fast = ll.head;
         for(int i=0;i<position;i++){
             fast=fast.next;
         }
@@ -47,14 +45,13 @@ public class GetNthElement {
     }
 
     public static void main(String args[]) {
-        LinkedList ll = new LinkedList();
+        LinkedList ll = new LinkedList(new SListNode(10));
         SListNode a = new SListNode(20);
         SListNode b = new SListNode(30);
         SListNode c = new SListNode(40);
         SListNode d = new SListNode(50);
         SListNode e = new SListNode(60);
         SListNode f = new SListNode(70);
-        ll.head = new SListNode(10);
 
         ll.head.next = a;
         ll.head.next.next = b;
@@ -65,7 +62,7 @@ public class GetNthElement {
 
         ll.display();
 
-        GetNthElement gn = new GetNthElement(ll.head);
+        GetNthElement gn = new GetNthElement(ll);
 
         System.out.println(gn.getNthFromLast(0));
         System.out.println(gn.getNthFromLast(1));

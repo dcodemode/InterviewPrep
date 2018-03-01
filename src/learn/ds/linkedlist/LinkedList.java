@@ -10,6 +10,10 @@ public class LinkedList {
 
     SListNode head;
 
+    public LinkedList(SListNode head){
+        this.head=head;
+    }
+
     /* Push adds node on front of the list*/
     public void push(int data) {
         SListNode new_node = new SListNode(data);
@@ -172,14 +176,13 @@ public class LinkedList {
     }
 
     public static void main(String args[]) {
-        LinkedList ll = new LinkedList();
+        LinkedList ll = new LinkedList(new SListNode(10));
         SListNode a = new SListNode(20);
         SListNode b = new SListNode(30);
         SListNode c = new SListNode(40);
         SListNode d = new SListNode(50);
         SListNode e = new SListNode(60);
         SListNode f = new SListNode(70);
-        ll.head = new SListNode(10);
 
         ll.head.next = a;
         ll.head.next.next = b;
