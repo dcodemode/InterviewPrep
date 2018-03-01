@@ -26,11 +26,13 @@ public class LinkedList {
     }
 
     /* Print elements of a linked list*/
-    public void print(SListNode head) {
-        while (head != null) {
-            System.out.print(head.data + " ");
-            head = head.next;
+    public void print() {
+        SListNode node = head;
+        while (node != null) {
+            System.out.print(node.data + " --> ");
+            node = node.next;
         }
+        System.out.println("null");
     }
 
     /* Insert after a given node */
@@ -245,7 +247,7 @@ public class LinkedList {
     }
 
     /* Print middle element of a linked list, if even nodes print second then there would be two middle nodes,
-  we need to print first middle element */
+    we need to print first middle element */
     public int getMiddleElement2(){
         SListNode slow = head;
         SListNode fast = head;
@@ -255,6 +257,74 @@ public class LinkedList {
         }
         return slow.data;
     }
+
+    //Get middle element
+    public int getMiddleElement3(){
+        SListNode node=head;
+        if(node == null) return 0;
+        for(int i=0;i<length()/2;i++){
+            node=node.next;
+        }
+        return node.data;
+    }
+
+    /*
+      Print nth node from end of linked list
+     */
+    public int getNthFromLast(int position){
+        SListNode node = head;
+        int i= 1;
+        while(node!=null && i<length()-position){
+            i++;
+            node=node.next;
+        }
+        return node.data;
+    }
+
+    /*
+      Print nth node from end of linked list two pointer approach
+     */
+    public int getNthFromLast2(int position){
+        if (head==null) return 0;
+        SListNode slow = head;
+        SListNode fast = head;
+        for(int i=0;i<position;i++){
+            fast=fast.next;
+        }
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next;
+        }
+        return slow.data;
+    }
+
+    /*
+      Write a function that counts the number of times a given int occurs in a Linked List
+     */
+    public int dupCount(int num){
+        int i=0;
+        SListNode node = head;
+        while(node!=null){
+            if(node.data==num){
+                i++;
+            }
+            node=node.next;
+        }
+        return i;
+    }
+
+     /*
+      Write a function that counts the number of times a given int occurs in a Linked List using recursion
+     */
+     public int dupCount2(SListNode curr, int num){
+         if (curr==null){
+             return 0;
+         }else if(curr.data==num){
+             return 1 + dupCount2(curr.next,num);
+         }else{
+             return dupCount2(curr.next,num);
+         }
+     }
 
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();
@@ -272,10 +342,11 @@ public class LinkedList {
         ll.head.next.next.next.next = d;
         ll.head.next.next.next.next.next = e;
         ll.head.next.next.next.next.next.next = f;
-        ll.append(80);
+        ll.append(10);
+        ll.append(10);
+        ll.append(10);
 
-        ll.print(ll.head);
-        System.out.println("\n");
+        ll.print();
         /*
         ll.push(5);
         ll.push(1);
@@ -289,9 +360,16 @@ public class LinkedList {
         ll.swapNode(a,d);
         ll.print(ll.head);
         System.out.println(ll.getNode(9));
-        */
         System.out.println(ll.getMiddleElement());
         System.out.println(ll.getMiddleElement2());
+        System.out.println(ll.getMiddleElement3());
+        System.out.println(ll.getNthFromLast(0));
+        System.out.println(ll.getNthFromLast(1));
+        System.out.println(ll.getNthFromLast2(1));
+        */
+        System.out.println(ll.dupCount2(ll.head,10));
+
+
 
     }
 
