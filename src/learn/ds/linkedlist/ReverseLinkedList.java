@@ -14,22 +14,47 @@ public class ReverseLinkedList {
         this.ll = ll;
     }
 
-    /*  Reverse nodes of a linked list */
+    /*  Reverse nodes of a linked list iterative approach
+    *   10 --> 20 --> 30 --> null
+    *   Step1:
+    *   10 --> null, 20 --> 30 --> null
+    *   Step2:
+    *   20 --> 10 --> null, 30 --> null
+    *   Step3:
+    *   30 --> 20 --> 10 --> null, null
+    *   Step4:
+    *   Set head = 30
+    * */
+
     public void reverse(){
-        SListNode curr = ll.head;
+
         SListNode prev = null;
+        SListNode curr = ll.head;
+        SListNode next = null;
 
         if (curr==null) return;
 
-        while(curr.next!=null){
+        while (curr != null) {
+            next=curr.next;
+            curr.next=prev;
             prev=curr;
-            curr=curr.next;
+            curr=next;
         }
-        SListNode temp = curr;
-        curr.next=ll.head;
-        prev.next=null;
-        ll.head= curr;
+        ll.head=prev;
 
+    }
+
+    /*
+      Reverse a linked list in recursive approach
+     */
+    public void reverse2(SListNode prev,SListNode curr){
+          if(curr.next == null){
+              ll.head=curr;
+              curr.next=prev;
+              return;
+          }
+          reverse2(curr,curr.next);
+          curr.next=prev;
     }
 
 
@@ -52,7 +77,7 @@ public class ReverseLinkedList {
 
         ll.display();
         ReverseLinkedList rl = new ReverseLinkedList(ll);
-        rl.reverse();
+        rl.reverse2(null,ll.head);
         ll.display();
 
     }
