@@ -1,14 +1,14 @@
 package learn.nodes;
 
 public class SListNode {
+
     /*
       Basic singly linked list node
      */
-
     public SListNode next;
-    public Integer data;
+    public int data;
 
-    public SListNode(Integer data){
+    public SListNode(int data){
         this.data=data;
         this.next=null;
     }

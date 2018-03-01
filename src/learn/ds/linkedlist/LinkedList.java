@@ -130,25 +130,14 @@ public class LinkedList {
         ll.append(10);
         ll.append(10);
         ll.append(10);
-
-        ll.print();
-        /*
         ll.push(5);
         ll.push(1);
         ll.insertAfter(a, 25);
-        System.out.println("Length of linked list: " + ll.length());
-        ll.print(ll.head);
+
+        ll.print();
+        System.out.println("Length of linked list: " + ll.length(ll.head));
         System.out.println(ll.searchRecursive(ll.head,10));
-        ll.swapNode(a,d);
-        ll.print(ll.head);
         System.out.println(ll.getNode(9));
-        System.out.println(ll.getMiddleElement());
-        System.out.println(ll.getMiddleElement2());
-        System.out.println(ll.getMiddleElement3());
-        System.out.println(ll.getNthFromLast(0));
-        System.out.println(ll.getNthFromLast(1));
-        System.out.println(ll.getNthFromLast2(1));
-        */
     }
 
 }
