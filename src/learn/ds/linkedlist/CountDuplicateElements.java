@@ -1,6 +1,6 @@
 package learn.ds.linkedlist;
 
-import learn.nodes.SListNode;
+import learn.ds.nodes.SListNode;
 
 public class CountDuplicateElements {
 
@@ -61,7 +61,7 @@ public class CountDuplicateElements {
         ll.append(10);
         ll.append(10);
 
-        ll.print();
+        ll.print(ll.head);
 
         CountDuplicateElements cd = new CountDuplicateElements(ll.head);
         System.out.println(cd.dupCount(10));

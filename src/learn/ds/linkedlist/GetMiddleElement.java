@@ -1,6 +1,6 @@
 package learn.ds.linkedlist;
 
-import learn.nodes.SListNode;
+import learn.ds.nodes.SListNode;
 
 public class GetMiddleElement {
 
@@ -63,7 +63,7 @@ public class GetMiddleElement {
         ll.head.next.next.next.next.next = e;
         ll.head.next.next.next.next.next.next = f;
 
-        ll.print();
+        ll.print(ll.head);
 
         GetMiddleElement gm = new GetMiddleElement(ll.head);
 

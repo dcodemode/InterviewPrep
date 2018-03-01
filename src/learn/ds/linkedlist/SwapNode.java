@@ -1,6 +1,6 @@
 package learn.ds.linkedlist;
 
-import learn.nodes.SListNode;
+import learn.ds.nodes.SListNode;
 
 public class SwapNode {
 
@@ -85,11 +85,9 @@ public class SwapNode {
         ll.head.next.next.next.next.next = e;
         ll.head.next.next.next.next.next.next = f;
 
-        ll.print();
-
         SwapNode sn = new SwapNode(ll.head);
+        sn.swap(b,c);
+        ll.print(ll.head);
 
-        sn.swap(c,d);
-        ll.print();
     }
 }

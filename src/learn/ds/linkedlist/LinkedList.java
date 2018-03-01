@@ -1,6 +1,6 @@
 package learn.ds.linkedlist;
 
-import learn.nodes.SListNode;
+import learn.ds.nodes.SListNode;
 
 public class LinkedList {
 
@@ -24,8 +24,7 @@ public class LinkedList {
     }
 
     /* Print elements of a linked list*/
-    public void print() {
-        SListNode node = head;
+    public void print(SListNode node) {
         while (node != null) {
             System.out.print(node.data + " --> ");
             node = node.next;
@@ -132,9 +131,11 @@ public class LinkedList {
         ll.append(10);
         ll.push(5);
         ll.push(1);
+        ll.pop();
+        ll.pop();
         ll.insertAfter(a, 25);
 
-        ll.print();
+        ll.print(ll.head);
         System.out.println("Length of linked list: " + ll.length(ll.head));
         System.out.println(ll.searchRecursive(ll.head,10));
         System.out.println(ll.getNode(9));

@@ -1,6 +1,6 @@
 package learn.ds.linkedlist;
 
-import learn.nodes.SListNode;
+import learn.ds.nodes.SListNode;
 
 public class GetNthElement {
 
@@ -59,7 +59,7 @@ public class GetNthElement {
         ll.head.next.next.next.next.next = e;
         ll.head.next.next.next.next.next.next = f;
 
-        ll.print();
+        ll.print(ll.head);
 
         GetNthElement gn = new GetNthElement(ll.head);
 
