@@ -1,5 +1,9 @@
 package learn.ds.linkedlist;
 
+/**
+ * @author Varma Penmetsa
+ */
+
 import learn.ds.nodes.SListNode;
 
 public class LinkedList {
@@ -196,7 +200,7 @@ public class LinkedList {
         System.out.println("Length of linked list: " + ll.length(ll.head));
         System.out.println(ll.searchRecursive(ll.head,10));
         System.out.println(ll.getNode(9));
-        ll.swapNodes(a,b);
+        ll.swapNodes(ll.head,f);
         ll.display();
     }
 

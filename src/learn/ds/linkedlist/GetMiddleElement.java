@@ -1,5 +1,9 @@
 package learn.ds.linkedlist;
 
+/**
+ * @author Varma Penmetsa
+ */
+
 import learn.ds.nodes.SListNode;
 
 public class GetMiddleElement {
