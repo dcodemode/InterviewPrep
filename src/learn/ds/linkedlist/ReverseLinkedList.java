@@ -77,6 +77,8 @@ public class ReverseLinkedList {
 
         ll.display();
         ReverseLinkedList rl = new ReverseLinkedList(ll);
+        rl.reverse();
+        ll.display();
         rl.reverse2(null,ll.head);
         ll.display();
 
