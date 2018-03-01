@@ -8,16 +8,30 @@ import learn.ds.nodes.SListNode;
 
 public class ReverseLinkedList {
 
-    SListNode head;
+    LinkedList ll;
 
-    public ReverseLinkedList(SListNode node){
-        this.head = node;
+    public ReverseLinkedList(LinkedList ll){
+        this.ll = ll;
     }
 
     /*  Reverse nodes of a linked list */
     public void reverse(){
+        SListNode curr = ll.head;
+        SListNode prev = null;
+
+        if (curr==null) return;
+
+        while(curr.next!=null){
+            prev=curr;
+            curr=curr.next;
+        }
+        SListNode temp = curr;
+        curr.next=ll.head;
+        prev.next=null;
+        ll.head= curr;
 
     }
+
 
     public static void main(String args[]){
         LinkedList ll = new LinkedList(new SListNode(10));
@@ -37,7 +51,9 @@ public class ReverseLinkedList {
         ll.head.next.next.next.next.next.next = f;
 
         ll.display();
-        ReverseLinkedList rl = new ReverseLinkedList(ll.head);
+        ReverseLinkedList rl = new ReverseLinkedList(ll);
+        rl.reverse();
+        ll.display();
 
     }
 }
