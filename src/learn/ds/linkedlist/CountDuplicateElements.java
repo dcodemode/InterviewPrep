@@ -61,7 +61,7 @@ public class CountDuplicateElements {
         ll.append(10);
         ll.append(10);
 
-        ll.print(ll.head);
+        ll.display();
 
         CountDuplicateElements cd = new CountDuplicateElements(ll.head);
         System.out.println(cd.dupCount(10));

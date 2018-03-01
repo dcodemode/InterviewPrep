@@ -96,10 +96,10 @@ public class DeleteKey {
 
         DeleteKey del  = new DeleteKey(ll.head);
 
-        ll.print(ll.head);
+        ll.display();
         del.deleteKey(20);
         del.deleteNode(a);
         del.deleteAfterPosition(7);
-        ll.print(ll.head);
+        ll.display();
     }
 }

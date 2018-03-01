@@ -24,7 +24,8 @@ public class LinkedList {
     }
 
     /* Print elements of a linked list*/
-    public void print(SListNode node) {
+    public void display() {
+        SListNode node = head;
         while (node != null) {
             System.out.print(node.data + " --> ");
             node = node.next;
@@ -110,6 +111,62 @@ public class LinkedList {
         return node;
     }
 
+    public void swapNodes(SListNode x, SListNode y) {
+
+        //Search prev of node x
+        SListNode currX = head;
+        SListNode prevX = null;
+
+        if (currX == null) return;
+        while (currX != null && currX != x) {
+            prevX = currX;
+            currX = currX.next;
+        }
+        if (currX == null) return;
+
+        //Search prev of node Y
+        SListNode currY = head;
+        SListNode prevY = null;
+
+        if (currY == null) return;
+        while (currY != null && currY != y) {
+            prevY = currY;
+            currY = currY.next;
+        }
+        if (currY == null) return;
+
+        //If x is head
+        if(prevX == null){
+            SListNode temp = currX.next;
+            currX.next = currY.next;
+            currY.next = temp;
+
+            prevY.next=currX;
+            head=currY;
+            return;
+        }
+
+        //If Y is head
+        if(prevY == null){
+            SListNode temp = currY.next;
+            currY.next = currX.next;
+            currX.next = temp;
+
+            prevX.next=currY;
+            head=currX;
+            return;
+        }
+
+        //Swapping nodes
+        SListNode temp = currX.next;
+        currX.next = currY.next;
+        currY.next= temp;
+
+        prevX.next=currY;
+        prevY.next=currX;
+
+    }
+
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();
         SListNode a = new SListNode(20);
@@ -135,10 +192,12 @@ public class LinkedList {
         ll.pop();
         ll.insertAfter(a, 25);
 
-        ll.print(ll.head);
+        ll.display();
         System.out.println("Length of linked list: " + ll.length(ll.head));
         System.out.println(ll.searchRecursive(ll.head,10));
         System.out.println(ll.getNode(9));
+        ll.swapNodes(a,b);
+        ll.display();
     }
 
 }

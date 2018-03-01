@@ -59,7 +59,7 @@ public class GetNthElement {
         ll.head.next.next.next.next.next = e;
         ll.head.next.next.next.next.next.next = f;
 
-        ll.print(ll.head);
+        ll.display();
 
         GetNthElement gn = new GetNthElement(ll.head);
 
