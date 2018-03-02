@@ -9,6 +9,9 @@ public class RandLinkedListGenetator {
 
     Random rand = new Random();
 
+    /*
+      Code to generate random linked list
+     */
     public LinkedList create(int size){
         LinkedList ll = new LinkedList(new SListNode(rand.nextInt(99)));
         int i=0;
