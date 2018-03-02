@@ -8,7 +8,7 @@ import learn.ds.nodes.SListNode;
 
 public class LinkedList {
 
-    SListNode head;
+    public SListNode head;
 
     public LinkedList(SListNode head){
         this.head=head;
@@ -57,7 +57,7 @@ public class LinkedList {
     }
 
     /*Length of a linked list*/
-    public static int length(SListNode head){
+    public int length(){
         SListNode node = head;
         int i=0;
         while(node!=null){
@@ -144,7 +144,7 @@ public class LinkedList {
         ll.insertAfter(a, 25);
 
         ll.display();
-        System.out.println("Length of linked list: " + ll.length(ll.head));
+        System.out.println("Length of linked list: " + ll.length());
         System.out.println(ll.searchRecursive(ll.head,10));
         System.out.println(ll.getNode(9));
         ll.display();

@@ -1,6 +1,7 @@
 package learn.ds.linkedlist;
 
 import learn.ds.nodes.SListNode;
+import learn.ds.util.RandLinkedListGenetator;
 
 public class CountDuplicateElements {
 
@@ -39,24 +40,9 @@ public class CountDuplicateElements {
     }
 
     public static void main(String args[]) {
-        LinkedList ll = new LinkedList(new SListNode(10));
-        SListNode a = new SListNode(20);
-        SListNode b = new SListNode(30);
-        SListNode c = new SListNode(40);
-        SListNode d = new SListNode(50);
-        SListNode e = new SListNode(60);
-        SListNode f = new SListNode(70);
-        ll.head = new SListNode(10);
-
-        ll.head.next.next = b;
-        ll.head.next.next.next = c;
-        ll.head.next.next.next.next = d;
-        ll.head.next.next.next.next.next = e;
-        ll.head.next.next.next.next.next.next = f;
+        LinkedList ll = new RandLinkedListGenetator().create(10);
         ll.append(10);
         ll.append(10);
-        ll.append(10);
-
         ll.display();
 
         CountDuplicateElements cd = new CountDuplicateElements(ll);
