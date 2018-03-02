@@ -41,6 +41,15 @@ public class LinkedList {
         System.out.println("null");
     }
 
+    public void display2(SListNode head) {
+        SListNode node = head;
+        while (node != null) {
+            System.out.print(node.data + " --> ");
+            node = node.next;
+        }
+        System.out.println("null");
+    }
+
     /* Add after last node */
     public void append(int new_data) {
 
