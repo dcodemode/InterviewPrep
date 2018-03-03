@@ -9,29 +9,23 @@ import learn.ds.util.RandLinkedListGenetator;
 
 public class GetMiddleElement {
 
-    LinkedList ll;
-
-    public GetMiddleElement(LinkedList ll){
-        this.ll=ll;
-    }
-
     /* Print middle element of a linked list, if even nodes print second then there would be two middle nodes,
    we need to print second middle element */
-    public int getMiddleElement(){
-        SListNode slow = ll.head;
-        SListNode fast = ll.head;
+    public static SListNode getMiddleElement(SListNode head){
+        SListNode slow = head;
+        SListNode fast = head;
         while(fast!=null && fast.next!=null){
             slow=slow.next;
             fast=fast.next.next;
         }
-        return slow.data;
+        return slow;
     }
 
     /* Print middle element of a linked list, if even nodes print second then there would be two middle nodes,
     we need to print first middle element */
-    public int getMiddleElement2(){
-        SListNode slow = ll.head;
-        SListNode fast = ll.head;
+    public int getMiddleElement2(SListNode head){
+        SListNode slow = head;
+        SListNode fast = head;
         while(fast.next!=null && fast.next.next!=null){
             slow=slow.next;
             fast=fast.next.next;
@@ -39,8 +33,8 @@ public class GetMiddleElement {
         return slow.data;
     }
 
-    //Get middle element
-    public int getMiddleElement3(){
+    //Get middle element using length
+    public int getMiddleElement3(LinkedList ll){
         SListNode node = ll.head;
         if(node == null) return 0;
         for(int i=0;i<ll.length()/2;i++){
@@ -53,10 +47,10 @@ public class GetMiddleElement {
         LinkedList ll = new RandLinkedListGenetator().create(10);
         ll.display();
 
-        GetMiddleElement gm = new GetMiddleElement(ll);
+        GetMiddleElement gm = new GetMiddleElement();
 
-        System.out.println(gm.getMiddleElement());
-        System.out.println(gm.getMiddleElement2());
-        System.out.println(gm.getMiddleElement3());
+        System.out.println(gm.getMiddleElement(ll.head));
+        System.out.println(gm.getMiddleElement2(ll.head));
+        System.out.println(gm.getMiddleElement3(ll));
     }
 }
