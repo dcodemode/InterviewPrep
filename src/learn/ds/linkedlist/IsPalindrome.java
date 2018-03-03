@@ -10,12 +10,6 @@ import java.util.Stack;
  */
 public class IsPalindrome {
 
-    SListNode head;
-
-    public IsPalindrome(SListNode head){
-        this.head=head;
-    }
-
     /*
        Check if give linked list is palindrome, using stacks
          1. Find middle element
@@ -75,7 +69,7 @@ public class IsPalindrome {
     /*
       Check if give linked list is palindrome using recursion
      */
-    public boolean palindromeCheck2(SListNode node){
+    public static boolean palindromeCheck2(SListNode node){
         //ToDo
         return false;
     }
@@ -96,12 +90,10 @@ public class IsPalindrome {
         ll.head.next.next.next = c;
         ll.head.next.next.next.next = d;
         ll.head.next.next.next.next.next = e;
-        ll.head.next.next.next.next.next.next = f;
+        //ll.head.next.next.next.next.next.next = f;
 
         ll.display();
-        IsPalindrome isp = new IsPalindrome(ll.head);
-
-        System.out.println(isp.palindromeCheck2(ll.head));
+        System.out.println(palindromeCheck(ll.head));
 
     }
 }
