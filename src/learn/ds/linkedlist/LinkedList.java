@@ -10,6 +10,10 @@ public class LinkedList {
 
     public SListNode head;
 
+    public LinkedList(){
+
+    }
+
     public LinkedList(SListNode head){
         this.head=head;
     }
