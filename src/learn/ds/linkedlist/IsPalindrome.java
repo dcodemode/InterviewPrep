@@ -1,9 +1,7 @@
 package learn.ds.linkedlist;
 
 import learn.ds.nodes.SListNode;
-import learn.ds.util.RandLinkedListGenetator;
-
-import java.util.Stack;
+import learn.ds.util.LinkedList;
 
 /**
  * @author Varma Penmetsa

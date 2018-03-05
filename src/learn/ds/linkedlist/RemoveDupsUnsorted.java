@@ -1,9 +1,9 @@
 package learn.ds.linkedlist;
 
 import learn.ds.nodes.SListNode;
+import learn.ds.util.LinkedList;
 
 import java.util.HashSet;
-import java.util.Set;
 
 /**
  * @author Varma Penmetsa

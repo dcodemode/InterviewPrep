@@ -2,6 +2,7 @@ package learn.ds.linkedlist;
 
 import learn.ds.nodes.SListNode;
 import learn.ds.util.HelperLinkedList;
+import learn.ds.util.LinkedList;
 
 import java.util.ArrayList;
 import java.util.List;

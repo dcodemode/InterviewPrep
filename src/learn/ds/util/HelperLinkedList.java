@@ -17,4 +17,13 @@ public class HelperLinkedList {
         }
         return i;
     }
+
+    public static void display(SListNode head){
+        SListNode curr = head;
+        while(curr!=null){
+            System.out.print(curr.data+" --> ");
+            curr=curr.next;
+        }
+        System.out.println("null");
+    }
 }

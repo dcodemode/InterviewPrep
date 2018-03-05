@@ -1,6 +1,5 @@
 package learn.ds.util;
 
-import learn.ds.linkedlist.LinkedList;
 import learn.ds.nodes.SListNode;
 
 import java.util.Random;

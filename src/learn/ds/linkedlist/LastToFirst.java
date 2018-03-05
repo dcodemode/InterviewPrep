@@ -6,6 +6,7 @@ package learn.ds.linkedlist;
  */
 
 import learn.ds.nodes.SListNode;
+import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
 
 public class LastToFirst {

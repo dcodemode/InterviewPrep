@@ -1,4 +1,4 @@
-package learn.ds.linkedlist;
+package learn.ds.util;
 
 /**
  * @author Varma Penmetsa
@@ -10,12 +10,12 @@ public class LinkedList {
 
     public SListNode head;
 
-    public LinkedList(){
+    public LinkedList() {
 
     }
 
-    public LinkedList(SListNode head){
-        this.head=head;
+    public LinkedList(SListNode head) {
+        this.head = head;
     }
 
     /* Push adds node on front of the list*/
@@ -70,10 +70,10 @@ public class LinkedList {
     }
 
     /*Length of a linked list*/
-    public int length(){
+    public int length() {
         SListNode node = head;
-        int i=0;
-        while(node!=null){
+        int i = 0;
+        while (node != null) {
             i++;
             node = node.next;
         }
@@ -96,14 +96,14 @@ public class LinkedList {
 
 
     /*Search an element in linked list iterative solution*/
-    public int search(int data){
+    public int search(int data) {
         SListNode temp = head;
 
-        while(temp!=null && temp.data!= data){
-            temp=temp.next;
+        while (temp != null && temp.data != data) {
+            temp = temp.next;
         }
 
-        if (temp==null){
+        if (temp == null) {
             return -1;
         }
         return 1;
@@ -111,23 +111,23 @@ public class LinkedList {
     }
 
     /*Search an element in linked list recursive solution*/
-    public boolean searchRecursive(SListNode head, int data){
-       if(head==null){
-           return false;
-       }
-       if (head.data==data){
-           return true;
-       }
-       return searchRecursive(head.next,data);
+    public boolean searchRecursive(SListNode head, int data) {
+        if (head == null) {
+            return false;
+        }
+        if (head.data == data) {
+            return true;
+        }
+        return searchRecursive(head.next, data);
     }
 
     /* Write a function to get Nth node in a Linked List */
-    public SListNode getNode(int position){
+    public SListNode getNode(int position) {
         SListNode node = head;
-        int i=0;
-        while(node!=null && i<position){
+        int i = 0;
+        while (node != null && i < position) {
             i++;
-            node=node.next;
+            node = node.next;
         }
         return node;
     }
@@ -158,7 +158,7 @@ public class LinkedList {
 
         ll.display();
         System.out.println("Length of linked list: " + ll.length());
-        System.out.println(ll.searchRecursive(ll.head,10));
+        System.out.println(ll.searchRecursive(ll.head, 10));
         System.out.println(ll.getNode(9));
         ll.display();
     }
