@@ -1,2 +1,1 @@
-# LearnDS
-Learn data structures and algos
+# Data structure and Algorithms
