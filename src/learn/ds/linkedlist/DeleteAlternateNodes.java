@@ -31,10 +31,21 @@ public class DeleteAlternateNodes {
         }
     }
 
+    /*
+     * Recursive Solution
+     * Time Complexity : O(n)
+     * Space Complexity : O(1)
+     */
+    public static void delAltNodes2(SListNode head){
+        if (head==null || head.next==null) return ;
+        head.next = head.next.next;
+        delAltNodes(head.next);
+    }
+
     public static void main(String args[]){
-        LinkedList ll  = new RandLinkedListGenetator().create(7);
+        LinkedList ll  = new RandLinkedListGenetator().create(3);
         ll.display();
-        delAltNodes(ll.head);
+        delAltNodes2(ll.head);
         ll.display();
     }
 
