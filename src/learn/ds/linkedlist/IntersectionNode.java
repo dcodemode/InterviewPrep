@@ -84,4 +84,33 @@ public class IntersectionNode {
         }
         return a;
     }
+    public static void main(String args[]) {
+        SListNode a = new SListNode(1);
+        SListNode b = new SListNode(2);
+        SListNode c = new SListNode(3);
+        SListNode d = new SListNode(4);
+        SListNode e = new SListNode(6);
+        SListNode f = new SListNode(8);
+
+        LinkedList l1 = new LinkedList();
+        l1.head = a;
+        l1.head.next = b;
+        l1.head.next.next = c;
+        l1.head.next.next.next = d;
+        l1.head.next.next.next.next = e;
+
+        LinkedList l2 = new LinkedList();
+        l2.head = b;
+        l2.head.next = d;
+        l2.head.next.next = e;
+        l2.head.next.next.next = f;
+
+        l1.display();
+        l2.display();
+
+        System.out.println(findIntersection(l1.head,l2.head).data);
+        System.out.println(findIntersection2(l1.head,l2.head).data);
+        System.out.println(findIntersection3(l1.head,l2.head).data);
+    }
+
 }
