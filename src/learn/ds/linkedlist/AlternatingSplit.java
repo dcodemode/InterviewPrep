@@ -1,12 +1,17 @@
 package learn.ds.linkedlist;
 
 import learn.ds.nodes.SListNode;
+import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
+import learn.ds.util.RandLinkedListGenetator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Varma Penmetsa
  * <p>
- * Write a function AlternatingSplit() that takes one list and divides up its nodes to make two smaller lists ‘a’ and ‘b’.
+ * Write a function altSplit() that takes one list and divides up its nodes to make two smaller lists ‘a’ and ‘b’.
  * The sublists should be made from alternating elements in the original list.
  * So if the original list is 0->1->0->1->0->1 then one sublist should be 0->0->0 and the other should be 1->1->1.
  * <p>
@@ -16,36 +21,35 @@ import learn.ds.util.LinkedList;
 public class AlternatingSplit {
 
     /*
-     * Time Complexity :
-     * Space Complexity :
+     * Time Complexity : O(n)
      */
-    public static void AltSplit(SListNode head) {
+    public static void altSplit(SListNode head) {
         if (head == null || head.next == null) {
             return;
         }
+
         SListNode curr = head;
+        LinkedList a = new LinkedList();
+        LinkedList b = new LinkedList();
 
-        //Building List 1
-        LinkedList l1 = new LinkedList();
-        SListNode h1 = l1.head;
-        while (curr != null && curr.next != null) {
-            h1.next = curr;
-            h1 = h1.next;
-            curr = curr.next.next;
+        while (curr != null) {
+            a.append(curr.data);
+            if (curr.next != null) {
+                b.append(curr.next.data);
+                curr = curr.next.next;
+            }else{
+                curr=null;
+            }
         }
-
-        //Building list 2
-        curr = head.next;
-        LinkedList l2 = new LinkedList();
-        SListNode h2 = l2.head;
-        while (curr != null && curr.next != null) {
-            h2.next = curr;
-            h2 = h2.next;
-            curr = curr.next.next;
-        }
+        a.display();
+        b.display();
     }
 
-    public static void main(String args[]){
+    public static void main(String args[]) {
+
+        LinkedList ll = new RandLinkedListGenetator().create(5);
+        ll.display();
+        altSplit(ll.head);
 
     }
 }
