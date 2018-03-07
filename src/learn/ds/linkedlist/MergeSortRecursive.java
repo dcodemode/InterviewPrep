@@ -31,6 +31,7 @@ public class MergeSortRecursive {
 
         SListNode left = mergeSort(head);
         SListNode right = mergeSort(sec);
+        //Merge sorted linked lists
         return sortedMerge(left, right);
     }
 
