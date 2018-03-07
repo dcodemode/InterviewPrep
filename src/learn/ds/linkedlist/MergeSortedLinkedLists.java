@@ -12,7 +12,7 @@ public class MergeSortedLinkedLists {
         SListNode head = dummy;
 
         while(l1!= null && l2!=null){
-          if(l1.data < l2.data){
+          if(l1.data <= l2.data){
               dummy.next=l1;
               l1=l1.next;
           }else if(l1.data > l2.data){
@@ -46,7 +46,7 @@ public class MergeSortedLinkedLists {
             return l1;
         }
 
-        if(l1.data < l2.data){
+        if(l1.data <= l2.data){
             head=l1;
             l1=l1.next;
         }else if(l1.data > l2.data){
@@ -57,7 +57,7 @@ public class MergeSortedLinkedLists {
         ret = head;
 
         while(l1!=null && l2!=null){
-            if(l1.data<l2.data){
+            if(l1.data<=l2.data){
                 head.next=l1;
                 l1=l1.next;
             }else if(l1.data>l2.data){

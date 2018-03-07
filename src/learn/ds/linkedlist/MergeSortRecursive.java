@@ -19,6 +19,9 @@ public class MergeSortRecursive {
      * 3) Sort the two halves a and b.
      * 4) Merge the sorted a & b and update the head pointer using headRef.
      *
+     * Time Complexity: O(n log n)
+     * Space Complexity O(n)
+     *
      */
 
     public static SListNode mergeSort(SListNode head) {
