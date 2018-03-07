@@ -1,5 +1,11 @@
 bin/
-*.class
-*.iml
+
 .idea
+
+*.class
+
+*.iml
+
+*.yml
+
 Thumbs.db
