@@ -18,6 +18,10 @@ public class LinkedList {
         this.head = head;
     }
 
+    public LinkedList(int data) {
+        this.head = new SListNode(data);
+    }
+
     /* Push adds node on front of the list*/
     public void push(int data) {
         SListNode new_node = new SListNode(data);
