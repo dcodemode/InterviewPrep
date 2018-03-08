@@ -34,7 +34,11 @@ public class IdenticalLists {
             a = a.next;
             b = b.next;
         }
-        return (a == null && b == null);
+
+        if (a == null && b == null){
+            return true;
+        }
+        return false;
     }
 
     /*
@@ -46,7 +50,10 @@ public class IdenticalLists {
             return true;
         }
         if (a != null && b != null) {
-            return (a.data == b.data) && compareLists2(a.next, b.next);
+            return compareLists2(a.next, b.next);
+        }
+        if (a == null && b == null) {
+            return true;
         }
         return false;
     }
@@ -57,7 +64,7 @@ public class IdenticalLists {
         a.append(1);
         a.append(2);
         a.append(3);
-        a.append(4);
+        a.append(6);
 
         LinkedList b = new LinkedList();
         b.append(1);
