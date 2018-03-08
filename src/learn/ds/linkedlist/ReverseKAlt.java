@@ -72,7 +72,7 @@ public class ReverseKAlt {
 
     public static boolean isValid(SListNode head, int k) {
         if (head == null) return false;
-        while (head != null && k > 0) {
+        while (head != null && k-1 > 0) {
             head = head.next;
             k--;
         }
@@ -84,7 +84,7 @@ public class ReverseKAlt {
         LinkedList ll = new RandLinkedListGenetator().create(10);
         ll.display();
 
-        HelperLinkedList.display(reverse(ll.head, 3));
+        HelperLinkedList.display(reverse(ll.head, 2));
     }
 
 
