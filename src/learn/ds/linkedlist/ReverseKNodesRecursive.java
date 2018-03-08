@@ -23,6 +23,8 @@ public class ReverseKNodesRecursive {
 
     //Time Complexity: O(n)
     public static SListNode reverse(SListNode head, int k) {
+        if (isValidSection(head, k) == false)
+            return head;
         int i = 0;
         SListNode prev = null;
         SListNode curr = head;
@@ -42,8 +44,21 @@ public class ReverseKNodesRecursive {
         return prev;
     }
 
+    public static boolean isValidSection(SListNode node, int k) {
+        if (node == null)
+            return false;
+        SListNode cur = node;
+        while (cur != null && k > 0) {
+            cur = cur.next;
+            k--;
+        }
+        if (k > 0)
+            return false;
+        return true;
+    }
+
     public static void main(String args[]){
-        LinkedList ll = new RandLinkedListGenetator().create(7);
+        LinkedList ll = new RandLinkedListGenetator().create(8);
         ll.display();
 
         HelperLinkedList.display(reverse(ll.head,3));
