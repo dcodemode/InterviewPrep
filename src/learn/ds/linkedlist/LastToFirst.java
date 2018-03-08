@@ -11,6 +11,9 @@ import learn.ds.util.RandLinkedListGenetator;
 
 public class LastToFirst {
 
+    /*
+     * Create a circular linked list by connecting last to head and break loop by setting prev = null
+     */
     public static void moveToFront(LinkedList ll){
         SListNode head = ll.head;
         if(head==null ){
