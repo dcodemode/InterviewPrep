@@ -81,7 +81,7 @@ public class ReverseKAlt {
     }
 
     public static void main(String args[]) {
-        LinkedList ll = new RandLinkedListGenetator().create(12);
+        LinkedList ll = new RandLinkedListGenetator().create(10);
         ll.display();
 
         HelperLinkedList.display(reverse(ll.head, 3));
