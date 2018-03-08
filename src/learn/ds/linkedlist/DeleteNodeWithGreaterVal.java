@@ -14,6 +14,8 @@ import learn.ds.util.RandLinkedListGenetator;
  * Q: 12->15->10->11->5->6->2->3->NULL
  * A: 15->11->6->3->NULL
  * <p>
+ * Q: 10->20->30->40->50->60->NULL
+ * A: 60->NULL
  * https://www.geeksforgeeks.org/delete-nodes-which-have-a-greater-value-on-right-side/
  */
 public class DeleteNodeWithGreaterVal {
@@ -25,39 +27,21 @@ public class DeleteNodeWithGreaterVal {
         SListNode prev = dummy;
         SListNode curr = dummy.next;
 
-        while (curr != null && curr.next!=null) {
+        while (curr != null && curr.next != null) {
             if (curr.data < curr.next.data) {
                 prev.next = curr.next;
+            } else {
+                prev = curr;
             }
-            prev = curr;
             curr = curr.next;
         }
         return dummy.next;
     }
 
-    public static void main(String args[]){
-//        LinkedList ll = new RandLinkedListGenetator().create(5);
-        SListNode a = new SListNode(12);
-        SListNode b = new SListNode(15);
-        SListNode c = new SListNode(10);
-        SListNode d = new SListNode(11);
-        SListNode e = new SListNode(5);
-        SListNode f = new SListNode(6);
-        SListNode g = new SListNode(2);
-        SListNode h = new SListNode(3);
+    public static void main(String args[]) {
+        LinkedList ll = new RandLinkedListGenetator().create(5);
+        ll.display();
 
-        LinkedList l1 = new LinkedList();
-        l1.head = a;
-        l1.head.next = b;
-        l1.head.next.next = c;
-        l1.head.next.next.next = d;
-        l1.head.next.next.next.next = e;
-        l1.head.next.next.next.next.next = f;
-        l1.head.next.next.next.next.next.next = g;
-        l1.head.next.next.next.next.next.next.next = h;
-
-        l1.display();
-
-        HelperLinkedList.display(delLesserNodes(l1.head));
+        HelperLinkedList.display(delLesserNodes(ll.head));
     }
 }
