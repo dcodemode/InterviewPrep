@@ -50,16 +50,15 @@ public class SagregateOddEven {
             curr = curr.next;
         }
 
-
         if (evenEnd == null) {
             return oddHead.next;
         } else if (oddEnd == null) {
             return evenHead.next;
-        } else {
-            oddEnd.next = null;
-            evenEnd.next = oddHead.next;
-            return evenHead.next;
         }
+
+        oddEnd.next = null;
+        evenEnd.next = oddHead.next;
+        return evenHead.next;
     }
 
     public static void main(String args[]) {
