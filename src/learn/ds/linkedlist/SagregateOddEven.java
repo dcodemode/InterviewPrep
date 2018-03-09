@@ -58,14 +58,13 @@ public class SagregateOddEven {
         } else {
             oddEnd.next = null;
             evenEnd.next = oddHead.next;
+            return evenHead.next;
         }
-
-        return evenHead.next;
     }
 
     public static void main(String args[]) {
 
-        LinkedList ll = new RandLinkedListGenetator().create(5);
+        LinkedList ll = new RandLinkedListGenetator().create(9);
         ll.display();
 
         HelperLinkedList.display(sagregate(ll.head));
