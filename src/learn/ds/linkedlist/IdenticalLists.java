@@ -23,10 +23,6 @@ public class IdenticalLists {
             return true;
         }
 
-        if (a == null || b == null) {
-            return false;
-        }
-
         while (a != null && b != null) {
             if (a.data != b.data) {
                 return false;
@@ -71,7 +67,7 @@ public class IdenticalLists {
         b.append(2);
         b.append(3);
 
-        System.out.println(compareLists(a.head, b.head));
+        System.out.println(compareLists(a.head, null));
         System.out.println(compareLists2(a.head, b.head));
     }
 }

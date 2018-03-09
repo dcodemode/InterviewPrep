@@ -21,8 +21,7 @@ public class PrintReverse {
     }
 
     public static void main(String args[]){
-        RandLinkedListGenetator rl = new RandLinkedListGenetator();
-        LinkedList ll = rl.create(5);
+        LinkedList ll = new RandLinkedListGenetator().create(5);
 
         ll.display();
         printRev(ll.head);

@@ -52,7 +52,7 @@ public class IsPalindrome {
 
         SListNode prev = null;
         SListNode curr  = head;
-        SListNode next = null;
+        SListNode next;
 
         while(curr!=null){
             next=curr.next;
@@ -60,7 +60,6 @@ public class IsPalindrome {
             prev=curr;
             curr=next;
         }
-        head = prev;
         return prev;
     }
 

@@ -28,12 +28,10 @@ public class LastToFirst {
         curr.next = head;
         ll.head = curr;
         prev.next = null;
-
     }
 
     public static void main(String args[]) {
-        RandLinkedListGenetator rg = new RandLinkedListGenetator();
-        LinkedList ll = rg.create(7);
+        LinkedList ll = new RandLinkedListGenetator().create(7);
         ll.display();
         moveToFront(ll);
         ll.display();

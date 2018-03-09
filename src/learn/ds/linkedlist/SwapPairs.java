@@ -54,8 +54,7 @@ public class SwapPairs {
     }
 
     public static void main(String args[]) {
-        RandLinkedListGenetator rg = new RandLinkedListGenetator();
-        LinkedList ll = rg.create(1);
+        LinkedList ll = new RandLinkedListGenetator().create(7);
         ll.display();
         swap2(ll.head);
         ll.display();
