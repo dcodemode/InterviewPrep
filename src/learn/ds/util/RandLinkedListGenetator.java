@@ -13,7 +13,7 @@ public class RandLinkedListGenetator {
         LinkedList ll = new LinkedList();
         int i=0;
         while(i<size){
-            ll.append(rand.nextInt(99));
+            ll.push(rand.nextInt(99));
             i++;
         }
         return ll;
