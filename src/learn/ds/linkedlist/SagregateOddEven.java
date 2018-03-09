@@ -23,16 +23,51 @@ import learn.ds.util.RandLinkedListGenetator;
 
 public class SagregateOddEven {
 
+    /**
+     * Create even & odd linked lists separately and finally add them
+     * Time Complexity: O(n)
+     */
 
     public static SListNode sagregate(SListNode head) {
-        //ToDo
-        return head;
+        SListNode curr = head;
+        SListNode evenStart = new SListNode(-1);
+        SListNode evenEnd = null;
+        SListNode oddStart = new SListNode(-1);
+        SListNode oddEnd = null;
+        SListNode evenHead = evenStart;
+        SListNode oddHead = oddStart;
+
+        while (curr != null) {
+            if (curr.data % 2 == 0) {
+                evenStart.next = curr;
+                evenEnd = evenStart.next;
+                evenStart = evenStart.next;
+            } else {
+                oddStart.next = curr;
+                oddEnd = oddStart.next;
+                oddStart = oddStart.next;
+            }
+            curr = curr.next;
+        }
+
+
+        if (evenEnd == null) {
+            return oddHead.next;
+        } else if (oddEnd == null) {
+            return evenHead.next;
+        } else {
+            oddEnd.next = null;
+            evenEnd.next = oddHead.next;
+        }
+
+        return evenHead.next;
     }
 
     public static void main(String args[]) {
 
-        LinkedList ll = new RandLinkedListGenetator().create(7);
+        LinkedList ll = new RandLinkedListGenetator().create(5);
         ll.display();
+
         HelperLinkedList.display(sagregate(ll.head));
     }
 }
