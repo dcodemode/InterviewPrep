@@ -52,7 +52,9 @@ public class SagregateOddEven {
 
         if (evenEnd == null) {
             return oddHead.next;
-        } else if (oddEnd == null) {
+        }
+
+        if (oddEnd == null) {
             return evenHead.next;
         }
 
