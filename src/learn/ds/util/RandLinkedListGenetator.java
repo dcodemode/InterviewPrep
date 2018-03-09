@@ -1,7 +1,5 @@
 package learn.ds.util;
 
-import learn.ds.nodes.SListNode;
-
 import java.util.Random;
 
 public class RandLinkedListGenetator {
