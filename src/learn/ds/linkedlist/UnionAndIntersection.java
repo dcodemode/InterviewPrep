@@ -1,6 +1,11 @@
 package learn.ds.linkedlist;
 
 import learn.ds.nodes.SListNode;
+import learn.ds.util.HelperLinkedList;
+import learn.ds.util.LinkedList;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author Varma Penmetsa
@@ -19,5 +24,56 @@ import learn.ds.nodes.SListNode;
  *
  */
 public class UnionAndIntersection {
-    //ToDo
+
+    /**
+     *
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
+     */
+
+    public static SListNode intersection(SListNode l1, SListNode l2){
+        Set<Integer> set = new HashSet<Integer>();
+        SListNode curr = l1;
+        SListNode ret = new SListNode(-1);
+
+        SListNode retHead = ret;
+
+        while(curr!=null){
+            set.add(curr.data);
+            curr=curr.next;
+        }
+
+        curr = l2;
+        while(curr!=null){
+            if(set.contains(curr.data)){
+                ret.next = curr;
+                ret=ret.next;
+            }
+            curr=curr.next;
+        }
+        return retHead.next;
+    }
+
+    public static void union(SListNode l1, SListNode l2){
+
+    }
+
+    public static void main(String[] args){
+        LinkedList ll = new LinkedList(new SListNode(10));
+        ll.push(5);
+        ll.push(4);
+        ll.push(3);
+        ll.push(2);
+        ll.push(1);
+
+        LinkedList l2 = new LinkedList();
+        l2.push(1);
+        l2.push(4);
+        l2.push(5);
+        l2.push(0);
+        l2.push(11);
+
+        HelperLinkedList.display(intersection(ll.head,l2.head));
+        //HelperLinkedList.display(union(ll.head,l2.head));
+    }
 }
