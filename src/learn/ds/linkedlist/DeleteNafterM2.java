@@ -17,19 +17,38 @@ import learn.ds.util.RandLinkedListGenetator;
 public class DeleteNafterM2 {
 
     public static SListNode delete(SListNode head, int n, int m){
-        SListNode curr = head;
+        if(head==null){
+            return head;
+        }
         int i = 0;
-        while(curr!=null || i < m){
+        SListNode curr = head;
+        SListNode prev;
+
+        while(curr.next!=null && i<m-1){
             i++;
             curr = curr.next;
         }
-        curr.next = delete(curr.next,n,m);
 
-        return null;
+        if (curr.next==null){
+            return curr;
+        }
+
+        prev = curr;
+
+        i =0;
+        while(curr.next!=null && i<n){
+            i++;
+            curr = curr.next;
+        }
+
+        prev.next = delete(curr.next, n, m);
+
+        return head;
+
     }
 
     public static void main(String[] args) {
-        LinkedList ll = new RandLinkedListGenetator().create(7);
+        LinkedList ll = new RandLinkedListGenetator().create(5);
         ll.display();
 
         HelperLinkedList.display(delete(ll.head, 2, 2));
