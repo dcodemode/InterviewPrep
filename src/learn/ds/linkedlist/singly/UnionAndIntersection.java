@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 
@@ -28,18 +28,18 @@ public class UnionAndIntersection {
      * Space Complexity: O(n)
      */
 
-    public static SListNode intersection(SListNode l1, SListNode l2){
+    public static ListNode intersection(ListNode l1, ListNode l2){
         //ToDo
         return null;
     }
 
-    public static SListNode union(SListNode l1, SListNode l2){
+    public static ListNode union(ListNode l1, ListNode l2){
         //ToDo
           return null;
     }
 
     public static void main(String[] args){
-        LinkedList ll = new LinkedList(new SListNode(1));
+        LinkedList ll = new LinkedList(new ListNode(1));
         ll.push(10);
         ll.push(15);
         ll.push(4);

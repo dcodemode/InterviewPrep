@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
@@ -20,12 +20,12 @@ import learn.ds.util.RandLinkedListGenetator;
  */
 public class DeleteNodeWithGreaterVal {
 
-    public static SListNode delLesserNodes(SListNode head) {
-        SListNode dummy = new SListNode(Integer.MAX_VALUE);
+    public static ListNode delLesserNodes(ListNode head) {
+        ListNode dummy = new ListNode(Integer.MAX_VALUE);
         dummy.next = head;
 
-        SListNode prev = dummy;
-        SListNode curr = dummy.next;
+        ListNode prev = dummy;
+        ListNode curr = dummy.next;
 
         while (curr != null && curr.next != null) {
             if (curr.data < curr.next.data) {

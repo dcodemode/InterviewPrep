@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 
 /**
@@ -13,7 +13,7 @@ public class RemoveDupsSorted {
       Time complexity : O(n)
       Space complexity : O(1)
      */
-    public static void removeDups(SListNode head){
+    public static void removeDups(ListNode head){
         if(head==null){
            return;
         }
@@ -28,13 +28,13 @@ public class RemoveDupsSorted {
     }
 
     public static void main(String args[]){
-        LinkedList ll = new LinkedList(new SListNode(10));
-        SListNode a = new SListNode(20);
-        SListNode b = new SListNode(20);
-        SListNode c = new SListNode(20);
-        SListNode d = new SListNode(20);
-        SListNode e = new SListNode(60);
-        SListNode f = new SListNode(70);
+        LinkedList ll = new LinkedList(new ListNode(10));
+        ListNode a = new ListNode(20);
+        ListNode b = new ListNode(20);
+        ListNode c = new ListNode(20);
+        ListNode d = new ListNode(20);
+        ListNode e = new ListNode(60);
+        ListNode f = new ListNode(70);
 
         ll.head.next = a;
         ll.head.next.next = b;

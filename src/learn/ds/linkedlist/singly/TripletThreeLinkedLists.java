@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
@@ -32,13 +32,13 @@ public class TripletThreeLinkedLists {
      * The step 2 takes O(n*n) time. So the overall time complexity is O(nlogn) + O(nlogn) + O(n*n) = O(n*n).
      */
 
-    public static SListNode getTriplet(SListNode l1, SListNode l2, SListNode l3,int num){
-        SListNode ret = null;
+    public static ListNode getTriplet(ListNode l1, ListNode l2, ListNode l3, int num){
+        ListNode ret = null;
         //Sorting l2 & l3;
-        SListNode newL2 = mergeSort(l2,"asc");
-        SListNode newL3 = mergeSort(l3,"desc");
-        SListNode nL2 = newL2;
-        SListNode nL3 = newL3;
+        ListNode newL2 = mergeSort(l2,"asc");
+        ListNode newL3 = mergeSort(l3,"desc");
+        ListNode nL2 = newL2;
+        ListNode nL3 = newL3;
         HelperLinkedList.display(newL2);
         HelperLinkedList.display(newL3);
 
@@ -63,21 +63,21 @@ public class TripletThreeLinkedLists {
         return  ret;
     }
 
-    public static SListNode mergeSort(SListNode head, String order){
+    public static ListNode mergeSort(ListNode head, String order){
         if (head==null || head.next==null) return head;
 
-        SListNode mid = middleElement(head);
-        SListNode midNext = mid.next;
+        ListNode mid = middleElement(head);
+        ListNode midNext = mid.next;
         mid.next = null;
 
-        SListNode left = mergeSort(head,order);
-        SListNode right = mergeSort(midNext,order);
+        ListNode left = mergeSort(head,order);
+        ListNode right = mergeSort(midNext,order);
 
         return mergeSorted(left,right,order);
     }
 
-    public static SListNode mergeSorted(SListNode a, SListNode b,String order){
-        SListNode ret = null;
+    public static ListNode mergeSorted(ListNode a, ListNode b, String order){
+        ListNode ret = null;
         if (a==null)
             return b;
 
@@ -104,10 +104,10 @@ public class TripletThreeLinkedLists {
         return ret;
     }
 
-    public static SListNode middleElement(SListNode head){
+    public static ListNode middleElement(ListNode head){
         if(head==null) return head;
-        SListNode slow = head;
-        SListNode fast = head;
+        ListNode slow = head;
+        ListNode fast = head;
 
         while(fast.next!=null && fast.next.next!=null){
             slow=slow.next;

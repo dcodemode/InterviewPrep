@@ -1,6 +1,6 @@
 package learn.ds.util;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 
 /**
  * @author Varma Penmetsa
@@ -9,7 +9,7 @@ import learn.ds.nodes.SListNode;
  */
 public class HelperLinkedList {
 
-    public static int length(SListNode head){
+    public static int length(ListNode head){
         int i=0;
         while(head!=null){
             i++;
@@ -18,8 +18,8 @@ public class HelperLinkedList {
         return i;
     }
 
-    public static void display(SListNode head){
-        SListNode curr = head;
+    public static void display(ListNode head){
+        ListNode curr = head;
         while(curr!=null){
             System.out.print(curr.data+" --> ");
             curr=curr.next;

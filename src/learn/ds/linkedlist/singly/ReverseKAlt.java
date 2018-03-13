@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
@@ -29,14 +29,14 @@ public class ReverseKAlt {
      * Return new head of the list.
      */
 
-    public static SListNode reverse(SListNode head, int k) {
+    public static ListNode reverse(ListNode head, int k) {
         if (isValid(head, k) == false) {
             return head;
         }
         int i = 0;
 
-        SListNode prev, next;
-        SListNode curr = head;
+        ListNode prev, next;
+        ListNode curr = head;
         prev = next = null;
 
         while (curr != null && i < k) {
@@ -70,7 +70,7 @@ public class ReverseKAlt {
 
     }
 
-    public static boolean isValid(SListNode head, int k) {
+    public static boolean isValid(ListNode head, int k) {
         if (head == null) return false;
         while (head != null && k-1 > 0) {
             head = head.next;

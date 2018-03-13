@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 
@@ -24,15 +24,15 @@ public class AddTwoNumbers2 {
     /*
      * Time Complexity: O(m+n)
      */
-    public static SListNode addNumbers(SListNode a, SListNode b) {
-        SListNode resultHead = new SListNode(-1);
-        SListNode result = resultHead;
+    public static ListNode addNumbers(ListNode a, ListNode b) {
+        ListNode resultHead = new ListNode(-1);
+        ListNode result = resultHead;
         int lenA = HelperLinkedList.length(a);
         int lenB = HelperLinkedList.length(b);
 
         if (lenA > lenB) {
             while (lenA != lenB) {
-                result.next = new SListNode(a.data);
+                result.next = new ListNode(a.data);
                 result = result.next;
                 a = a.next;
                 lenA--;
@@ -41,7 +41,7 @@ public class AddTwoNumbers2 {
 
         if (lenA < lenB) {
             while (lenA != lenB) {
-                result.next = new SListNode(b.data);
+                result.next = new ListNode(b.data);
                 result = result.next;
                 b = b.next;
                 lenB--;
@@ -51,7 +51,7 @@ public class AddTwoNumbers2 {
         // when length of both lists are equal
         int finalCarry = getSum(a, b);
         if (finalCarry > 0) {
-            result.next = new SListNode(finalCarry);
+            result.next = new ListNode(finalCarry);
             result.next.next = a;
         } else {
             result.next = a;
@@ -63,7 +63,7 @@ public class AddTwoNumbers2 {
      * Recursively go to the last node linked list a & b and sum them up, if sum is > 10
      * change value in last node and return carry to previous node
      */
-    public static int getSum(SListNode a, SListNode b) {
+    public static int getSum(ListNode a, ListNode b) {
         if (a.next == null && b.next == null) {
             int sum = a.data + b.data;
             int carry = sum / 10;

@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 
@@ -17,12 +17,12 @@ import learn.ds.util.LinkedList;
 
 public class DetectAndRemoveLoop {
 
-    public static void removeLoop(SListNode head) {
+    public static void removeLoop(ListNode head) {
         if (head == null || head.next == null)
             return;
 
-        SListNode slow = head.next;
-        SListNode fast = head.next.next;
+        ListNode slow = head.next;
+        ListNode fast = head.next.next;
 
         while (fast != null && fast.next!= null) {
             if (slow == fast)
@@ -43,14 +43,14 @@ public class DetectAndRemoveLoop {
     }
 
     public static void main(String args[]) {
-        LinkedList ll = new LinkedList(new SListNode(10));
+        LinkedList ll = new LinkedList(new ListNode(10));
 
-        SListNode a = new SListNode(20);
-        SListNode b = new SListNode(30);
-        SListNode c = new SListNode(40);
-        SListNode d = new SListNode(50);
-        SListNode e = new SListNode(60);
-        SListNode f = new SListNode(70);
+        ListNode a = new ListNode(20);
+        ListNode b = new ListNode(30);
+        ListNode c = new ListNode(40);
+        ListNode d = new ListNode(50);
+        ListNode e = new ListNode(60);
+        ListNode f = new ListNode(70);
 
         ll.head.next = a;
         ll.head.next.next = b;

@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
 
@@ -12,7 +12,7 @@ public class PrintReverse {
     /*
      Recursive function to print reverse of a linked list
      */
-    public static void printRev(SListNode head){
+    public static void printRev(ListNode head){
         if(head==null){
             return;
         }

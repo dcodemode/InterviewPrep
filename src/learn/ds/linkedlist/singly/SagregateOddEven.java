@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
@@ -28,14 +28,14 @@ public class SagregateOddEven {
      * Time Complexity: O(n)
      */
 
-    public static SListNode sagregate(SListNode head) {
-        SListNode curr = head;
-        SListNode evenStart = new SListNode(-1);
-        SListNode evenEnd = null;
-        SListNode oddStart = new SListNode(-1);
-        SListNode oddEnd = null;
-        SListNode evenHead = evenStart;
-        SListNode oddHead = oddStart;
+    public static ListNode sagregate(ListNode head) {
+        ListNode curr = head;
+        ListNode evenStart = new ListNode(-1);
+        ListNode evenEnd = null;
+        ListNode oddStart = new ListNode(-1);
+        ListNode oddEnd = null;
+        ListNode evenHead = evenStart;
+        ListNode oddHead = oddStart;
 
         while (curr != null) {
             if (curr.data % 2 == 0) {

@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
 
@@ -22,9 +22,9 @@ public class DeleteAlternateNodes {
      * Time Complexity : O(n)
      * Space Complexity : O(1)
      */
-    public static void delAltNodes(SListNode head){
+    public static void delAltNodes(ListNode head){
         if (head==null || head.next==null) return ;
-        SListNode curr = head;
+        ListNode curr = head;
         while(curr!=null && curr.next!=null){
                curr.next = curr.next.next;
                curr=curr.next;
@@ -36,7 +36,7 @@ public class DeleteAlternateNodes {
      * Time Complexity : O(n)
      * Space Complexity : O(1)
      */
-    public static void delAltNodes2(SListNode head){
+    public static void delAltNodes2(ListNode head){
         if (head==null || head.next==null) return ;
         head.next = head.next.next;
         delAltNodes(head.next);

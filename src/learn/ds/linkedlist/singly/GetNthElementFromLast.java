@@ -4,7 +4,7 @@ package learn.ds.linkedlist.singly;
  * @author Varma Penmetsa
  */
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
 
@@ -20,7 +20,7 @@ public class GetNthElementFromLast {
      Print nth node from end of linked list
     */
     public int getNthFromLast(int position){
-        SListNode node = ll.head;
+        ListNode node = ll.head;
         int i= 1;
         while(node!=null && i<ll.length()-position){
             i++;
@@ -34,8 +34,8 @@ public class GetNthElementFromLast {
      */
     public int getNthFromLast2(int position){
         if (ll.head==null) return 0;
-        SListNode slow = ll.head;
-        SListNode fast = ll.head;
+        ListNode slow = ll.head;
+        ListNode fast = ll.head;
         for(int i=0;i<position;i++){
             fast=fast.next;
         }

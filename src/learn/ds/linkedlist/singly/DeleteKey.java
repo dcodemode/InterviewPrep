@@ -4,7 +4,7 @@ package learn.ds.linkedlist.singly;
  * @author Varma Penmetsa
  */
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 
 public class DeleteKey {
@@ -17,8 +17,8 @@ public class DeleteKey {
 
     /* Given a ‘key’, delete the first occurrence of this key in linked list. */
     public void deleteKey(int new_data) {
-        SListNode node = ll.head;
-        SListNode prevNode = null;
+        ListNode node = ll.head;
+        ListNode prevNode = null;
 
         if (node != null && node.data == new_data) {
             ll.head = node.next;
@@ -38,9 +38,9 @@ public class DeleteKey {
     }
 
     /* Deletes the node at the given node */
-    public void deleteNode(SListNode node) {
-        SListNode temp = ll.head;
-        SListNode prev = null;
+    public void deleteNode(ListNode node) {
+        ListNode temp = ll.head;
+        ListNode prev = null;
 
         if(temp == node){
             ll.head = temp.next;
@@ -60,8 +60,8 @@ public class DeleteKey {
 
     /* Deletes the node at the given position */
     public void deleteAfterPosition(int position){
-        SListNode node = ll.head;
-        SListNode prev = null;
+        ListNode node = ll.head;
+        ListNode prev = null;
 
         if (position==0){
             ll.head = node.next;
@@ -82,14 +82,14 @@ public class DeleteKey {
 
 
     public static void main(String args[]){
-        LinkedList ll = new LinkedList(new SListNode(10));
+        LinkedList ll = new LinkedList(new ListNode(10));
 
-        SListNode a = new SListNode(20);
-        SListNode b = new SListNode(30);
-        SListNode c = new SListNode(40);
-        SListNode d = new SListNode(50);
-        SListNode e = new SListNode(60);
-        SListNode f = new SListNode(70);
+        ListNode a = new ListNode(20);
+        ListNode b = new ListNode(30);
+        ListNode c = new ListNode(40);
+        ListNode d = new ListNode(50);
+        ListNode e = new ListNode(60);
+        ListNode f = new ListNode(70);
 
         ll.head.next = a;
         ll.head.next.next = b;

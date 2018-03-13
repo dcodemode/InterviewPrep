@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
 
@@ -17,7 +17,7 @@ public class CountDuplicateElements {
      */
     public int dupCount(int num){
         int i=0;
-        SListNode node = ll.head;
+        ListNode node = ll.head;
         while(node!=null){
             if(node.data==num){
                 i++;
@@ -30,7 +30,7 @@ public class CountDuplicateElements {
     /*
      Write a function that counts the number of times a given int occurs in a Linked List using recursion
     */
-    public int dupCount2(SListNode curr, int num){
+    public int dupCount2(ListNode curr, int num){
         if (curr==null){
             return 0;
         }else if(curr.data==num){

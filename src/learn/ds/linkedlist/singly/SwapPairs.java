@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
 
@@ -18,10 +18,10 @@ public class SwapPairs {
      * Time complexity : O(n)
      * Space complexity : O(1)
      */
-    public static void swap1(SListNode head) {
+    public static void swap1(ListNode head) {
         int i = 0;
-        SListNode curr = head;
-        SListNode prev = null;
+        ListNode curr = head;
+        ListNode prev = null;
 
         while (curr != null) {
             if (i == 1) {
@@ -42,7 +42,7 @@ public class SwapPairs {
      * Time complexity : O(n)
      * Space complexity : O(1)
      */
-    public static void swap2(SListNode head) {
+    public static void swap2(ListNode head) {
        if(head==null || head.next ==null){
            return;
        }

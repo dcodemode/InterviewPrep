@@ -4,27 +4,27 @@ package learn.ds.util;
  * @author Varma Penmetsa
  */
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 
 public class LinkedList {
 
-    public SListNode head;
+    public ListNode head;
 
     public LinkedList() {
 
     }
 
-    public LinkedList(SListNode head) {
+    public LinkedList(ListNode head) {
         this.head = head;
     }
 
     public LinkedList(int data) {
-        this.head = new SListNode(data);
+        this.head = new ListNode(data);
     }
 
     /* Push adds node on front of the list*/
     public void push(int data) {
-        SListNode new_node = new SListNode(data);
+        ListNode new_node = new ListNode(data);
         new_node.next = head;
         head = new_node;
 
@@ -41,7 +41,7 @@ public class LinkedList {
 
     /* Print elements of a linked list*/
     public void display() {
-        SListNode node = head;
+        ListNode node = head;
         while (node != null) {
             System.out.print(node.data + " --> ");
             node = node.next;
@@ -49,8 +49,8 @@ public class LinkedList {
         System.out.println("null");
     }
 
-    public void display2(SListNode head) {
-        SListNode node = head;
+    public void display2(ListNode head) {
+        ListNode node = head;
         while (node != null) {
             System.out.print(node.data + " --> ");
             node = node.next;
@@ -62,11 +62,11 @@ public class LinkedList {
     public void append(int new_data) {
 
         if (head == null) {
-            head = new SListNode(new_data);
+            head = new ListNode(new_data);
             return;
         }
-        SListNode new_node = new SListNode(new_data);
-        SListNode node = head;
+        ListNode new_node = new ListNode(new_data);
+        ListNode node = head;
         while (node.next != null) {
             node = node.next;
         }
@@ -75,7 +75,7 @@ public class LinkedList {
 
     /*Length of a linked list*/
     public int length() {
-        SListNode node = head;
+        ListNode node = head;
         int i = 0;
         while (node != null) {
             i++;
@@ -85,10 +85,10 @@ public class LinkedList {
     }
 
     /* Insert after a given node */
-    public void insertAfter(SListNode prev, int new_data) {
+    public void insertAfter(ListNode prev, int new_data) {
 
-        SListNode new_node = new SListNode(new_data);
-        SListNode temp;
+        ListNode new_node = new ListNode(new_data);
+        ListNode temp;
 
         if (null == prev) {
             System.out.println("Given node cant't be null");
@@ -101,7 +101,7 @@ public class LinkedList {
 
     /*Search an element in linked list iterative solution*/
     public int search(int data) {
-        SListNode temp = head;
+        ListNode temp = head;
 
         while (temp != null && temp.data != data) {
             temp = temp.next;
@@ -115,7 +115,7 @@ public class LinkedList {
     }
 
     /*Search an element in linked list recursive solution*/
-    public boolean searchRecursive(SListNode head, int data) {
+    public boolean searchRecursive(ListNode head, int data) {
         if (head == null) {
             return false;
         }
@@ -126,8 +126,8 @@ public class LinkedList {
     }
 
     /* Write a function to get Nth node in a Linked List */
-    public SListNode getNode(int position) {
-        SListNode node = head;
+    public ListNode getNode(int position) {
+        ListNode node = head;
         int i = 0;
         while (node != null && i < position) {
             i++;
@@ -137,13 +137,13 @@ public class LinkedList {
     }
 
     public static void main(String args[]) {
-        LinkedList ll = new LinkedList(new SListNode(10));
-        SListNode a = new SListNode(20);
-        SListNode b = new SListNode(30);
-        SListNode c = new SListNode(40);
-        SListNode d = new SListNode(50);
-        SListNode e = new SListNode(60);
-        SListNode f = new SListNode(70);
+        LinkedList ll = new LinkedList(new ListNode(10));
+        ListNode a = new ListNode(20);
+        ListNode b = new ListNode(30);
+        ListNode c = new ListNode(40);
+        ListNode d = new ListNode(50);
+        ListNode e = new ListNode(60);
+        ListNode f = new ListNode(70);
 
         ll.head.next = a;
         ll.head.next.next = b;

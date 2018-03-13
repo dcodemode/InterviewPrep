@@ -4,7 +4,7 @@ package learn.ds.linkedlist.singly;
  * @author Varma Penmetsa
  */
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
 
@@ -12,9 +12,9 @@ public class GetMiddleElement {
 
     /* Print middle element of a linked list, if even nodes print second then there would be two middle nodes,
    we need to print second middle element */
-    public static SListNode getMiddleElement(SListNode head){
-        SListNode slow = head;
-        SListNode fast = head;
+    public static ListNode getMiddleElement(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head;
         while(fast!=null && fast.next!=null){
             slow=slow.next;
             fast=fast.next.next;
@@ -24,9 +24,9 @@ public class GetMiddleElement {
 
     /* Print middle element of a linked list, if even nodes print second then there would be two middle nodes,
     we need to print first middle element */
-    public int getMiddleElement2(SListNode head){
-        SListNode slow = head;
-        SListNode fast = head;
+    public int getMiddleElement2(ListNode head){
+        ListNode slow = head;
+        ListNode fast = head;
         while(fast.next!=null && fast.next.next!=null){
             slow=slow.next;
             fast=fast.next.next;
@@ -36,7 +36,7 @@ public class GetMiddleElement {
 
     //Get middle element using length
     public int getMiddleElement3(LinkedList ll){
-        SListNode node = ll.head;
+        ListNode node = ll.head;
         if(node == null) return 0;
         for(int i=0;i<ll.length()/2;i++){
             node=node.next;

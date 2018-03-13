@@ -1,15 +1,15 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 
 public class MergeSortedLinkedLists {
 
     /* This method takes heads of two linked list and merge two sorted linked lists using dummy node approach */
-    public static SListNode sortedMerge(SListNode l1,SListNode l2){
+    public static ListNode sortedMerge(ListNode l1, ListNode l2){
         //Creating a dummy node
-        SListNode dummy = new SListNode(0);
-        SListNode head = dummy;
+        ListNode dummy = new ListNode(0);
+        ListNode head = dummy;
 
         while(l1!= null && l2!=null){
           if(l1.data <= l2.data){
@@ -34,9 +34,9 @@ public class MergeSortedLinkedLists {
     }
 
     /* Merge sorted linked list with out dummy node */
-    public static SListNode sortedMerge2(SListNode l1, SListNode l2){
-        SListNode head=null;
-        SListNode ret;
+    public static ListNode sortedMerge2(ListNode l1, ListNode l2){
+        ListNode head=null;
+        ListNode ret;
 
         if(l1==null && l2==null){
             return head;
@@ -79,8 +79,8 @@ public class MergeSortedLinkedLists {
     }
 
     /* Merge sorted linked list using recursion*/
-    public static SListNode sortedMerge3(SListNode l1, SListNode l2){
-        SListNode temp = null;
+    public static ListNode sortedMerge3(ListNode l1, ListNode l2){
+        ListNode temp = null;
 
         if(l1==null && l2==null){
             return temp;
@@ -102,7 +102,7 @@ public class MergeSortedLinkedLists {
     }
 
     public static void main(String args[]) {
-        LinkedList list1 = new LinkedList(new SListNode(10));
+        LinkedList list1 = new LinkedList(new ListNode(10));
         list1.append(30);
         list1.append(50);
         list1.append(70);
@@ -110,7 +110,7 @@ public class MergeSortedLinkedLists {
         list1.append(110);
         list1.append(130);
 
-        LinkedList list2 = new LinkedList(new SListNode(0));
+        LinkedList list2 = new LinkedList(new ListNode(0));
         list2.append(20);
         list2.append(40);
         list2.append(60);

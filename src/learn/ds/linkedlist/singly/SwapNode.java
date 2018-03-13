@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
 
@@ -15,11 +15,11 @@ public class SwapNode {
         this.ll=ll;
     }
 
-    public void swap(SListNode x, SListNode y) {
+    public void swap(ListNode x, ListNode y) {
 
         //Search prev of node x
-        SListNode currX = ll.head;
-        SListNode prevX = null;
+        ListNode currX = ll.head;
+        ListNode prevX = null;
 
         if (currX == null) return;
         while (currX != null && currX != x) {
@@ -29,8 +29,8 @@ public class SwapNode {
         if (currX == null) return;
 
         //Search prev of node Y
-        SListNode currY = ll.head;
-        SListNode prevY = null;
+        ListNode currY = ll.head;
+        ListNode prevY = null;
 
         if (currY == null) return;
         while (currY != null && currY != y) {
@@ -41,7 +41,7 @@ public class SwapNode {
 
         //If x is head
         if(prevX == null){
-            SListNode temp = currX.next;
+            ListNode temp = currX.next;
             currX.next = currY.next;
             currY.next = temp;
 
@@ -52,7 +52,7 @@ public class SwapNode {
 
         //If Y is head
         if(prevY == null){
-            SListNode temp = currY.next;
+            ListNode temp = currY.next;
             currY.next = currX.next;
             currX.next = temp;
 
@@ -62,7 +62,7 @@ public class SwapNode {
         }
 
         //Swapping nodes
-        SListNode temp = currX.next;
+        ListNode temp = currX.next;
         currX.next = currY.next;
         currY.next= temp;
 

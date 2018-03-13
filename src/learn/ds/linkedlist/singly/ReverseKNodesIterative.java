@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
@@ -38,15 +38,15 @@ public class ReverseKNodesIterative {
      * @return the reversed list's 'begin' node, which is the precedence of node end
      */
 
-    public static SListNode revK(SListNode head, int k) {
+    public static ListNode revK(ListNode head, int k) {
         if (head == null || head.next == null || k == 1) {
             return head;
         }
 
-        SListNode dummyHead = new SListNode(-1);
+        ListNode dummyHead = new ListNode(-1);
         dummyHead.next = head;
 
-        SListNode first = dummyHead;
+        ListNode first = dummyHead;
 
         int i = 0;
         while (head != null) {
@@ -62,12 +62,12 @@ public class ReverseKNodesIterative {
     }
 
     //Reverse between two nodes
-    public static SListNode reverseBetween(SListNode start, SListNode end) {
-        SListNode prev = start;
-        SListNode curr = start.next;
-        SListNode next;
+    public static ListNode reverseBetween(ListNode start, ListNode end) {
+        ListNode prev = start;
+        ListNode curr = start.next;
+        ListNode next;
 
-        SListNode first = curr;
+        ListNode first = curr;
         while (curr != end) {
             next = curr.next;
             curr.next = prev;

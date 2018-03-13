@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 
 /**
@@ -23,10 +23,10 @@ public class SortedLinkedListIntersection {
      */
 
     public static LinkedList sortedIntersection(LinkedList l1, LinkedList l2) {
-        LinkedList l3 = new LinkedList(new SListNode(0));
+        LinkedList l3 = new LinkedList(new ListNode(0));
 
-        SListNode h1 = l1.head;
-        SListNode h2 = l2.head;
+        ListNode h1 = l1.head;
+        ListNode h2 = l2.head;
 
         while (h1 != null && h2 != null) {
             if (h1.data > h2.data) {

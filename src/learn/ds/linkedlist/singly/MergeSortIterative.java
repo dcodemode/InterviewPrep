@@ -1,19 +1,19 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
 
 public class MergeSortIterative {
 
-    public static SListNode mergeSort(SListNode first){
+    public static ListNode mergeSort(ListNode first){
         if(first==null || first.next == null){
             return first;
         }
 
-        SListNode mid = getMiddle(first);
-        SListNode second = mid.next;
+        ListNode mid = getMiddle(first);
+        ListNode second = mid.next;
         mid.next = null;
 
         //TODo
@@ -23,10 +23,10 @@ public class MergeSortIterative {
     }
 
 
-    public static SListNode getMiddle(SListNode head){
+    public static ListNode getMiddle(ListNode head){
         if(head==null) return head;
-        SListNode slow = head;
-        SListNode fast = head;
+        ListNode slow = head;
+        ListNode fast = head;
         while(fast.next!=null && fast.next.next!=null){
             slow=slow.next;
             fast=fast.next.next;

@@ -4,7 +4,7 @@ package learn.ds.linkedlist.singly;
  * @author Varma Penmetsa
  */
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
 
@@ -30,9 +30,9 @@ public class ReverseLinkedList {
 
     public void reverse(){
 
-        SListNode prev = null;
-        SListNode curr = ll.head;
-        SListNode next = null;
+        ListNode prev = null;
+        ListNode curr = ll.head;
+        ListNode next = null;
 
         if (curr==null) return;
 
@@ -49,7 +49,7 @@ public class ReverseLinkedList {
     /*
       Reverse a linked list in recursive approach
      */
-    public void reverse2(SListNode prev,SListNode curr){
+    public void reverse2(ListNode prev, ListNode curr){
           if(curr.next == null){
               ll.head=curr;
               curr.next=prev;

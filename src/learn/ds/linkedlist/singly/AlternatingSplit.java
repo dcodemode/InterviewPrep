@@ -1,12 +1,8 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
-import learn.ds.util.HelperLinkedList;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * @author Varma Penmetsa
@@ -23,12 +19,12 @@ public class AlternatingSplit {
     /*
      * Time Complexity : O(n)
      */
-    public static void altSplit(SListNode head) {
+    public static void altSplit(ListNode head) {
         if (head == null || head.next == null) {
             return;
         }
 
-        SListNode curr = head;
+        ListNode curr = head;
         LinkedList a = new LinkedList();
         LinkedList b = new LinkedList();
 

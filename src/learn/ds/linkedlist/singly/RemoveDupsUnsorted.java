@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 
 import java.util.HashSet;
@@ -15,10 +15,10 @@ public class RemoveDupsUnsorted {
       Time Complexity: O(n)
       Space O(n) on average (assuming that hash table access time is O(1) on average).
      */
-    public static void removeDups(SListNode head){
+    public static void removeDups(ListNode head){
         HashSet<Integer> set = new HashSet<Integer>();
-        SListNode curr = head;
-        SListNode prev = null;
+        ListNode curr = head;
+        ListNode prev = null;
 
         while(curr!=null){
             if(set.contains(curr.data)){
@@ -32,13 +32,13 @@ public class RemoveDupsUnsorted {
     }
 
     public static void main(String args[]){
-        LinkedList ll = new LinkedList(new SListNode(10));
-        SListNode a = new SListNode(20);
-        SListNode b = new SListNode(30);
-        SListNode c = new SListNode(20);
-        SListNode d = new SListNode(20);
-        SListNode e = new SListNode(70);
-        SListNode f = new SListNode(10);
+        LinkedList ll = new LinkedList(new ListNode(10));
+        ListNode a = new ListNode(20);
+        ListNode b = new ListNode(30);
+        ListNode c = new ListNode(20);
+        ListNode d = new ListNode(20);
+        ListNode e = new ListNode(70);
+        ListNode f = new ListNode(10);
 
         ll.head.next = a;
         ll.head.next.next = b;

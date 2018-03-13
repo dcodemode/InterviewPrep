@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
@@ -22,14 +22,14 @@ import learn.ds.util.RandLinkedListGenetator;
 public class Rotate {
 
     //Iterative
-    public static SListNode rev(SListNode head, int k) {
+    public static ListNode rev(ListNode head, int k) {
         if (head == null) {
             return head;
         }
 
         int i = 0;
-        SListNode curr = head;
-        SListNode prev, next;
+        ListNode curr = head;
+        ListNode prev, next;
         prev = next = null;
 
         while (curr != null && i < k) {

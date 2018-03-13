@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.LinkedList;
 
 /**
@@ -18,7 +18,7 @@ public class IdenticalLists {
      * Time Complexity : O(n)
      * Space Complexity: O(1)
      */
-    public static boolean compareLists(SListNode a, SListNode b) {
+    public static boolean compareLists(ListNode a, ListNode b) {
         if (a == null && b == null) {
             return true;
         }
@@ -41,7 +41,7 @@ public class IdenticalLists {
      * Time Complexity : O(n)
      * Space Complexity: O(1)
      */
-    public static boolean compareLists2(SListNode a, SListNode b) {
+    public static boolean compareLists2(ListNode a, ListNode b) {
         if (a == null && b == null) {
             return true;
         }

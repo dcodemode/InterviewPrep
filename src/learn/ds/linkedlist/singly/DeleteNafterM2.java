@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
@@ -16,13 +16,13 @@ import learn.ds.util.RandLinkedListGenetator;
  */
 public class DeleteNafterM2 {
 
-    public static SListNode delete(SListNode head, int n, int m){
+    public static ListNode delete(ListNode head, int n, int m){
         if(head==null){
             return head;
         }
         int i = 0;
-        SListNode curr = head;
-        SListNode prev;
+        ListNode curr = head;
+        ListNode prev;
 
         while(curr.next!=null && i<m-1){
             i++;

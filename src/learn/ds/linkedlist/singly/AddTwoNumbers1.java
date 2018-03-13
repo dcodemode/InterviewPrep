@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 
@@ -34,7 +34,7 @@ public class AddTwoNumbers1 {
      *
      */
 
-    public static SListNode sum(SListNode l1, SListNode l2){
+    public static ListNode sum(ListNode l1, ListNode l2){
         if(l1==null && l2==null){
             return l1;
         }else if(l1!=null && l2==null){
@@ -42,8 +42,8 @@ public class AddTwoNumbers1 {
         }else if(l1==null && l2!=null){
             return l2;
         }
-        SListNode resHead = new SListNode(-1);
-        SListNode res = resHead;
+        ListNode resHead = new ListNode(-1);
+        ListNode res = resHead;
         int carry = 0;
         while(l1!=null && l2!=null){
             int sum = carry+l1.data+l2.data;
@@ -52,7 +52,7 @@ public class AddTwoNumbers1 {
                 carry = 1;
                 sum = sum%10;
             }
-            res.next = new SListNode(sum);
+            res.next = new ListNode(sum);
 
             l1=l1.next;
             l2=l2.next;
@@ -67,7 +67,7 @@ public class AddTwoNumbers1 {
                     carry = 1;
                     sum = sum%10;
                 }
-                res.next = new SListNode(sum);
+                res.next = new ListNode(sum);
                 l2=l2.next;
                 res=res.next;
             }
@@ -81,13 +81,13 @@ public class AddTwoNumbers1 {
                     carry = 1;
                     sum = sum%10;
                 }
-                res.next = new SListNode(sum);
+                res.next = new ListNode(sum);
                 l1=l1.next;
                 res=res.next;
             }
         }
        if (carry==1){
-            res.next = new SListNode(carry);
+            res.next = new ListNode(carry);
        }
        return resHead.next;
     }

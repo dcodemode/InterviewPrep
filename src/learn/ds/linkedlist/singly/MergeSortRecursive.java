@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
@@ -24,22 +24,22 @@ public class MergeSortRecursive {
      *
      */
 
-    public static SListNode mergeSort(SListNode head) {
+    public static ListNode mergeSort(ListNode head) {
         if (head == null || head.next == null) {
             return head;
         }
-        SListNode mid = middleElement(head);
-        SListNode sec = mid.next;
+        ListNode mid = middleElement(head);
+        ListNode sec = mid.next;
         mid.next = null;
 
-        SListNode left = mergeSort(head);
-        SListNode right = mergeSort(sec);
+        ListNode left = mergeSort(head);
+        ListNode right = mergeSort(sec);
         //Merge sorted linked lists
         return sortedMerge(left, right);
     }
 
-    public static SListNode sortedMerge(SListNode a, SListNode b) {
-        SListNode ret = null;
+    public static ListNode sortedMerge(ListNode a, ListNode b) {
+        ListNode ret = null;
 
         if (a == null) {
             return b;
@@ -59,10 +59,10 @@ public class MergeSortRecursive {
         return ret;
     }
 
-    public static SListNode middleElement(SListNode head) {
+    public static ListNode middleElement(ListNode head) {
         if (head == null) return null;
-        SListNode slow = head;
-        SListNode fast = head;
+        ListNode slow = head;
+        ListNode fast = head;
 
         while (fast.next != null && fast.next.next != null) {
             slow = slow.next;

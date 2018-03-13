@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 import learn.ds.util.RandLinkedListGenetator;
@@ -22,13 +22,13 @@ import learn.ds.util.RandLinkedListGenetator;
 public class ReverseKNodesRecursive {
 
     //Time Complexity: O(n)
-    public static SListNode reverse(SListNode head, int k) {
+    public static ListNode reverse(ListNode head, int k) {
         if (isValidSection(head, k) == false)
             return head;
         int i = 0;
-        SListNode prev = null;
-        SListNode curr = head;
-        SListNode next = null;
+        ListNode prev = null;
+        ListNode curr = head;
+        ListNode next = null;
 
         while (curr != null && i < k) {
             next = curr.next;
@@ -44,10 +44,10 @@ public class ReverseKNodesRecursive {
         return prev;
     }
 
-    public static boolean isValidSection(SListNode node, int k) {
+    public static boolean isValidSection(ListNode node, int k) {
         if (node == null)
             return false;
-        SListNode cur = node;
+        ListNode cur = node;
         while (cur != null && k > 0) {
             cur = cur.next;
             k--;

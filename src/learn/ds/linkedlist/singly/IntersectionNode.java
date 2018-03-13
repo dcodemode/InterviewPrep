@@ -1,6 +1,6 @@
 package learn.ds.linkedlist.singly;
 
-import learn.ds.nodes.SListNode;
+import learn.ds.nodes.ListNode;
 import learn.ds.util.HelperLinkedList;
 import learn.ds.util.LinkedList;
 
@@ -19,8 +19,8 @@ public class IntersectionNode {
       Time complexity : O(m+n)
       Space complexity : O(m)
      */
-    public static SListNode findIntersection(SListNode l1, SListNode l2) {
-        List<SListNode> list = new ArrayList<SListNode>();
+    public static ListNode findIntersection(ListNode l1, ListNode l2) {
+        List<ListNode> list = new ArrayList<ListNode>();
 
         if (l1 == null || l2 == null) {
             return null;
@@ -45,7 +45,7 @@ public class IntersectionNode {
        Time complexity : O(m+n)
        Space complexity : O(1)
     */
-    public static SListNode findIntersection2(SListNode l1, SListNode l2) {
+    public static ListNode findIntersection2(ListNode l1, ListNode l2) {
         int len1 = HelperLinkedList.length(l1);
         int len2 = HelperLinkedList.length(l2);
 
@@ -71,13 +71,13 @@ public class IntersectionNode {
        Time complexity : O(n)
        Space complexity : O(1)
     */
-    public static SListNode findIntersection3(SListNode l1, SListNode l2) {
+    public static ListNode findIntersection3(ListNode l1, ListNode l2) {
         if(l1==null || l2==null){
              return null;
         }
 
-        SListNode a = l1;
-        SListNode b = l2;
+        ListNode a = l1;
+        ListNode b = l2;
 
         while( a != b){
             a = (a == null) ? l2 : a.next;
@@ -86,12 +86,12 @@ public class IntersectionNode {
         return a;
     }
     public static void main(String args[]) {
-        SListNode a = new SListNode(1);
-        SListNode b = new SListNode(2);
-        SListNode c = new SListNode(3);
-        SListNode d = new SListNode(4);
-        SListNode e = new SListNode(6);
-        SListNode f = new SListNode(8);
+        ListNode a = new ListNode(1);
+        ListNode b = new ListNode(2);
+        ListNode c = new ListNode(3);
+        ListNode d = new ListNode(4);
+        ListNode e = new ListNode(6);
+        ListNode f = new ListNode(8);
 
         LinkedList l1 = new LinkedList();
         l1.head = a;
