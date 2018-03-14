@@ -48,19 +48,35 @@ public class CloneLLWithRandomPointer1 {
     }
 
     //Use constant extra space
-    public Node clone(Node head){
+    public Node clone(){
         Node orig = head;
         Node clone = null;
 
-        while(orig!=null){
+        while(orig!=null ){
             clone = new Node(orig.data);
-            Node temp = orig.next;
+            clone.next = orig.next;
             orig.next = clone;
-            clone.next = temp;
-            orig = orig.next;
+            orig = clone.next;
         }
 
-        return head;
+        orig = head;
+        while(orig!=null ){
+            if (orig.random != null){
+                orig.next.random = orig.random.next;
+            }
+            orig=orig.next.next;
+        }
+
+        //Braking List
+        orig = head;
+        clone = head.next;
+        while(orig!=null && orig.next.next!=null){
+            Node temp = orig.next;
+            orig.next = temp.next;
+            temp.next = temp.next.next;
+            orig = orig.next;
+        }
+        return clone;
     }
 
     public static void main(String[] args){
@@ -80,6 +96,8 @@ public class CloneLLWithRandomPointer1 {
         list.head.next.next.next.next.random = list.head.next;
 
         list.print();
+        System.out.println();
+        list.print(list.clone());
 
     }
 
