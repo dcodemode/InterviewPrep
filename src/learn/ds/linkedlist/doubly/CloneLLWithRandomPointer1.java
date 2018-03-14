@@ -67,7 +67,7 @@ public class CloneLLWithRandomPointer1 {
             orig=orig.next.next;
         }
 
-        //Braking List
+        //Breaking List
         orig = head;
         clone = head.next;
         while(orig!=null && orig.next.next!=null){
