@@ -21,20 +21,31 @@ public class RearrangeLinkedList {
             return head;
         }
 
-        ListNode curr = head;
         ListNode mid = getMidNode(head);
-        ListNode secList = mid.next;
+        ListNode secH = mid.next;
         mid.next = null;
-        ListNode rev = reverse(secList);
+        ListNode secHead = reverse(secH);
 
-        while(curr!=null && curr.next!=null){
-            ListNode temp = curr.next;
-            rev.next =  curr.next;
-            curr.next = rev;
-            rev = rev.next;
-            curr = temp.next;
+        ListNode dummy = new ListNode(-1);
+        ListNode ret = dummy;
+
+        HelperLinkedList.display(head);
+        HelperLinkedList.display(secHead);
+
+        while(head!=null || secHead !=null){
+            if(head!=null){
+                dummy.next = head;
+                dummy = dummy.next;
+                head = head.next;
+            }
+            if(secHead!=null){
+                dummy.next = secHead;
+                dummy = dummy.next;
+                secHead = secHead.next;
+            }
         }
-        return head;
+
+        return ret.next;
     }
 
     public static ListNode reverse(ListNode head){
@@ -68,7 +79,7 @@ public class RearrangeLinkedList {
     }
 
     public static void main(String[] args){
-        LinkedList ll = new RandLinkedListGenetator().create(6);
+        LinkedList ll = new RandLinkedListGenetator().create(5);
         ll.display();
 
         HelperLinkedList.display(rearrange(ll.head));
