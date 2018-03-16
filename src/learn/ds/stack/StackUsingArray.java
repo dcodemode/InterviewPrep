@@ -3,7 +3,11 @@ package learn.ds.stack;
 /**
  * @author Varma Penmetsa
  *
+ * Pros: Easy to implement. Memory is saved as pointers are not involved.
+ * Cons: It is not dynamic. It doesn’t grow and shrink depending on needs at runtime.
+ *
  * https://www.geeksforgeeks.org/stack-data-structure-introduction-program/
+ *
  */
 
 public class StackUsingArray {
