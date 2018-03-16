@@ -1,9 +1,5 @@
 package learn.ds.stack;
 
-
-import learn.ds.nodes.ListNode;
-import learn.ds.util.LinkedList;
-
 /**
  * @author Varma Penmetsa
  *

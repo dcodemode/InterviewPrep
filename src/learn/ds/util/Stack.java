@@ -1,24 +1,21 @@
-package learn.ds.stack;
+package learn.ds.util;
 
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * @author Varma Penmetsa
  *
- * Pros: Easy to implement. Memory is saved as pointers are not involved.
- * Cons: It is not dynamic. It doesn’t grow and shrink depending on needs at runtime.
+ * Pros: The linked list implementation of stack can grow and shrink according to the needs at runtime.
+ * Cons: Requires extra memory due to involvement of pointers.
  *
  * https://www.geeksforgeeks.org/stack-data-structure-introduction-program/
- *
  */
+public class Stack {
 
-public class StackUsingArray {
     public int stackSize;
     public String[] stackArray;
     public int top = 0;
 
-    public StackUsingArray(int stackSize) {
+    public Stack(int stackSize) {
         this.stackSize = stackSize;
         stackArray = new String[stackSize];
     }
@@ -61,20 +58,17 @@ public class StackUsingArray {
 
     public static void main(String args[]) {
 
-        Queue<String> q = new LinkedList<>();
-        StackUsingArray st = new StackUsingArray(5);
-        st.push("S");
-        st.push("T");
-        st.push("A");
-        st.push("C");
-        st.push("K");
+        Stack ll = new Stack(5);
+        ll.push("S");
+        ll.push("T");
+        ll.push("A");
+        ll.push("C");
+        ll.push("K");
 
-        System.out.println(st.pop());
-        System.out.println(st.pop());
-        System.out.println(st.pop());
-        System.out.println(st.pop());
-        System.out.println(st.pop());
+        System.out.println(ll.peek());
+        System.out.println(ll.pop());
 
-        System.out.println("Is stack empty: " + st.isEmpty());
+        System.out.println(ll.isEmpty());
     }
+
 }
