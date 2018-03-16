@@ -10,8 +10,8 @@ import learn.ds.util.Stack;
 
 public class BuildQueueUsingStack {
 
-    Stack tStack  = new Stack();
-    Stack qStack  = new Stack();
+    Stack tStack  = new Stack(5);
+    Stack qStack  = new Stack(5);
 
     public void enQueue(String val){
         tStack.push(val);
