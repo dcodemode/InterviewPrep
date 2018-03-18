@@ -40,7 +40,7 @@ public class Stack {
     }
 
     public String peek() {
-        if (top < stackSize) {
+        if (top <= stackSize) {
             return stackArray[top - 1];
         } else {
             System.out.println("Stack Underflow");
@@ -66,9 +66,6 @@ public class Stack {
         ll.push("K");
 
         System.out.println(ll.peek());
-        System.out.println(ll.pop());
-
-        System.out.println(ll.isEmpty());
     }
 
 }

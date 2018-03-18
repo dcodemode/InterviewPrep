@@ -43,7 +43,7 @@ public class StackUsingArray {
     }
 
     public String peek() {
-        if (top < stackSize) {
+        if (top <= stackSize) {
             return stackArray[top - 1];
         } else {
             System.out.println("Stack Underflow");
