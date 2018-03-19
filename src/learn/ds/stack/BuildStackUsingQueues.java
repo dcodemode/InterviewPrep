@@ -12,11 +12,11 @@ public class BuildStackUsingQueues {
     Queue<String> q1 = new LinkedList<>();
     Queue<String> q2 = new LinkedList<>();
 
-    public void enqueue(String data){
+    public void push(String data){
         q1.add(data);
     }
 
-    public void dequeue() {
+    public void pop() {
         while (q1.size() > 1){
             q2.add(q1.remove());
         }
@@ -33,21 +33,21 @@ public class BuildStackUsingQueues {
 
         BuildStackUsingQueues q = new BuildStackUsingQueues();
 
-        q.enqueue("S");
-        q.enqueue("T");
-        q.enqueue("A");
-        q.enqueue("C");
-        q.enqueue("K");
+        q.push("S");
+        q.push("T");
+        q.push("A");
+        q.push("C");
+        q.push("K");
 
-        q.dequeue();
+        q.pop();
         System.out.println(q.peek());
-        q.dequeue();
+        q.pop();
         System.out.println(q.peek());
-        q.dequeue();
+        q.pop();
         System.out.println(q.peek());
-        q.dequeue();
+        q.pop();
         System.out.println(q.peek());
-        q.dequeue();
+        q.pop();
         System.out.println(q.peek());
     }
 
