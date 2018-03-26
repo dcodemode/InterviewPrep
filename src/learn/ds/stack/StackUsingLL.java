@@ -63,7 +63,6 @@ public class StackUsingLL {
         ll.push("K");
 
         System.out.println(ll.peek());
-        System.out.println(ll.pop());
 
         System.out.println(ll.isEmpty());
     }
