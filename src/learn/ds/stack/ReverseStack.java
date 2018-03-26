@@ -11,13 +11,23 @@ import java.util.Deque;
  */
 public class ReverseStack {
 
-    public static void reverse(Deque<Integer> st){
-        if(st.isEmpty()){
+    public static void reverse(Deque<Integer> st) {
+        if (st.isEmpty()) {
             return;
         }
         int val = st.pop();
         reverse(st);
-        st.addLast(val);
+        addLast(st, val);
+    }
+
+    public static void addLast(Deque<Integer> st, int val) {
+        if (st.isEmpty()) {
+            st.push(val);
+        } else {
+            int v = st.pop();
+            addLast(st, val);
+            st.push(v);
+        }
     }
 
     public static void main(String[] args) {
