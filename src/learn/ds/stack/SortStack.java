@@ -12,6 +12,7 @@ import java.util.Deque;
  */
 public class SortStack {
 
+    //Using Recursion
     public static void sort(Deque<Integer> st){
         if(st.isEmpty())
             return;
@@ -21,7 +22,7 @@ public class SortStack {
     }
 
     public static void sortedInsert(Deque<Integer> st ,int val){
-        if(st.isEmpty() || val < st.peek()){
+        if(st.isEmpty() || val > st.peek()){
             st.push(val);
             return;
         }else {
@@ -31,6 +32,21 @@ public class SortStack {
         }
     }
 
+    //Iteration O(n^2)
+    public static Deque<Integer> sort2(Deque<Integer> input){
+        Deque<Integer> tmpStack = new ArrayDeque<>();
+        while (!input.isEmpty()) {
+            int tmp = input.pop();
+            while (!tmpStack.isEmpty() && tmpStack.peek() > tmp) {
+                input.push(tmpStack.pop());
+            }
+            tmpStack.push(tmp);
+        }
+        return tmpStack;
+    }
+
+
+
     public static void main(String[] args) {
         Deque<Integer> st = new ArrayDeque<>();
         st.push(5);
@@ -39,8 +55,6 @@ public class SortStack {
         st.push(-9);
         st.push(2);
 
-        sort(st);
-
-        System.out.println(Arrays.toString(st.toArray()));
+        System.out.println(Arrays.toString(sort2(st).toArray()));
     }
 }
