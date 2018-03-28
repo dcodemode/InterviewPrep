@@ -5,8 +5,9 @@ import java.util.Arrays;
 /**
  * @author Varma Penmetsa
  *
- *
  * https://www.geeksforgeeks.org/queue-set-1introduction-and-array-implementation/
+ *
+ * This is a basic implementaion, will not work for multiple push and pops, as circular array implementation is not used
  */
 public class QueueUsingArray {
 
