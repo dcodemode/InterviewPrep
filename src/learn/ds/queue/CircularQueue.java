@@ -77,7 +77,6 @@ public class CircularQueue {
 
 
     public static void main(String args[]){
-
         CircularQueue q = new CircularQueue(3);
 
         q.enqueue(1);
@@ -90,7 +89,7 @@ public class CircularQueue {
         q.enqueue(3);
         q.enqueue(2);
 
-
+        System.out.println(Arrays.toString(q.array));
         System.out.println("Front "+ q.front());
         System.out.println("Rear "+ q.rear());
     }
