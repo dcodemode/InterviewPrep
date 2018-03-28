@@ -4,103 +4,94 @@ import java.util.Arrays;
 
 /**
  * @author Varma Penmetsa
- * <p>
+ *
  * https://www.geeksforgeeks.org/circular-queue-set-1-introduction-array-implementation/
  */
-public class CircularQueue<T> {
+public class CircularQueue {
 
-    private int QUEUE_LENGTH;
-    private T data[] = null;
+    private int[] array;
+    private int head, tail, size, len;
 
-    public CircularQueue(int size){
-        this.QUEUE_LENGTH = size;
-        data = (T[]) new Object[QUEUE_LENGTH];
+    public CircularQueue(int capacity){
+        array = new int[capacity];
+        head = tail = -1;
+        size = 0;
+        len = capacity;
     }
-    private int top=-1;
-    private int end = -1;
 
-    public void offer(T t){
-        if(top == -1){
-            data[0] = t;
-            top =0;
-            end = 0;
-        }else if(top == (end + 1) % QUEUE_LENGTH){
-            throw new IllegalArgumentException();
-        }else{
-            end = (end + 1) % QUEUE_LENGTH;
-            data[end] = t;
+    public void enqueue(int val){
+        if(size < len){
+            if(tail==-1){
+                array[0] = val;
+                head = tail = 0;
+                size++;
+            }else if(len == (tail+1)% len){
+                return;
+            }else {
+                tail = (tail+1)% len;
+                array[tail] = val;
+                size++;
+            }
+        }else {
+            System.out.println("Queue is full");
         }
     }
 
-    public T top(){
-        if(top == -1){
-            throw new IllegalArgumentException();
-        }else{
-            return data[top];
+    public int dequeue(){
+        if(size != 0){
+            if(head == -1){
+                return -1;
+            }else if(head == tail){
+                int ret = array[head];
+                head = -1;
+                tail = -1;
+                size--;
+                return ret;
+            }else {
+                head = (head + 1) % len;
+                int ret = array[head];
+                size--;
+                return ret;
+            }
+        }else {
+            System.out.println("Queue is empty");
+            return -1;
         }
     }
 
-    public T rear(){
-        if(top == -1){
-            throw new IllegalArgumentException();
-        }else{
-            return data[end];
+    public int rear(){
+        if(tail == -1){
+            return -1;
+        }else {
+            return array[tail];
         }
     }
 
-    public T poll(){
-        if(top == -1){
-            throw new IllegalArgumentException();
-        }else if(top == end){
-            T t =  data[top];
-            top = -1;
-            end = -1;
-            return t;
+    public int front(){
+        if(head == -1){
+            return -1;
+        }else {
+            return array[head];
         }
-        else{
-            T t =  data[top];
-            top = (top +1)% QUEUE_LENGTH;
-            return t;
-        }
-
     }
 
-    public boolean isEmpty(){
-        if(top == -1){
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isFull(){
-        if(top == (end + 1)% QUEUE_LENGTH){
-            return true;
-        }
-        return false;
-    }
 
     public static void main(String args[]){
-        CircularQueue<Integer> circularQueue = new CircularQueue<Integer>(5);
 
-        circularQueue.offer(1);
-        circularQueue.offer(2);
-        circularQueue.offer(3);
+        CircularQueue q = new CircularQueue(3);
 
-        circularQueue.poll();
-        circularQueue.poll();
-        circularQueue.poll();
+        q.enqueue(1);
+        q.enqueue(2);
+        q.enqueue(3);
 
-        circularQueue.offer(3);
-        circularQueue.offer(2);
+        q.dequeue();
+        q.dequeue();
 
-        circularQueue.poll();
-
-        System.out.println("Top " +circularQueue.top());
-        System.out.println("Rear " +circularQueue.rear());
+        q.enqueue(3);
+        q.enqueue(2);
 
 
-        System.out.println(Arrays.toString(circularQueue.data));
-
-
+        System.out.println("Front "+ q.front());
+        System.out.println("Rear "+ q.rear());
     }
 }
