@@ -55,6 +55,29 @@ public class RotateArray {
         }
     }
 
+    /**
+     * Reversal Algorithm
+     * Space Complexity: O(1)
+     * Time Complexity: O(n)
+     */
+    public static void rotate3(int[] array, int d) {
+        int n = array.length -1;
+        reverse(array, 0, d - 1);
+        reverse(array, d, n);
+        reverse(array, 0, n);
+    }
+
+    public static void reverse(int[] array, int start, int end){
+        int temp;
+        while (start < end){
+            temp = array[start];
+            array[start] = array[end];
+            array[end] = temp;
+            start++;
+            end--;
+        }
+    }
+
     public static void main(String[] args) {
         System.out.println("Actual Array");
         int[] array = {1,2,3,4,5,6,7,8,9,10,11,12};
@@ -66,6 +89,10 @@ public class RotateArray {
 
         System.out.println("Rotated Array 2");
         rotate2(array, 2);
+        ArrayUtil.display(array);
+
+        System.out.println("Rotated Array 3");
+        rotate3(array, 6);
         ArrayUtil.display(array);
 
     }
