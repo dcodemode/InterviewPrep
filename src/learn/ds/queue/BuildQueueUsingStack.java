@@ -1,4 +1,4 @@
-package learn.ds.stack;
+package learn.ds.queue;
 
 import learn.ds.util.Stack;
 
