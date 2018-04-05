@@ -10,7 +10,7 @@ public class BinarySearch {
     /**
      * Recursive implementation
      * Time Complexity: O(log n)
-     * Space Complexity: O(1)
+     * Space Complexity: O(n)
      */
     public static int search(int array[],int x, int left, int right) {
         if (right >= left) {
