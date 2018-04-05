@@ -1,4 +1,4 @@
-package learn.ds.array;
+package learn.ds.array.search;
 
 /**
  * @author Varma Penmetsa
