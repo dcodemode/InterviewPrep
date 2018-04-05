@@ -26,7 +26,7 @@ public class SearchRotateArray {
 
     }
 
-    // Using Binary Search, Space Complexity : O(log n)
+    // Using Binary Search, time Complexity : O(log n)
     public static int findPivot(int[] array, int left, int right) {
         if (left > right) {
             return -1;
@@ -37,9 +37,9 @@ public class SearchRotateArray {
 
         int mid = left + (right - left) / 2;
 
-        if (array[mid] > array[mid + 1] && mid < right) {
+        if (array[mid] > array[mid + 1]) {
             return mid;
-        } else if (array[mid - 1] > array[mid] && mid > left) {
+        } else if (array[mid - 1] > array[mid]) {
             return mid - 1;
         }
 
@@ -67,8 +67,8 @@ public class SearchRotateArray {
     }
 
     public static void main(String[] args) {
-        int[] array = {3,4,5,6,1,2};
-        System.out.println(search(array,1));
+        int[] array = {2,3,4,5,1};
+        System.out.println(findPivot(array,0,array.length-1));
     }
 
 }
