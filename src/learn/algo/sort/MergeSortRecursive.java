@@ -61,7 +61,7 @@ public class MergeSortRecursive {
     }
 
     public static void main(String[] args) {
-        int[] array = ArrayUtil.generateRandomArray(9);
+        int[] array = ArrayUtil.generateRandomArray(9,9);
         sort(array);
         ArrayUtil.display(array);
     }
