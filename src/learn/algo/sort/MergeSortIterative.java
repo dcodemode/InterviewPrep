@@ -58,7 +58,7 @@ public class MergeSortIterative {
     }
 
     public static void main(String[] args) {
-        int[] array = {3, 2, 11, 5, 9, 4, 1, 6};
+        int[] array = ArrayUtil.generateRandomArray(7);
         sort(array);
         ArrayUtil.display(array);
     }
