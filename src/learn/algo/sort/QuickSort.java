@@ -46,7 +46,7 @@ public class QuickSort {
         }
 
         //If Pivot is greater the last element swap it.
-        if (array[p] > array[j]) {
+        if (array[p] >= array[j]) {
             ArrayUtil.swap(array, p, j);
             return j;
         }
