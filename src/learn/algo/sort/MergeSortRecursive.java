@@ -7,7 +7,7 @@ import learn.ds.util.ArrayUtil;
  * https://www.youtube.com/watch?v=TzeBrDU-JaY
  * https://github.com/mission-peace/interview/blob/68f97392c6f6e14e2c08860684ed605a1a5e7e72/src/com/interview/sort/MergeSort.java
  */
-public class MergeSort {
+public class MergeSortRecursive {
 
     /**
      * Time Complexity: O (n log n)
