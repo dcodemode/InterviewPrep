@@ -1,6 +1,6 @@
 package learn.ds.array;
 
-import learn.ds.util.ArrayUtil;
+import learn.util.ArrayUtil;
 
 public class RotateArray {
 

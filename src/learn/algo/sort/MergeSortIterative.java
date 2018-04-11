@@ -1,6 +1,6 @@
 package learn.algo.sort;
 
-import learn.ds.util.ArrayUtil;
+import learn.util.ArrayUtil;
 
 /**
  * @author Varma Penmetsa

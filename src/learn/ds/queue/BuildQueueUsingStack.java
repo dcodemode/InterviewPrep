@@ -1,6 +1,6 @@
 package learn.ds.queue;
 
-import learn.ds.util.Stack;
+import learn.util.Stack;
 
 /**
  * @author Varma Penmetsa

@@ -1,4 +1,4 @@
-package learn.ds.util;
+package learn.util;
 
 /**
  * @author Varma Penmetsa

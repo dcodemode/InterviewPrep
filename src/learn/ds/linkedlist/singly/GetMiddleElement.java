@@ -5,8 +5,8 @@ package learn.ds.linkedlist.singly;
  */
 
 import learn.ds.nodes.ListNode;
-import learn.ds.util.LinkedList;
-import learn.ds.util.RandLinkedListGenetator;
+import learn.util.LinkedList;
+import learn.util.RandLinkedListGenetator;
 
 public class GetMiddleElement {
 
@@ -50,7 +50,7 @@ public class GetMiddleElement {
 
         GetMiddleElement gm = new GetMiddleElement();
 
-        System.out.println(gm.getMiddleElement(ll.head));
+        System.out.println(getMiddleElement(ll.head));
         System.out.println(gm.getMiddleElement2(ll.head));
         System.out.println(gm.getMiddleElement3(ll));
     }

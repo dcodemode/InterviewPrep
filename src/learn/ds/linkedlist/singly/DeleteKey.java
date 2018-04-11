@@ -5,7 +5,7 @@ package learn.ds.linkedlist.singly;
  */
 
 import learn.ds.nodes.ListNode;
-import learn.ds.util.LinkedList;
+import learn.util.LinkedList;
 
 public class DeleteKey {
 

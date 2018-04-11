@@ -2,9 +2,8 @@ package learn.ds.linkedlist.singly;
 
 
 import learn.ds.nodes.ListNode;
-import learn.ds.util.HelperLinkedList;
-import learn.ds.util.LinkedList;
-import learn.ds.util.RandLinkedListGenetator;
+import learn.util.HelperLinkedList;
+import learn.util.LinkedList;
 
 /**
  * @author Varma Penmetsa

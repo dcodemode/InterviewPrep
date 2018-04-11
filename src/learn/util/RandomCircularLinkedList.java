@@ -1,4 +1,4 @@
-package learn.ds.util;
+package learn.util;
 
 import learn.ds.nodes.ListNode;
 

@@ -1,9 +1,9 @@
 package learn.ds.linkedlist.singly;
 
 import learn.ds.nodes.ListNode;
-import learn.ds.util.HelperLinkedList;
-import learn.ds.util.LinkedList;
-import learn.ds.util.RandLinkedListGenetator;
+import learn.util.HelperLinkedList;
+import learn.util.LinkedList;
+import learn.util.RandLinkedListGenetator;
 
 /**
  * @author Varma Penmetsa
@@ -52,9 +52,7 @@ public class ReverseKNodesRecursive {
             cur = cur.next;
             k--;
         }
-        if (k > 0)
-            return false;
-        return true;
+        return k <= 0;
     }
 
     public static void main(String args[]){

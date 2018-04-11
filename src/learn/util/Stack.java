@@ -1,4 +1,4 @@
-package learn.ds.util;
+package learn.util;
 
 
 /**
@@ -49,11 +49,7 @@ public class Stack {
     }
 
     public boolean isEmpty() {
-        if (top == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return top == 0;
     }
 
     public static void main(String args[]) {

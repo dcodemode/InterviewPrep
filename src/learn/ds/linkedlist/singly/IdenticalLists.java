@@ -1,7 +1,7 @@
 package learn.ds.linkedlist.singly;
 
 import learn.ds.nodes.ListNode;
-import learn.ds.util.LinkedList;
+import learn.util.LinkedList;
 
 /**
  * @author Varma Penmetsa
@@ -31,10 +31,7 @@ public class IdenticalLists {
             b = b.next;
         }
 
-        if (a == null && b == null){
-            return true;
-        }
-        return false;
+        return a == null && b == null;
     }
 
     /*
@@ -48,10 +45,7 @@ public class IdenticalLists {
         if (a != null && b != null) {
             return compareLists2(a.next, b.next);
         }
-        if (a == null && b == null) {
-            return true;
-        }
-        return false;
+        return a == null && b == null;
     }
 
     public static void main(String args[]) {

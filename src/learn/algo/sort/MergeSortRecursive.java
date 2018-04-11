@@ -1,6 +1,6 @@
 package learn.algo.sort;
 
-import learn.ds.util.ArrayUtil;
+import learn.util.ArrayUtil;
 
 /**
  * @author Varma Penmetsa
@@ -61,7 +61,7 @@ public class MergeSortRecursive {
     }
 
     public static void main(String[] args) {
-        int[] array = {3, 2, 8, 5, 9, 4, 1, 6};
+        int[] array = ArrayUtil.generateRandomArray(9);
         sort(array);
         ArrayUtil.display(array);
     }
