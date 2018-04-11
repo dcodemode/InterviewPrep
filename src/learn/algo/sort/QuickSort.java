@@ -54,7 +54,7 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int[] array = {5,1,8,1,1,4,6,5,5,5,3,1};
+        int[] array = ArrayUtil.generateRandomArray(15,9);
         ArrayUtil.display(array);
         sort(array);
         ArrayUtil.display(array);
