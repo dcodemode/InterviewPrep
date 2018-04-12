@@ -14,28 +14,28 @@ public class QuickSortIterative {
 
     public static void sort(int arr[]){
         Deque<Integer> stack = new ArrayDeque<>();
-        int l = 0;
-        int h = arr.length-1;
-        stack.push(l);
-        stack.push(h);
+        int low = 0;
+        int high = arr.length-1;
+        stack.push(low);
+        stack.push(high);
 
         while(!stack.isEmpty()){
-            h = stack.pop();
-            l = stack.pop();
+            high = stack.pop();
+            low = stack.pop();
 
-            int p = partition(arr,l,h);
-            if(l < p-1 && h > p+1){
-                stack.push(l);
+            int p = partition(arr,low,high);
+            if(low < p-1 && high > p+1){
+                stack.push(low);
                 stack.push(p-1);
                 stack.push(p+1);
-                stack.push(h);
+                stack.push(high);
             }
-            else if(l < p-1){
-                stack.offerFirst(l);
+            else if(low < p-1){
+                stack.offerFirst(low);
                 stack.offerFirst(p-1);
-            }else if(h > p+1){
+            }else if(high > p+1){
                 stack.offerFirst(p+1);
-                stack.offerFirst(h);
+                stack.offerFirst(high);
             }
         }
     }
