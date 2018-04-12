@@ -5,6 +5,7 @@ import learn.util.ArrayUtil;
 /**
  * @author Varma Penmetsa
  * https://github.com/mission-peace/interview/blob/68f97392c6f6e14e2c08860684ed605a1a5e7e72/src/com/interview/sort/QuickSort.java
+ * https://www.youtube.com/watch?v=SLauY6PpjW4&t=283s
  */
 public class QuickSort {
 
@@ -20,37 +21,28 @@ public class QuickSort {
         if (left >= right) {
             return;
         }
-        int pivot = partition(array, left, right);
-        sort(array, left, pivot - 1);
-        sort(array, pivot + 1, right);
+        int pivot = array[left + (right - left) / 2];
+        int index = partition(array, pivot, left, right);
+        sort(array, left, index - 1);
+        sort(array, index, right);
     }
 
-    public static int partition(int[] array, int left, int right) {
-        int p = left;
-        int i = left + 1;
-        int j = right;
+    public static int partition(int[] array, int pivot, int left, int right) {
+        while (left <= right) {
 
-        while (i <= j) {
-
-            if (array[i] < array[p]) {
-                i++;
+            if (array[left] < pivot) {
+                left++;
                 continue;
             }
 
-            if (array[p] < array[j]) {
-                j--;
+            if (array[right] > pivot) {
+                right--;
                 continue;
             }
 
-            ArrayUtil.swap(array, i++, j--);
+            ArrayUtil.swap(array, left++, right--);
         }
-
-        //If Pivot is greater the last element swap it.
-        if (array[p] >= array[j]) {
-            ArrayUtil.swap(array, p, j);
-            return j;
-        }
-        return p;
+        return left;
     }
 
     public static void main(String[] args) {
