@@ -25,14 +25,13 @@ public class MergeSortRecursive {
         int mid = (left + right) / 2;
         sort(array, left, mid);
         sort(array,mid+1, right);
-        sortedHalves(array,left,right);
+        sortedHalves(array,mid,left,right);
     }
 
-    public static void sortedHalves(int[] array, int left, int right){
-        int mid = (left + right) / 2;
+    public static void sortedHalves(int[] array, int mid, int left, int right){
         int[] temp = new int[right - left + 1];
 
-        // i is start of left, j is start of right and r is start of temp
+        // i is the index of left sub array, j is start index of right sub array and r is start index of temp
         int i = left;
         int j = mid + 1;
         int r = 0;
@@ -62,6 +61,7 @@ public class MergeSortRecursive {
 
     public static void main(String[] args) {
         int[] array = ArrayUtil.generateRandomArray(9,9);
+        ArrayUtil.display(array);
         sort(array);
         ArrayUtil.display(array);
     }
