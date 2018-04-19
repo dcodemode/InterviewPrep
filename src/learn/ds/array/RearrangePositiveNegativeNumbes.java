@@ -23,7 +23,7 @@ public class RearrangePositiveNegativeNumbes {
      *  Once negative and positive numbers are separated, we start from the first negative number and first positive number,
      *  and swap every alternate negative number with next positive number.
      *
-     * Time Complexity: O (log n)
+     * Time Complexity: O (n)
      * Space Complexity: O (1)
      */
     public static void rearrange(int[] array){
@@ -36,7 +36,7 @@ public class RearrangePositiveNegativeNumbes {
     }
 
     /**
-     * Time Complexity: O(n log n)
+     * Time Complexity: O(n)
      * Space Complexity: O(1)
      */
     public static int partition(int[] array){
