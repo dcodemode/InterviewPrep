@@ -26,53 +26,33 @@ public class RearrangePositiveNegativeNumbes {
      * Time Complexity: O (n)
      * Space Complexity: O (1)
      */
-    public static void rearrange(int[] array){
+    public static void rearrange(int[] arr) {
+        int p = partition(arr);
 
-        int p = partition(array) + 1;
-
-        for (int i = 0 ; i < array.length-2 ;i+=i+2){
-            ArrayUtil.swap(array,i,p++);
+        for (int i = 0; i < p && p < arr.length; i += 2) {
+            ArrayUtil.swap(arr, i, p++);
         }
     }
 
-    /**
-     * Time Complexity: O(n)
-     * Space Complexity: O(1)
-     */
-    public static int partition(int[] array){
-        int left = 0;
-        int right = array.length-1;
-        int pivot = left;
-
-        int i = left+1;
-        int j = right;
-
-        while (i <= j){
-            if(array[i] <= array[pivot]){
-                i++;
-                continue;
+    public static int partition(int[] arr) {
+        int low = 0;
+        int high = arr.length - 1;
+        while (low < high) {
+            if (arr[low] < 0) {
+                low++;
+            } else if (arr[high] >= 0) {
+                high--;
+            } else {
+                ArrayUtil.swap(arr, low, high);
             }
-
-            if(array[pivot] <= array[j]){
-                j--;
-                continue;
-            }
-
-            ArrayUtil.swap(array,i,j);
         }
-
-        if(array[pivot] >= array[j]){
-            ArrayUtil.swap(array,pivot,j);
-            return j;
-        }
-
-        return pivot;
+        return low;
     }
 
     public static void main(String[] args) {
 
-        int[] array = ArrayUtil.generateRandomArray(5);
-
+        int[] array = ArrayUtil.generateRandomArray(7);
+        ArrayUtil.display(array);
         rearrange(array);
         ArrayUtil.display(array);
     }
