@@ -61,7 +61,7 @@ public class RearrangePositiveNegativeNumbes {
             ArrayUtil.swap(array,i,j);
         }
 
-        if(array[pivot] > array[j]){
+        if(array[pivot] >= array[j]){
             ArrayUtil.swap(array,pivot,j);
             return j;
         }
