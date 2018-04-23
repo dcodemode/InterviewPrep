@@ -29,34 +29,45 @@ public class MergeSortRecursive {
     }
 
     public static void sortedHalves(int[] array, int mid, int left, int right){
-        int[] temp = new int[right - left + 1];
+        int leftStart =  left;
+        int rightStart = mid + 1;
 
-        // i is the index of left sub array, j is start index of right sub array and r is start index of temp
-        int i = left;
-        int j = mid + 1;
-        int r = 0;
+        int lSize = mid - left + 1;
+        int rSize = right - mid;
 
-        while(i <= mid && j <= right){
-            if(array[i] < array[j]){
-                temp[r++] = array[i++];
-            }else {
-                temp[r++] = array[j++];
+        int[] L = new int[lSize];
+        int[] R  = new int[rSize];
+        int i,j,k;
+
+        for (i = 0; i < lSize; i++) {
+            L[i] = array[leftStart + i];
+        }
+
+        for (j = 0; j < rSize; j++) {
+            R[j] = array[rightStart + j];
+        }
+
+        i = 0;
+        j = 0;
+        k = leftStart;
+
+        while (i < lSize && j < rSize) {
+            if (L[i] < R[j]) {
+                array[k++] = L[i++];
+            } else {
+                array[k++] = R[j++];
             }
         }
 
-        while(i <= mid){
-            temp[r++] = array[i++];
+        while (i < lSize) {
+            array[k++] = L[i++];
         }
 
-        while (j <= right){
-            temp[r++] = array[j++];
+        while (j < rSize) {
+            array[k++] = R[j++];
         }
 
-        //Copying it back to array
-        i = left;
-        for (int k = 0; k < temp.length; ) {
-            array[i++] = temp[k++];
-        }
+
     }
 
     public static void main(String[] args) {
