@@ -23,8 +23,8 @@ public class RotateArray {
 
     /**
      * Juggling Algorithm
-     * Time Complexity: O(1)
-     * Space Complexity: O(n)
+     * Time Complexity: O(n)
+     * Space Complexity: O(1)
      */
     public static void rotate2(int[] array, int d) {
         int n = array.length;
@@ -57,8 +57,8 @@ public class RotateArray {
 
     /**
      * Reversal Algorithm
-     * Space Complexity: O(1)
      * Time Complexity: O(n)
+     * Space Complexity: O(1)
      */
     public static void rotate3(int[] array, int d) {
         int n = array.length -1;
