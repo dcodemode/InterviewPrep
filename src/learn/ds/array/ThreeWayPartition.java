@@ -30,7 +30,7 @@ public class ThreeWayPartition {
 
         int i = 0;
         //Traversing from left to right
-        while(i < end){
+        while(i <= end){
             if(array[i] < lowVal){
                 ArrayUtil.swap(array,i++,start++);
             }else if(array[i] > highVal){
