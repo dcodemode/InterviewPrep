@@ -15,6 +15,10 @@ package learn.ds.array;
  */
 public class BitonicSubarrayMaxLength {
 
+    /**
+     * Time Complexity  : O(n)
+     * Space Complexity : O(n)
+     */
     public static int maxLength(int[] array){
         int[] inc = new int[array.length];
         int[] dec = new int[array.length];
