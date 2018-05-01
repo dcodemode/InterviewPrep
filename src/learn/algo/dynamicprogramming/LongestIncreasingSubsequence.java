@@ -1,4 +1,4 @@
-package learn.ds.array;
+package learn.algo.dynamicprogramming;
 
 /**
  * The Longest Increasing Subsequence (LIS) problem is to find the length of the longest subsequence of a given sequence
