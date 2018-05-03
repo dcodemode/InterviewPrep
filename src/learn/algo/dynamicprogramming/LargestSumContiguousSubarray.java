@@ -12,6 +12,23 @@ package learn.algo.dynamicprogramming;
  */
 public class LargestSumContiguousSubarray {
 
+    /**
+     * Time Complexity  : O(n)
+     * Space Complexity : O(n)
+     */
+
+    public static int maxSum(int[] array) {
+        int max = array[0];
+        int[] sum = new int[array.length];
+        sum[0] = array[0];
+
+        for (int i = 1; i < array.length; i++) {
+            sum[i] = Math.max(array[i], sum[i - 1] + array[i]);
+            max = Math.max(max, sum[i]);
+        }
+
+        return max;
+    }
 
     /**
      * Time Complexity : O(n)
@@ -32,5 +49,6 @@ public class LargestSumContiguousSubarray {
     public static void main(String[] args) {
         int array[] = {4,-1,2,1};
         System.out.println(maxSum1(array));
+        System.out.println(maxSum(array));
     }
 }
