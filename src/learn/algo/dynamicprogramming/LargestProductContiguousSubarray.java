@@ -51,25 +51,19 @@ public class LargestProductContiguousSubarray {
      * Space Complexity : O(1)
      */
     public static int maxProduct1(int[] array){
-        int min = 1;
-        int max = 1;
         int maxSoFar = array[0];
+        int min = maxSoFar;
+        int max = maxSoFar;
 
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > 0) {
-                max = max * array[i];
-                min = Math.min(min * array[i], 1);
-                maxSoFar = Math.max(maxSoFar, max);
-            } else if (array[i] == 0) {
-                min = 1;
-                max = 1;
-                maxSoFar = Math.max(maxSoFar, 0);
-            } else {
-                int t = max * array[i];
-                maxSoFar = Math.max(maxSoFar, min * array[i]);
-                max = Math.max(1, min*array[i]);
-                min = t;
+        for (int i = 1; i < array.length; i++) {
+            if(array[i] < 0){
+                int temp = max;
+                max = min;
+                min = temp;
             }
+            max = Math.max(array[i], max * array[i]);
+            min = Math.min(array[i], min * array[i]);
+            maxSoFar = Math.max(maxSoFar, max);
         }
         return maxSoFar;
     }
