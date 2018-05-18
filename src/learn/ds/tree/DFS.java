@@ -5,7 +5,7 @@ import learn.ds.nodes.TreeNode;
 /**
  * @author Varma
  *
- * DFS Tree Traversals
+ * Deepth First Traversals
  *
  * 1. In-order   (Left, Root, Right)
  * 2. Pre-order  (Root, Left, Right)
@@ -25,6 +25,10 @@ import learn.ds.nodes.TreeNode;
  */
 public class DFS {
 
+    /**
+     * Time Complexity  : O(n)
+     * Space Complexity : O(h) , h is the height of binary tree
+     */
     public static void inOrder(TreeNode node){
         if(node == null){
             return;
@@ -34,6 +38,10 @@ public class DFS {
         inOrder(node.right);
     }
 
+    /**
+     * Time Complexity  : O(n)
+     * Space Complexity : O(h) , h is the height of binary tree
+     */
     public static void preOrder(TreeNode node){
         if(node == null){
             return;
@@ -43,6 +51,10 @@ public class DFS {
         preOrder(node.right);
     }
 
+    /**
+     * Time Complexity  : O(n)
+     * Space Complexity : O(h) , h is the height of binary tree
+     */
     public static void postOrder(TreeNode node){
         if(node == null){
             return;
