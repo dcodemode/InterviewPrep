@@ -10,7 +10,7 @@ import java.util.Stack;
  * https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion/
  *
  */
-public class InOrderNoRecursion {
+public class InOrderIterative {
 
 
     /*   Using Stacks:
