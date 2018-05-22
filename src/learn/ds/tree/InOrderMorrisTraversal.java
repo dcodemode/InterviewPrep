@@ -21,12 +21,19 @@ public class InOrderMorrisTraversal {
      *
      * 1. Initialize current as root
      * 2. While current is not NULL
+     *
      * If current does not have left child
      *   a) Print current’s data
      *   b) Go to the right, i.e., current = current->right
      * Else
-     *   a) Make current as right child of the rightmost node in current's left subtree
-     *   b) Go to this left child, i.e., current = current->left
+     *   Find InOrder predecessor
+     *   a) If predecessor does not have right child
+     *         predecessor.right = current
+     *         Go to the left, i.e., current = current->left
+     *   b) else
+     *         predecessor.right = null;
+     *         Print current’s data
+     *         Go to the right, i.e., current = current->right
      */
 
     public static void inOrder(TreeNode root) {
@@ -66,6 +73,8 @@ public class InOrderMorrisTraversal {
         root.right = new TreeNode(3);
         root.left.left = new TreeNode(4);
         root.left.right = new TreeNode(5);
+        root.left.left.right = new TreeNode(6);
+        root.left.left.right.left = new TreeNode(7);
 
         inOrder(root);
     }
