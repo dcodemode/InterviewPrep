@@ -16,6 +16,7 @@ package learn.algo.dynamicprogramming;
  * Input arr[] = {80, 60, 30, 40, 20, 10}
  * Output: 5 (A Longest Bitonic Subsequence of length 5 is 80, 60, 30, 20, 10)
  *
+ * Hint :  Variation if Largest Increasing Subsequence (LIS)
  * https://www.geeksforgeeks.org/dynamic-programming-set-15-longest-bitonic-subsequence/
  */
 public class LongestBitonicSubsequence {
