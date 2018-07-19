@@ -12,6 +12,15 @@ public class PostOrderIterative {
     /**
      * Using two stacks
      *
+     * Example:
+     *
+     * Tree:
+     *                1
+     *             2     3
+     *          4     5
+     *
+     * Post-order : 4, 5, 2, 3, 1
+     *
      * Time Complexity  : O(n)
      * Space Complexity : O(n)
      */
