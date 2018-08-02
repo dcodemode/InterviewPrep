@@ -24,7 +24,7 @@ public class RotateString {
 
     /**
      * Using stack
-     * <p>
+     *
      * Time Complexity  : O(n)
      * Space Complexity : O(n)
      */
@@ -66,7 +66,21 @@ public class RotateString {
         System.out.println(charArray);
     }
 
+    /**
+     * Using recursion
+     *
+     * Time Complexity  : O(n)
+     * Space Complexity : O(n)
+     */
+    public static void reverse4(String str, int n){
+        if(str == null || str.length() == 0 || n < 0){
+            return;
+        }
+        System.out.print(str.charAt(n));
+        reverse4(str, n-1);
+    }
+
     public static void main(String[] args) {
-        reverse3("Test");
+        reverse4("Test", 3);
     }
 }
