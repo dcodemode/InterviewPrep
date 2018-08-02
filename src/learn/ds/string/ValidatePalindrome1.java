@@ -7,7 +7,7 @@ package learn.ds.string;
  *
  * https://leetcode.com/problems/valid-palindrome/description/
  */
-public class PalindromeCheck {
+public class ValidatePalindrome1 {
 
     /**
      *

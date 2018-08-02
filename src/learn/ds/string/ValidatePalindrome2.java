@@ -19,7 +19,7 @@ public class ValidatePalindrome2 {
      * Space Complexity  : O(n)
      *
      */
-    public static boolean validPalindrome1(String str) {
+    public static boolean valid(String str) {
 
         if(str == null || str.length() == 0){
             return true;
@@ -57,12 +57,38 @@ public class ValidatePalindrome2 {
         return true;
     }
 
-
     /**
-     * TO-DO Greedy Approach
+     * Greedy Approach
+     *
+     * Time Complexity   : O(n)
+     * Space Complexity  : O(1)
      */
 
+    public static boolean validate1(String s) {
+        for (int i = 0; i < s.length() / 2; i++) {
+            if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
+                int j = s.length() - 1 - i;
+                return (checkRange(s, i + 1, j) || checkRange(s, i, j - 1));
+            }
+        }
+        return true;
+    }
+
+    public static boolean checkRange(String s, int i, int j) {
+        for (int k = i; k <= i + (j - i) / 2; k++) {
+            if (s.charAt(k) != s.charAt(j - k + i)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+
     public static void main(String[] args) {
-        System.out.println(validPalindrome1("abc"));
+
+        System.out.println(validate1("deeee"));
+        System.out.println(validate1("abc"));
+        System.out.println(validate1("aasasdasas"));
+
     }
 }
