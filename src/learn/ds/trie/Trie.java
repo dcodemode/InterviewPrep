@@ -1,4 +1,4 @@
-package learn.ds.advanced;
+package learn.ds.trie;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -31,6 +31,9 @@ public class Trie {
         root = new TrieNode();
     }
 
+    /**
+     * Time Complexity  : O (l * n) where l is average length of words , n is the number of words
+     */
     public void insert(String word){
         TrieNode current = root;
         for(int i =0 ; i < word.length() ; i++){
@@ -46,6 +49,9 @@ public class Trie {
         current.endOfWord = true;
     }
 
+    /**
+     * Time Complexity  : O(l) where l is the length of word.
+     */
     public boolean search(String word) {
         TrieNode current = root;
         for (int i = 0; i < word.length(); i++) {
