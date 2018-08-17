@@ -95,11 +95,10 @@ public class LongestWordInDictionary {
 
     public static void main(String[] args) {
         LongestWordInDictionary trie = new LongestWordInDictionary();
-        String[] words = {"w","wo","wor","worl", "world"};
+        String[] words = {"a", "banana", "app", "appl", "ap", "apple", "apply"};
         for (String word : words) {
             trie.insert(word);
         }
-
         System.out.println(trie.findLongestWord());
     }
 }
