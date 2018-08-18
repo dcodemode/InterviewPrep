@@ -84,6 +84,14 @@ public class LinkedList {
         return i;
     }
 
+    //Length Recursive
+    public int recLength(ListNode node, int count){
+        if(node == null){
+            return count;
+        }
+        return recLength(node.next,count+1);
+    }
+
     /* Insert after a given node */
     public void insertAfter(ListNode prev, int new_data) {
 
@@ -161,7 +169,7 @@ public class LinkedList {
         ll.insertAfter(a, 25);
 
         ll.display();
-        System.out.println("Length of linked list: " + ll.length());
+        System.out.println("Length of linked list: " + ll.recLength(ll.head,0));
         System.out.println(ll.searchRecursive(ll.head, 10));
         System.out.println(ll.getNode(9));
         ll.display();
