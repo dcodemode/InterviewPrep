@@ -7,7 +7,16 @@ import java.util.Stack;
 /**
  * @author Varma
  *
- * Iterative pre-order traversal
+ * Iterative pre-order traversal RT, L, R
+ *
+ * Example:
+ *
+ * Tree:
+ *                1
+ *            2      3
+ *        4      5
+ *
+ * Pre-order : 1, 2, 4, 5, 3
  *
  * https://www.geeksforgeeks.org/iterative-preorder-traversal/
  */
