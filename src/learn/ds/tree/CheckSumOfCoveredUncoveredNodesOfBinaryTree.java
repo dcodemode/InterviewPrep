@@ -38,6 +38,16 @@ public class CheckSumOfCoveredUncoveredNodesOfBinaryTree {
         return sum(node.left) + node.data + sum(node.right);
     }
 
+    /**
+     * Algorithm:
+     * 1. Start from root, go to left and keep going until left child is available,  if not go to right child and again follow same procedure until you reach a leaf node.
+     * 2. After step 1 sum of left boundary will be stored, now for right part again do the same procedure but now keep going to right until right child is available,
+     * if not then go to left child and follow same procedure until you reach a leaf node.
+     * 3. Check if this true : totalTreeSum - sumUncovered == sumUncovered
+     *
+     * Time Complexity  : O(n)
+     * Space Complexity : O(n)
+     */
     public static boolean getUncoveredSum(TreeNode node){
         if(node == null){
             return true;
