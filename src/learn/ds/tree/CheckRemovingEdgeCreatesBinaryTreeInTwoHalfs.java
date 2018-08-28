@@ -75,6 +75,19 @@ public class CheckRemovingEdgeCreatesBinaryTreeInTwoHalfs {
 
     }
 
+    /**
+     * We can find the solution in O(n) time. The idea is to traverse tree in bottom up manner and while traversing keep updating size and keep checking
+     * if there is a node that follows the required property.
+     */
+    public static void checkTree1(TreeNode node){
+      //TO-DO
+    }
+
+    public static void checkTreeRec(TreeNode node, int s, Boolean isTrue){
+       //TO-DO
+    }
+
+
     public static void main(String[] args) {
         TreeNode root = new TreeNode(5);
         root.left = new TreeNode(1);
