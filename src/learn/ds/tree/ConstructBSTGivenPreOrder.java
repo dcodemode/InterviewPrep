@@ -1,4 +1,4 @@
-package learn.ds.string;
+package learn.ds.tree;
 
 import learn.ds.nodes.TreeNode;
 
