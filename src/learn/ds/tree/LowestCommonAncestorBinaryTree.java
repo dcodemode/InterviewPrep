@@ -32,9 +32,18 @@ import learn.ds.nodes.TreeNode;
  * Explanation: The LCA of nodes 5 and 4 is 5, since a node can be a descendant of itself
  *              according to the LCA definition.
  *
+ * https://www.geeksforgeeks.org/lowest-common-ancestor-binary-tree-set-1/
  */
 public class LowestCommonAncestorBinaryTree {
 
+    /**
+     * Algorithm
+     * The idea is to traverse the tree starting from root. If any of the given keys (n1 and n2) matches with root, then root is LCA (assuming that both keys are
+     * present). If root doesn’t match with any of the keys, we recur for left and right subtree. The node which has one key present in its left subtree and the
+     * other key present in right subtree is the LCA. If both keys lie in left subtree, then left subtree has LCA also, otherwise LCA lies in right subtree
+     *
+     * Time Complexity : O(n)
+     */
     public static TreeNode LCA(TreeNode root, TreeNode n1, TreeNode n2){
         if(root == null){
             return null;
@@ -49,5 +58,18 @@ public class LowestCommonAncestorBinaryTree {
             return root;
         }
         return (left != null ? left : right);
+    }
+
+    public static void main(String[] args) {
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.left.right.left = new TreeNode(7);
+        root.left.right.right = new TreeNode(8);
+        root.right.right = new TreeNode(6);
+        root.right.right.left = new TreeNode(9);
+        System.out.println(LCA(root,root.left.left,root.left.right.right).data);
     }
 }
