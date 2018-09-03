@@ -1,8 +1,6 @@
 package learn.ds.string;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -30,11 +28,11 @@ public class FindSmallestWindowContainingAllCharacters {
 
 
     /**
-     *Algorithm
-     * 1. We start with two pointers, left and right initially pointing to the first element of the string S.
-     * 2. We use the right pointer to expand the window until we get a desirable window i.e. a window that contains all of the characters of T.
-     * 3. Once we have a window with all the characters, we can move the left pointer ahead one by one. If the window is still a desirable one we keep on updating the minimum window size.
-     * 4. If the window is not desirable any more, we repeat step2 onwards.
+     * Algorithm (Sliding Window Approach)
+     *  1. We start with two pointers, left and right initially pointing to the first element of the string S.
+     *  2. We use the right pointer to expand the window until we get a desirable window i.e. a window that contains all of the characters of T.
+     *  3. Once we have a window with all the characters, we can move the left pointer ahead one by one. If the window is still a desirable one we keep on updating the minimum window size.
+     *  4. If the window is not desirable any more, we repeat step2 onwards.
      *
      * Time Complexity  : O(S + T) where S, T represent the lengths of strings S & T
      * Space Complexity : O(S + T)
@@ -92,7 +90,6 @@ public class FindSmallestWindowContainingAllCharacters {
                     formed--;
                 }
                 left++;
-
             }
             right++;
         }
