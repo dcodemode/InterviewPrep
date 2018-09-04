@@ -65,9 +65,10 @@ public class ValidatePalindrome2 {
      */
 
     public static boolean validate1(String s) {
-        for (int i = 0; i < s.length() / 2; i++) {
-            if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
-                int j = s.length() - 1 - i;
+        int n = s.length();
+        for (int i = 0; i < n / 2; i++) {
+            int j = n - 1 - i;
+            if (s.charAt(i) != s.charAt(j)) {
                 return (checkRange(s, i + 1, j) || checkRange(s, i, j - 1));
             }
         }
