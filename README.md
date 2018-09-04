@@ -1,4 +1,4 @@
-# Algorithm Questions
+# DS & Algorithm Questions
 
 ### Contents
 * Array
