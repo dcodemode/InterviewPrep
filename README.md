@@ -2,7 +2,7 @@
 
 ### Contents
 * Array
-* Strings
+* [String](https://github.com/dvpenmetsa/InterviewPrep/wiki/String)
 * [Linked List](https://github.com/dvpenmetsa/InterviewPrep/wiki/Linked-List)
 * [Stack](https://github.com/dvpenmetsa/InterviewPrep/wiki/Stack)
 * [Queue](https://github.com/dvpenmetsa/InterviewPrep/wiki/Queue)
