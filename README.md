@@ -1,7 +1,7 @@
 # DS & Algorithm Questions
 
 ### Contents
-* Array
+* [Array](https://github.com/dvpenmetsa/InterviewPrep/wiki/Arrays)
 * [String](https://github.com/dvpenmetsa/InterviewPrep/wiki/String)
 * [Linked List](https://github.com/dvpenmetsa/InterviewPrep/wiki/Linked-List)
 * [Stack](https://github.com/dvpenmetsa/InterviewPrep/wiki/Stack)
