@@ -2,6 +2,15 @@ package learn.ds.array;
 
 import learn.util.ArrayUtil;
 
+/**
+ * @author varpen01
+ * Write a function that rotates array[] by d elements.
+ *
+ * Example:
+ *  Input  : [1 2 3 4 5 6 7], d = 2
+ *  Output : [3 4 5 6 7 1 2]
+ *
+ */
 public class RotateArray {
 
     /**
@@ -57,6 +66,13 @@ public class RotateArray {
 
     /**
      * Reversal Algorithm
+     * Let the array be arr[] = [1, 2, 3, 4, 5, 6, 7], d =2 and n = 7
+     * A = [1, 2] and B = [3, 4, 5, 6, 7]
+     *
+     * Reverse A, we get ArB = [2, 1, 3, 4, 5, 6, 7]
+     * Reverse B, we get ArBr = [2, 1, 7, 6, 5, 4, 3]
+     * Reverse all, we get (ArBr)r = [3, 4, 5, 6, 7, 1, 2]
+     *
      * Time Complexity: O(n)
      * Space Complexity: O(1)
      */
