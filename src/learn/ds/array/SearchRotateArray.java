@@ -7,9 +7,29 @@ package learn.ds.array;
  *
  * Given a rotated sorted array, perform search in O(log n) time
  * Assume no duplicates
+ *
+ * Input  : arr[] = {5, 6, 7, 8, 9, 10, 1, 2, 3}; key = 3
+ * Output : Found at index 8
+ *
+ * Input  : arr[] = {5, 6, 7, 8, 9, 10, 1, 2, 3}; key = 30
+ * Output : Not found
+ *
+ * Input : arr[] = {30, 40, 50, 10, 20}; key = 10
+ * Output : Found at index 3
  */
 public class SearchRotateArray {
 
+    /**
+     * Input arr[] = {3, 4, 5, 1, 2}
+     * Element to Search = 1
+     *  1) Find out pivot point and divide the array in two sub-arrays. (pivot = 2)
+     *  2) Now call binary search for one of the two sub-arrays.
+     *      (a) If element is greater than 0th element then search in left array
+     *      (b) Else Search in right array (1 will go in else as 1 < 0th element(3))
+     *  3) If element is found in selected sub-array then return index
+     *      Else return -1.
+     *
+     */
     public static int search(int[] array, int x) {
         int n = array.length;
         int pivot = findPivot(array, 0, n - 1);
