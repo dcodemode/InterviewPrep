@@ -36,6 +36,25 @@ import java.util.Deque;
  */
 public class SortArrayInWaveForm {
 
+
+    /**
+     * Naive Approach
+     * 1. Sort Array
+     * 2. Swap Adjacent elements
+     *
+     * Time  : O (n log n)
+     * Space : O (1)
+     */
+    public static void waveSort(int[] array){
+        //Iterative Quick Sort
+        sort(array);
+        //Swap Alternate numbers
+        for(int i =0 ; i < array.length-1 ; i+=2){
+            ArrayUtil.swap(array,i,i+1);
+        }
+    }
+
+    //Iterative Quick Sort
     public static void sort(int[] array){
         sort(array,0, array.length-1);
     }
@@ -85,23 +104,6 @@ public class SortArrayInWaveForm {
             return j;
         }
         return pivot;
-    }
-
-    /**
-     * Naive Approach
-     * 1. Sort Array
-     * 2. Swap Adjacent elements
-     *
-     * Time  : O (n log n)
-     * Space : O (1)
-     */
-    public static void waveSort(int[] array){
-        //Quick Sort
-        sort(array);
-        //Swap Alternate numbers
-        for(int i =0 ; i < array.length-1 ; i+=2){
-            ArrayUtil.swap(array,i,i+1);
-        }
     }
 
     /**
