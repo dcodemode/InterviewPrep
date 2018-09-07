@@ -7,6 +7,9 @@ import java.util.Set;
  * Given an array A[] of n numbers and another number x.
  * Determines whether or not there exist two elements in S whose sum is exactly x.
  *
+ * Input: {1, 4, 45, 6, 10, -8} and sum to find be 16
+ * Output: 6, 10 
+ *
  * https://www.geeksforgeeks.org/write-a-c-program-that-given-a-set-a-of-n-numbers-and-another-number-x-determines-whether-or-not-there-exist-two-elements-in-s-whose-sum-is-exactly-x/
  */
 public class Sum1 {

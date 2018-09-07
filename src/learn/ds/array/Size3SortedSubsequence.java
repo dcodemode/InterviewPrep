@@ -21,6 +21,11 @@ import learn.util.ArrayUtil;
 public class Size3SortedSubsequence {
 
     /**
+     * Algorithm
+     *  1) Create an auxiliary array smaller[n]. smaller[i] should store the index of a number which is smaller than arr[i] and is on left side of arr[i]. smaller[i] should contain -1 if there is no such element.
+     *  2) Create another auxiliary array greater[0..n-1]. greater[i] should store the index of a number which is greater than arr[i] and is on right side of arr[i]. greater[i] should contain -1 if there is no such element.
+     *  3) Finally traverse both smaller[] and greater[] and find the index i for which both smaller[i] and greater[i] are not -1.
+     *
      * Time Complexity  : O(n)
      * Space Complexity : O(1)
      */
@@ -37,6 +42,8 @@ public class Size3SortedSubsequence {
         int[] small = new int[n];
         int[] large = new int[n];
 
+        // Create an array that will store index of a smaller element on left side.
+        // If there is no smaller element on left side, then smaller[i] will be -1.
         small[0] = -1;
         for(int i = 1 ; i < n ; i++){
             if (array[min] >= array[i] ){
@@ -47,6 +54,8 @@ public class Size3SortedSubsequence {
             }
         }
 
+        // Create another array that will store index of a greater element on right side.
+        // If there is no greater element on right side, then greater[i] will be -1.
         large[n-1] = -1;
         for(int i = n-2; i >=0; i--){
             if(array[max] <= array[i]){
@@ -57,6 +66,7 @@ public class Size3SortedSubsequence {
             }
         }
 
+        // Now find a number which has both a greater number on right side and smaller number on left side
         for(int i =0 ; i< n ; i++){
             if(small[i]!=-1 && large[i] != -1){
                 System.out.println(array[small[i]] + " " + array[i] + " " + array[large[i]]);
