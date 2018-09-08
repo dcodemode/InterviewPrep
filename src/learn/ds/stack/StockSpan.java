@@ -5,6 +5,11 @@ import java.util.Stack;
 
 /**
  * @author Varma Penmetsa
+ * The stock span problem is a financial problem where we have a series of n daily price quotes for a stock and we need to calculate 
+ * span of stock’s price for all n days. 
+ *
+ * For example, if an array of 7 days prices is given as {100, 80, 60, 70, 60, 75, 85},
+ * then the span values for corresponding 7 days are {1, 1, 1, 2, 1, 4, 6}
  *
  * https://www.geeksforgeeks.org/the-stock-span-problem/
  */
