@@ -14,7 +14,7 @@ import java.util.Map;
  *
  * Ref: Cracking the code interview: Moderate 16.25, Page 185
  */
-public class LRU {
+public class LruCache {
 
     public class Node {
         Node prev, next;
@@ -128,7 +128,7 @@ public class LRU {
     }
 
     public static void main(String[] args) {
-        LRU cache = new LRU(5);
+        LruCache cache = new LruCache(5);
 
         cache.setKeyValue(1,"Book");
         cache.setKeyValue(2,"Dress");
