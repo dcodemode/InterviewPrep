@@ -28,6 +28,7 @@ public class BalanceParentheses {
                 stack.push(')');
             } else if (c[i] == '[') {
                 stack.push(']');
+            // checking st.isEmpty in cases where the char arrays just contains ')}]'
             } else if (stack.isEmpty() || c[i] != stack.pop()) {
                 return false;
             }
