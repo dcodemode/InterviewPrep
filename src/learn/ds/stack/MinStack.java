@@ -8,10 +8,9 @@ import java.util.Stack;
 /**
  * @author Varma Penmetsa
  *
+ * Design a stack that supports getMin() in O(1) time, Allowed to use extra space
+ *
  * https://www.geeksforgeeks.org/design-a-stack-that-supports-getmin-in-o1-time-and-o1-extra-space/
- *
- * Allowed to use extra space
- *
  */
 public class MinStack {
 
