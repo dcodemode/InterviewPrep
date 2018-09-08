@@ -34,7 +34,7 @@ public class LruCache {
     private Map<Integer, Node> map  =  new HashMap<>();
     private int size;
 
-    public LRU(int size){
+    public LruCache(int size){
         this.size = size;
     }
 
