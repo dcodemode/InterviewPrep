@@ -24,16 +24,9 @@ public class DutchNationalFlagProblem {
 
         while(i <= end){
             if(array[i] == 0){
-                int temp = array[i];
-                array[i] = array[start];
-                array[start] = temp;
-                i++;
-                start++;
+                ArrayUtil.swap(array,i++,start++);
             }else if(array[i] == 2){
-                int temp = array[i];
-                array[i] = array[end];
-                array[end] = temp;
-                end--;
+                ArrayUtil.swap(array,i,end--);
             }else{
                 i++;
             }
@@ -41,7 +34,7 @@ public class DutchNationalFlagProblem {
     }
 
     public static void main(String[] args) {
-        int[] array = {2,0,1};
+        int[] array = {2,0,2,1,1,0};
         sortColors(array);
         ArrayUtil.display(array);
     }
