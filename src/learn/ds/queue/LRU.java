@@ -119,11 +119,9 @@ public class LRU {
 
     /* Print Doubly Linked List */
     public static void display(Node node){
-        Node last = null;
-        System.out.println("Traversing forward");
+        System.out.print("Null <---> ");
         while(node!=null){
             System.out.print(node.val+ " <---> ");
-            last = node;
             node = node.next;
         }
         System.out.println("Null");
@@ -138,6 +136,8 @@ public class LRU {
         cache.setKeyValue(4,"Sock");
         cache.setKeyValue(5,"Pencils");
         cache.setKeyValue(6,"Pens");
+
+        System.out.println("Value is : "+cache.getValue(2));
 
         display(cache.head);
 
