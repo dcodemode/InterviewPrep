@@ -4,22 +4,32 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 9/8/18
  * @author Varma Penmetsa
+ *
+ * Design and implement a data structure for Least Recently Used (LRU) cache. It should support the following operations: getValue and setKeyValue.
+ *
+ * getValue(key) - Get the value (will always be positive) of the key if the key exists in the cache, otherwise return -1.
+ * setKeyValue(key, value) - Set or insert the value if the key is not already present. When the cache reached its capacity, it should invalidate the least recently used item before inserting a new item.
+ *
+ * Ref: Cracking the code interview: Moderate 16.25, Page 185
  */
 public class LRU {
 
     public class Node {
         Node prev, next;
-        int val;
+        int key;
+        String val;
 
-        public Node(int val) {
-            this.val = val;
+        public Node(int k, String v) {
+            this.key = k;
+            this.val = v;
             prev = next = null;
         }
     }
 
     Node head;
-    Node end;
+    Node tail;
 
     private Map<Integer, Node> map  =  new HashMap<>();
     private int size;
@@ -28,78 +38,108 @@ public class LRU {
         this.size = size;
     }
 
-    public void set(int val){
-
-        if(head == null){
-            head = new Node(val);
-            end = head;
-            map.put(val,head);
-            return;
+    /* Get Value from key and mark it as most recently used */
+    public String getValue(int key){
+        Node item = map.get(key);
+        if(item == null){
+            return null;
+        }
+        /* If item is not head, move the item front of list to mark as Most recently used. */
+        if(item != head) {
+            removeFromLinkedList(item);
+            insertAtFrontOfLinkedList(item);
         }
 
-        //Size check
-        if(map.size() >= size){
-            delete(end);
-        }
-
-        if(map.containsKey(val)){
-            delete(map.get(val));
-        }
-
-        Node new_node = new Node(val);
-        new_node.next = head;
-        head.prev = new_node;
-        head = new_node;
-        map.put(val,new_node);
+        return item.val;
     }
 
-    public void delete(Node node){
+    /* Remove Node from a Linked List */
+    public void removeFromLinkedList(Node node){
         if(node == null){
             return;
         }
 
-        if(node.prev == null){
-            head  = node.next;
-            head.prev = null;
-        }else if(node.next == null){
-            node.prev.next = null;
-            end = node.prev;
-        }else {
-            node.next.prev = node.prev;
-            node.prev.next = node.next;
+        //If node is head, make next node as head
+        if(node == head){
+            head = head.next;
+        }
 
+        //If node is tail, make previous node as tail
+        if(node == tail){
+            tail = tail.prev;
+        }
+
+        if(node.prev != null){
+            node.prev.next = node.next;
+        }
+        if(node.next != null){
+            node.next.prev = node.prev;
         }
     }
 
+    /* Insert Node at front of linked list */
+    public void insertAtFrontOfLinkedList(Node node){
+        if(node == null){
+            return;
+        }
+
+        if(head == null){
+            head = node;
+            tail = node;
+        }else {
+            node.next = head;
+            head.prev = node;
+            head = node;
+        }
+    }
+
+    /* Remove key/value pair from cache, deleting from hash table and linked list. */
+    public boolean removeKey(int key){
+        Node item = map.get(key);
+        removeFromLinkedList(item);
+        map.remove(key);
+        return true;
+    }
+
+    /* Put key,value pair in cache. Remove old values for keys if necessary. Insert pairs in linked-list and hash-table */
+    public void setKeyValue(int key, String value){
+        /* Remove key if already there */
+        removeKey(key);
+
+        /* If full remove recently used item. */
+        if(map.size() >= size && tail != null){
+            removeKey(tail.key);
+        }
+
+        /* Insert new node. */
+        Node node  = new Node(key,value);
+        insertAtFrontOfLinkedList(node);
+        map.put(key,node);
+    }
+
+    /* Print Doubly Linked List */
     public static void display(Node node){
         Node last = null;
         System.out.println("Traversing forward");
         while(node!=null){
-            System.out.print(node.val+ " ");
+            System.out.print(node.val+ " <---> ");
             last = node;
             node = node.next;
         }
-        System.out.println();
-        System.out.println("Traversing reverse");
-        while(last!=null){
-            System.out.print(last.val +" ");
-            last = last.prev;
-        }
-        System.out.println();
+        System.out.println("Null");
     }
 
     public static void main(String[] args) {
+        LRU cache = new LRU(5);
 
-        LRU l =  new LRU(4);
+        cache.setKeyValue(1,"Book");
+        cache.setKeyValue(2,"Dress");
+        cache.setKeyValue(3,"Shoe");
+        cache.setKeyValue(4,"Sock");
+        cache.setKeyValue(5,"Pencils");
+        cache.setKeyValue(6,"Pens");
 
-        l.set(1);
-        l.set(2);
-        l.set(3);
-        l.set(1);
-        l.set(4);
-        l.set(5);
-
-        display(l.head);
+        display(cache.head);
 
     }
 
