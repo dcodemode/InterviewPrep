@@ -66,7 +66,6 @@ public class NumberToEnglishWord {
 
     //This method handles triplet ie ( 3 digit numbers)
     public String convert(int num) {
-        fillMap();
 
         StringBuffer sb = new StringBuffer();
 
@@ -95,6 +94,7 @@ public class NumberToEnglishWord {
     //General Method all numbers
     public String numberToWord(int num){
         fillMap();
+
         StringBuilder sb = new StringBuilder();
 
         if(num == 0){
@@ -130,7 +130,7 @@ public class NumberToEnglishWord {
 
 
     public static void main(String[] args) {
-        System.out.println(new NumberToEnglishWord().convert(556));
+        System.out.println(new NumberToEnglishWord().numberToWord(532332356));
     }
 
 }
