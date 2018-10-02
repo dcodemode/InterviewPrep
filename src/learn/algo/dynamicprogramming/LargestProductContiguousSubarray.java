@@ -47,6 +47,7 @@ public class LargestProductContiguousSubarray {
         return result;
     }
     /**
+     * Application of Kadane's Algorithm
      * Time Complexity : O(n)
      * Space Complexity : O(1)
      */
@@ -56,20 +57,25 @@ public class LargestProductContiguousSubarray {
         int max = maxSoFar;
 
         for (int i = 1; i < array.length; i++) {
+            // multiplied by a negative makes big number smaller, small number bigger
+            // so we redefine the extremums by swapping them
             if(array[i] < 0){
                 int temp = max;
                 max = min;
                 min = temp;
             }
+            // max/min product for the current number is either the current number itself
+            // or the max/min by the previous number times the current one
             max = Math.max(array[i], max * array[i]);
             min = Math.min(array[i], min * array[i]);
+            // the newly computed max value is a candidate for our global result
             maxSoFar = Math.max(maxSoFar, max);
         }
         return maxSoFar;
     }
 
     public static void main(String[] args) {
-        int array[] = {-6, -3, 8, -9, -1, -1, 3, 6, 9, 0, 3, -1};
-        System.out.println(maxProduct(array));
+        int array[] = {6, -3, -10, 0, 2};
+        System.out.println(maxProduct1(array));
     }
 }
