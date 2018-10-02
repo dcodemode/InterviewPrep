@@ -31,8 +31,10 @@ public class LargestSumContiguousSubarray {
     }
 
     /**
+     * Kadane's Algorithm
      * Time Complexity : O(n)
      * Space Complexity : O(1)
+     * https://www.youtube.com/watch?v=86CQq3pKSUw&t=587s
      */
     public static int maxSum1(int[] array) {
         int sum = array[0];
