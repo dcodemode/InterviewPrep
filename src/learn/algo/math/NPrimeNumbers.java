@@ -1,4 +1,4 @@
-package learn.ds.string;
+package learn.algo.math;
 
 import java.util.ArrayList;
 import java.util.List;

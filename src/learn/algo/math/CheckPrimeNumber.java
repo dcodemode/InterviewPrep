@@ -8,7 +8,8 @@ package learn.algo.math;
 
 public class CheckPrimeNumber {
 
-    /*Brute force
+    /*
+     * Brute force
      * Time Complexity: O(n)
      * Space Complexity: O(1)
      */

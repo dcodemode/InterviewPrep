@@ -11,8 +11,26 @@ package learn.algo.divideconquer;
  *    if the given array is {-2, -5, 6, -2, -3, 1, 5, -6}, then the maximum subarray sum is 7
  *
  * https://www.geeksforgeeks.org/divide-and-conquer-maximum-sum-subarray/
+ * https://github.com/mission-peace/interview/blob/master/src/com/interview/dynamic/MaxSumForNonAdjacentElements.java
+ * https://www.youtube.com/watch?v=UtGtF6nc35g&frags=pl%2Cwn
  */
 public class MaxSubarraySum {
+
+    /**
+     * Dynamic Programming Solution
+     * O(n)
+     * Space complexity O(1)
+     */
+    public static int maxSum1(int arr[]) {
+        int excl = 0;
+        int incl = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            int temp = incl;
+            incl = Math.max(excl + arr[i], incl);
+            excl = temp;
+        }
+        return incl;
+    }
 
     /**
      * Divide and Conquer technique
@@ -46,8 +64,10 @@ public class MaxSubarraySum {
         return max;
     }
 
+
     public static void main(String[] args) {
         int[] array =  {4,-1,2,1};
         System.out.println(maxSum(array, 0 , array.length));
+        System.out.println(maxSum1(array));
     }
 }
