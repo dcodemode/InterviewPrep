@@ -9,15 +9,15 @@ public class GraphNode {
     /*
      * Basic Graph Node
      */
-    public int V;
+    public int vertices;
     public LinkedList<Integer> adjListArray[];
 
-    public GraphNode(int V){
+    public GraphNode(int vertices){
 
-        this.V = V;
-        adjListArray = new LinkedList[V];
+        this.vertices = vertices;
+        adjListArray = new LinkedList[vertices];
 
-        for(int i = 0; i < V ; i++){
+        for(int i = 0; i < vertices ; i++){
             adjListArray[i] = new LinkedList<>();
         }
     }

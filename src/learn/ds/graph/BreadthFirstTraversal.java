@@ -1,8 +1,8 @@
 package learn.ds.graph;
 
 import learn.ds.nodes.GraphNode;
+import learn.util.Graph;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -21,7 +21,7 @@ public class BreadthFirstTraversal {
 
     public static void BFS(GraphNode graph, int start){
 
-        boolean visited[] = new boolean[graph.V];
+        boolean visited[] = new boolean[graph.vertices];
 
         LinkedList<Integer> queue = new LinkedList<>();
 
@@ -40,25 +40,22 @@ public class BreadthFirstTraversal {
             }
         }
         System.out.println();
-    }
 
-    public static void addEdge(GraphNode g, int v, int w) {
-        g.adjListArray[v].add(w);
     }
 
     public static void main(String[] args) {
-        GraphNode g = new GraphNode(4);
+        Graph g = new Graph(5);
 
-        addEdge(g, 0, 1);
-        addEdge(g, 0, 2);
-        addEdge(g, 1, 2);
-        addEdge(g, 2, 0);
-        addEdge(g, 2, 3);
-        addEdge(g, 3, 3);
+        g.addEdge(0, 1);
+        g.addEdge(0, 2);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0);
+        g.addEdge(2, 3);
+        g.addEdge(3, 3);
 
         System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
 
-        BFS(g, 2);
+        BFS(g.node, 2);
     }
 
 

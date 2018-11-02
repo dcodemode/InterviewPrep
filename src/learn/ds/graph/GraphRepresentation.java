@@ -2,8 +2,6 @@ package learn.ds.graph;
 
 import learn.ds.nodes.GraphNode;
 
-import java.util.LinkedList;
-
 /**
  * @author Varma Penmetsa
  *
@@ -28,7 +26,7 @@ public class GraphRepresentation {
 
     // A utility function to print the adjacency list representation of graph
     public static void printGraph(GraphNode graph) {
-        for (int v = 0; v < graph.V; v++) {
+        for (int v = 0; v < graph.vertices; v++) {
             System.out.println("Adjacency list of vertex " + v);
             System.out.print("head");
             for (Integer pCrawl : graph.adjListArray[v]) {
