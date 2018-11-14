@@ -57,20 +57,47 @@ public class FindMotherVertex {
     }
 
     /**
-     * Using Strongly Connected Elements(Kosaraju's Algorithm)
+     * Based on Strongly Connected Elements(Kosaraju's Algorithm)
      *
      * Algo:
-     * 1) Create an empty stack ‘S’ and do DFS traversal of a graph. In DFS traversal, after calling recursive DFS for adjacent vertices of a vertex, push the vertex to stack.
-     * 2) Reverse directions of all arcs to obtain the transpose graph.
-     * 3) One by one pop a vertex from S while S is not empty. Let the popped vertex be ‘v’. Take v as source and do DFS (call DFSUtil(v)). The DFS starting from v prints strongly connected component of v. In the above example, we process vertices in order 0, 3, 4, 2, 1 (One by one popped from stack).
+     *  1. Do DFS traversal of the given graph. While doing traversal keep track of last finished vertex ‘v’. This step takes O(V+E) time.
+     *  2. If there exist mother vertex (or vetices), then v must be one (or one of them). Check if v is a mother vertex by doing DFS/BFS from v. This step also takes O(V+E) time.
      *
      * Time Complexity  : O(V + E) where V is number of vertices and E is number of edges
      * Space Complexity : O(V)
      */
 
-    //To-Do
-    
+    public static int getMotherVertex2(GraphNode graph) {
+        boolean visited[] = new boolean[graph.vertices];
+        int v = 0;
 
+        for (int i = 0; i < graph.vertices; i++) {
+            if (!visited[i]) {
+                dfsRecursive(graph, i, visited);
+                v = i;
+            }
+        }
+
+        //Check if v visits all nodes in the graph
+        visited = new boolean[graph.vertices];
+        dfsRecursive(graph, v, visited);
+        for (int i = 0; i < graph.vertices; i++) {
+            if (!visited[i]) {
+                return -1;
+            }
+        }
+        return v;
+    }
+
+    public static void dfsRecursive(GraphNode graph, int start, boolean[] visited) {
+        visited[start] = true;
+        for (int i : graph.adjListArray[start]) {
+            if (!visited[i]) {
+                visited[i] = true;
+                dfsRecursive(graph, i, visited);
+            }
+        }
+    }
 
     public static void main(String[] args) {
         Graph g = new Graph(7);
@@ -84,6 +111,8 @@ public class FindMotherVertex {
         g.addEdge(5, 2);
         g.addEdge(6, 0);
 
-        getMotherVertix(g.node);
+        //getMotherVertix(g.node);
+
+        System.out.println(getMotherVertex2(g.node));
     }
 }
