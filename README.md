@@ -9,3 +9,4 @@
 * [Tree](https://github.com/dvpenmetsa/InterviewPrep/wiki/Trees)
 * [Trie](https://github.com/dvpenmetsa/InterviewPrep/wiki/Trie)
 * [Sorting & Searching](https://github.com/dvpenmetsa/InterviewPrep/wiki/Sorting-&-Searching)
+* [Graph](https://github.com/dvpenmetsa/InterviewPrep/wiki/Graph)
