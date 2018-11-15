@@ -57,7 +57,7 @@ public class FindMotherVertex {
     }
 
     /**
-     * Based on Strongly Connected Elements(Kosaraju's Algorithm)
+     * Based on Strongly Connected Elements(Kosa raju's Algorithm)
      *
      * Algo:
      *  1. Do DFS traversal of the given graph. While doing traversal keep track of last finished vertex ‘v’. This step takes O(V+E) time.
@@ -100,16 +100,13 @@ public class FindMotherVertex {
     }
 
     public static void main(String[] args) {
-        Graph g = new Graph(7);
+        Graph g = new Graph(4);
 
-        g.addEdge(0, 1);
-        g.addEdge(0, 2);
-        g.addEdge(1, 3);
-        g.addEdge(4, 1);
-        g.addEdge(6, 4);
-        g.addEdge(5, 6);
-        g.addEdge(5, 2);
-        g.addEdge(6, 0);
+        g.addEdge(2, 3);
+        g.addEdge(2, 1);
+        g.addEdge(3, 1);
+        g.addEdge(1, 0);
+        g.addEdge(0, 3);
 
         //getMotherVertix(g.node);
 
