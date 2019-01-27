@@ -48,7 +48,7 @@ import java.util.List;
  * 20
  *
  * References:
- * https://github.com/ufoscout/HackerRank_Java/blob/master/src/main/java/ufo/hackerrank/job/numbrs/budget_shopping/Solution.java
+ * hackerrank
  *
  *
  */
@@ -71,6 +71,7 @@ public class BudgetShopping {
         return max[0];
     }
 
+    //To-Do Recursion time out
     static void calculateRecursive(int n, List<Integer> cost, List<Integer> quantity, int[] max, int position, int count) {
         if (n == 0 || position == cost.size()) {
             if (count > max[0]) {
@@ -83,5 +84,77 @@ public class BudgetShopping {
         }
     }
 
+    public static void main(String[] args) {
+
+        List<Integer> bundleQuantities =  new ArrayList<>();
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+        bundleQuantities.add(20);
+        bundleQuantities.add(1);
+
+        List<Integer> bundleCosts = new ArrayList<>();
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+        bundleCosts.add(2);
+        bundleCosts.add(12);
+
+        System.out.println(budgetShopping(50,bundleQuantities,bundleCosts));
+    }
 
 }
