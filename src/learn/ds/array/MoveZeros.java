@@ -16,6 +16,10 @@ package learn.ds.array;
  */
 public class MoveZeros {
 
+    /**
+     * Time Complexity: O(n)
+     * Space complexity O(1)
+     */
     public static void moveZeroes(int[] nums) {
         int i = 0, j = 0;
         while (j < nums.length) {
