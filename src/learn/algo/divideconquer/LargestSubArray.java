@@ -67,7 +67,7 @@ public class LargestSubArray {
      * Merge the subproblems solutions, i.e. return max(left_sum, right_sum, cross_sum).
      *
      *
-     * Time Complexity: O(log n)
+     * Time Complexity: O(n log n)
      * Space complexity O(log n)
      */
     public static int maxSubArray(int[] array){
