@@ -30,8 +30,8 @@ import java.util.Stack;
 
 public class ValidateParenthesisString {
 
-    Stack<Integer> open = new Stack();
-    Stack<Integer> star = new Stack();
+    Stack<Integer> open = new Stack<Integer>();
+    Stack<Integer> star = new Stack<Integer>();
 
     /**
      * Time Complexity: O(n)
