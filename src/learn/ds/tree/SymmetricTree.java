@@ -38,7 +38,7 @@ public class SymmetricTree {
      * Space Complexity: O(n)
      */
     public boolean isSymmetricR(TreeNode root) {
-        return helper(t1, t2);
+        return helper(root, root);
     }
     public boolean helper(TreeNode t1, TreeNode t2){
         if(t1==null && t2==null){
