@@ -48,7 +48,7 @@ public class ConstructBSTGivenPreOrder {
 
         //Find left sub-tree and right sub-tree
         int i =0;
-        for(i = start+1 ; i < end ; i++ ){
+        for(i = start+1 ; i <= end ; i++ ){
             if(array[index] < array[i]){
                 break;
             }
