@@ -48,7 +48,7 @@ public class RotateMatrixElements {
      */
     public static void rotate(int[][] matrix){
         int n = matrix.length;
-        //Step1: Transpose Matric
+        //Step1: Transpose Matrix
         for(int i=0 ; i < n ; i++){
             for(int j = i ; j < n ; j++){
                 int temp = matrix[j][i];
