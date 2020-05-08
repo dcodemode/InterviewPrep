@@ -38,7 +38,7 @@ public class PrintMatrixInSpiral {
      */
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> list = new ArrayList<>();
-        if(matrix==null || matrix.length==0){
+        if(matrix.length==0 || matrix[0].length == 0){
             return list;
         }
         int left = 0;
