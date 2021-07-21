@@ -12,4 +12,7 @@ bin/
 
 *.DS_Store
 
-Thumbs.db
+Thumbs.db\
+
+.history/
+practice/
