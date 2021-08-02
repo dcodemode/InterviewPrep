@@ -10,3 +10,4 @@
 * [Trie](https://github.com/dvpenmetsa/InterviewPrep/wiki/Trie)
 * [Sorting & Searching](https://github.com/dvpenmetsa/InterviewPrep/wiki/Sorting-&-Searching)
 * [Graph](https://github.com/dvpenmetsa/InterviewPrep/wiki/Graph)
+* [Cracking the Code Interview](https://github.com/dvpenmetsa/InterviewPrep/wiki/Cracking-The-Code)
