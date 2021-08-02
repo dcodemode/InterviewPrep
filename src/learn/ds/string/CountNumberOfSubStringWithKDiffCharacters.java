@@ -23,6 +23,7 @@ import java.util.*;
  * Possible substrings are {"a", "a", "aa"}
  *
  * https://www.geeksforgeeks.org/count-number-of-substrings-with-exactly-k-distinct-characters/
+ * https://leetcode.com/problems/subarrays-with-k-different-integers/
  */
 public class CountNumberOfSubStringWithKDiffCharacters {
 
