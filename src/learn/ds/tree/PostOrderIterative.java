@@ -43,7 +43,7 @@ public class PostOrderIterative {
         }
 
         while(!st2.isEmpty()){
-            System.out.print(st2.pop().data + " ");
+            System.out.print(st2.pop().val + " ");
         }
         System.out.println();
     }

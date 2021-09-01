@@ -28,9 +28,9 @@ public class CheckIfNodeExistsBST {
         if (root == null) {
             return null;
         }
-        if (root.data == n1) {
+        if (root.val == n1) {
             return root;
-        } else if (root.data > n1) {
+        } else if (root.val > n1) {
             return searchBST(root.left, n1);
         } else {
             return searchBST(root.right, n1);

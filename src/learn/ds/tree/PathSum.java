@@ -32,7 +32,7 @@ public class PathSum {
         if(root==null){
             return false;
         }
-        sum = sum - root.data;
+        sum = sum - root.val;
         if ((root.left == null) && (root.right == null))
             return (sum == 0);
         return hasPathSum(root.left, sum) || hasPathSum(root.right, sum);

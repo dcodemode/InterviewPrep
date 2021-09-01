@@ -33,11 +33,11 @@ public class CheckIfRootToLeafPathSumEqualToGivenNumber {
         }
         //Leaf check
         if(node.left == null && node.right == null){
-            if(node.data == sum){
+            if(node.val == sum){
                 return true;
             }
         }
-        sum = sum - node.data;
+        sum = sum - node.val;
         return checkIfPathExists(node.left,sum) || checkIfPathExists(node.right,sum);
     }
 

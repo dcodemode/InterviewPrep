@@ -15,7 +15,7 @@ public class DeleteNodeBST {
         while(node.right != null){
             node = node.right;
         }
-        return node.data;
+        return node.val;
     }
 
     public int successor(TreeNode root){
@@ -23,7 +23,7 @@ public class DeleteNodeBST {
         while(node.left != null){
             node = node.left;
         }
-        return node.data;
+        return node.val;
     }
 
     public TreeNode deleteNode(TreeNode root, int key) {
@@ -32,20 +32,20 @@ public class DeleteNodeBST {
             return null;
         }
 
-        if(key > root.data){
+        if(key > root.val){
             root.right = deleteNode(root.right, key);
-        } else if(key < root.data){
+        } else if(key < root.val){
             root.left = deleteNode(root.left, key);
         }else{
             if(root.left == null && root.right == null){
                 root = null;
             }else if(root.right != null){
-                root.data = successor(root);
-                root.right = deleteNode(root.right, root.data);
+                root.val = successor(root);
+                root.right = deleteNode(root.right, root.val);
 
             }else{
-                root.data = predecessor(root);
-                root.left = deleteNode(root.left, root.data);
+                root.val = predecessor(root);
+                root.left = deleteNode(root.left, root.val);
             }
         }
         return root;

@@ -34,7 +34,7 @@ public class BFS {
 
         while (!q.isEmpty()) {
             TreeNode node = q.poll();
-            System.out.print(node.data + " ");
+            System.out.print(node.val + " ");
             if (node.left != null) {
                 q.offer(node.left);
             }

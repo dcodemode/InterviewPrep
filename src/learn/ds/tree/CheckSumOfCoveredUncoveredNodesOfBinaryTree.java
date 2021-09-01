@@ -35,7 +35,7 @@ public class CheckSumOfCoveredUncoveredNodesOfBinaryTree {
         if(node == null){
             return 0;
         }
-        return sum(node.left) + node.data + sum(node.right);
+        return sum(node.left) + node.val + sum(node.right);
     }
 
     /**
@@ -59,7 +59,7 @@ public class CheckSumOfCoveredUncoveredNodesOfBinaryTree {
         //Find sum of left uncovered nodes
         TreeNode current = node;
         while(current!=null){
-            leftSum += current.data;
+            leftSum += current.val;
             if(current.left!=null){
                 current = current.left;
             }else {
@@ -73,7 +73,7 @@ public class CheckSumOfCoveredUncoveredNodesOfBinaryTree {
             current = current.right;
         }
         while(current!=null){
-            rightSum += current.data;
+            rightSum += current.val;
             if(current.right!=null){
                 current = current.right;
             }else {

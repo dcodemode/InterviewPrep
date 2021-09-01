@@ -70,7 +70,7 @@ public class ConstructCompleteBinaryTreeFromLinkedList {
             return;
         }
         inOrderTraversal(root.left);
-        System.out.print(root.data + " ");
+        System.out.print(root.val + " ");
         inOrderTraversal(root.right);
 
     }

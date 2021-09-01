@@ -40,7 +40,7 @@ public class InOrderIterative {
 
         while (!st.isEmpty()) {
             TreeNode temp = st.pop();
-            System.out.print(temp.data + " ");
+            System.out.print(temp.val + " ");
 
             if (temp.right != null) {
                 temp = temp.right;

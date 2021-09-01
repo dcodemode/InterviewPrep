@@ -45,7 +45,7 @@ public class InOrderMorrisTraversal {
 
         while (current != null) {
             if (current.left == null) {
-                System.out.print(current.data + " ");
+                System.out.print(current.val + " ");
                 current = current.right;
             } else {
                 TreeNode predecessor = current.left;
@@ -59,7 +59,7 @@ public class InOrderMorrisTraversal {
                     current = current.left;
                 } else {
                     predecessor.right = null;
-                    System.out.print(current.data + " ");
+                    System.out.print(current.val + " ");
                     current = current.right;
                 }
             }

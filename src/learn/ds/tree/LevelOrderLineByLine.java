@@ -44,7 +44,7 @@ public class LevelOrderLineByLine {
             int nodeCount = q.size();
             while (nodeCount > 0) {
                 TreeNode node = q.poll();
-                System.out.print(node.data + " ");
+                System.out.print(node.val + " ");
 
                 if (node.left != null)
                     q.add(node.left);

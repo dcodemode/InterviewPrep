@@ -32,7 +32,7 @@ public class SerializeAndDeserialize {
         if(root == null){
             return "Null";
         }
-        return root.data + "," + serialize(root.left) + "," + serialize(root.right);
+        return root.val + "," + serialize(root.left) + "," + serialize(root.right);
     }
 
     /**

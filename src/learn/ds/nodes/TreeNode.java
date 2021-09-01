@@ -7,10 +7,10 @@ public class TreeNode {
       Basic Tree Node
      */
     public TreeNode left, right;
-    public int data;
+    public int val;
 
-    public TreeNode(int data) {
-        this.data = data;
+    public TreeNode(int val) {
+        this.val = val;
         left = right = null;
     }
 }

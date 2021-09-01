@@ -36,7 +36,7 @@ public class CheckIfRootToLeafPathWithGivenSequence {
             return true;
         }
         //Check if data is not matching || if index is greater than array
-        if(index > array.length-1 || array[index] != node.data)
+        if(index > array.length-1 || array[index] != node.val)
             return false;
 
         return checkGivenSeq(node.left, array,index+1) || checkGivenSeq(node.right, array,index+1);

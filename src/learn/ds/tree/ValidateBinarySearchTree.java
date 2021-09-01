@@ -47,11 +47,11 @@ public class ValidateBinarySearchTree {
         if(root == null){
             return true;
         }
-        if(root.data <= min || root.data > max){
+        if(root.val <= min || root.val > max){
             return false;
         }
 
-        return checkBST(root.left,min, root.data) && checkBST(root.right,root.data, max);
+        return checkBST(root.left,min, root.val) && checkBST(root.right,root.val, max);
     }
 
     public static void main(String[] args) {

@@ -34,7 +34,7 @@ public class DFS {
             return;
         }
         inOrder(node.left);
-        System.out.print(node.data + " ");
+        System.out.print(node.val + " ");
         inOrder(node.right);
     }
 
@@ -46,7 +46,7 @@ public class DFS {
         if(node == null){
             return;
         }
-        System.out.print(node.data + " ");
+        System.out.print(node.val + " ");
         preOrder(node.left);
         preOrder(node.right);
     }
@@ -61,7 +61,7 @@ public class DFS {
         }
         postOrder(node.left);
         postOrder(node.right);
-        System.out.print(node.data + " ");
+        System.out.print(node.val + " ");
     }
 
     public static void main(String[] args) {

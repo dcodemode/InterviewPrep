@@ -56,11 +56,11 @@ public class CountUnivalueSubtrees {
         boolean right  = helper(root.right);
 
         if(left && right){
-            if(root.left != null && root.data != root.left.data){
+            if(root.left != null && root.val != root.left.val){
                 return false;
             }
 
-            if(root.right != null && root.data != root.right.data){
+            if(root.right != null && root.val != root.right.val){
                 return false;
             }
             count++;

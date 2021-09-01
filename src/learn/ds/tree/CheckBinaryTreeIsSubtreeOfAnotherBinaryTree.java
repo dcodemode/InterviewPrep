@@ -44,7 +44,7 @@ public class CheckBinaryTreeIsSubtreeOfAnotherBinaryTree {
             return true;
         if (a == null || b == null)
             return false;
-        if (a.data != b.data)
+        if (a.val != b.val)
             return false;
         return isSame(a.left, b.left) && isSame(a.right, b.right);
     }

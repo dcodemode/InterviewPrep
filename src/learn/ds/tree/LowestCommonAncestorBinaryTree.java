@@ -70,6 +70,6 @@ public class LowestCommonAncestorBinaryTree {
         root.left.right.right = new TreeNode(8);
         root.right.right = new TreeNode(6);
         root.right.right.left = new TreeNode(9);
-        System.out.println(LCA(root,root.left.left,root.left.right.right).data);
+        System.out.println(LCA(root,root.left.left,root.left.right.right).val);
     }
 }

@@ -30,7 +30,7 @@ public class ReverseLevelOrder {
         }
 
         while(!s.isEmpty()){
-            System.out.print(s.pop().data + " ");
+            System.out.print(s.pop().val + " ");
         }
 
         System.out.println();

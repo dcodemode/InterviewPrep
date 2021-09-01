@@ -35,17 +35,17 @@ public class CheckFromChildSumProperty {
 
         while(!s.isEmpty()){
             TreeNode temp = s.pop();
-            int sum = temp.data;
+            int sum = temp.val;
             int lSum = 0, rSum = 0;
 
             if(temp.right!=null){
                 s.push(temp.right);
-                rSum = temp.right.data;
+                rSum = temp.right.val;
             }
 
             if(temp.left!=null){
                 s.push(temp.left);
-                lSum = temp.left.data;
+                lSum = temp.left.val;
             }
             //Check if leaf, ignore them.
             if(lSum==0 && rSum==0){

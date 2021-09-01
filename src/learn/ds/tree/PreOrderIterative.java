@@ -41,7 +41,7 @@ public class PreOrderIterative {
 
         while (!st.isEmpty()) {
             TreeNode node = st.pop();
-            System.out.print(node.data + " ");
+            System.out.print(node.val + " ");
 
             if (node.right != null) {
                 st.push(node.right);

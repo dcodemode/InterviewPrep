@@ -47,7 +47,7 @@ public class SymmetricTree {
         if(t1==null || t2==null){
             return false;
         }
-        return (t1.data==t2.data) && helper(t1.left, t2.right) && helper(t1.right, t2.left);
+        return (t1.val ==t2.val) && helper(t1.left, t2.right) && helper(t1.right, t2.left);
     }
 
     /**
@@ -65,7 +65,7 @@ public class SymmetricTree {
             TreeNode t2 = q.poll();
             if (t1 == null && t2 == null) continue;
             if (t1 == null || t2 == null) return false;
-            if (t1.data != t2.data) return false;
+            if (t1.val != t2.val) return false;
             q.add(t1.left);
             q.add(t2.right);
             q.add(t1.right);

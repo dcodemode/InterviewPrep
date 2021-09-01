@@ -29,7 +29,7 @@ public class CheckGivenBinaryTreeSumTree {
         if(node == null){
             return 0;
         }
-        return sum(node.left) + node.data + sum(node.right);
+        return sum(node.left) + node.val + sum(node.right);
     }
 
     /**
@@ -46,7 +46,7 @@ public class CheckGivenBinaryTreeSumTree {
         int leftSum = sum(node.left);
         int rightSum = sum(node.right);
 
-        return (node.data == leftSum + rightSum) || (leftSum == 0 && rightSum == 0);
+        return (node.val == leftSum + rightSum) || (leftSum == 0 && rightSum == 0);
     }
 
     public static void main(String[] args) {
