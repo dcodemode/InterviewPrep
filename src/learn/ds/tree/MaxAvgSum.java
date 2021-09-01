@@ -40,35 +40,32 @@ import learn.util.TreeUtil;
 
 public class MaxAvgSum {
 
-    int count = 0;
-    int sum = 0;
-    public void helper(TreeNode root){
-        if(root == null){
-            return;
-        }
-        helper(root.left);
-        count += 1;
-        sum += root.val;
-        helper(root.right);
-
-    }
-    double avg = 0.0;
+    /**
+     * Time Complexity: O(n)
+     * Space Complexity: O(n)
+     * @param root
+     * @return
+     */
     public double maximumAverageSubtree(TreeNode root) {
+        return helper(root)[2];
+    }
+
+    private double[] helper(TreeNode root){
+        //1st count, 2nd sum, 3rd avg
         if(root == null){
-            return avg;
+            return new double[]{0,0,0};
         }
-        count = 0;
-        sum = 0;
-        helper(root);
+        double[] l = helper(root.left);
+        double[] r = helper(root.right);
 
-        avg = Math.max(avg, (double) sum/count);
+        double count = 1 + l[0] + r[0];
+        double sum = root.val + l[1] + r[1];
+        double max_child = Math.max(l[2], r[2]);
 
-        double leftA = maximumAverageSubtree(root.left);
-        double rightA = maximumAverageSubtree(root.right);
-
-        return Math.max(avg, Math.max(leftA, rightA));
+        return new double[]{count, sum , Math.max(max_child, sum/count)};
 
     }
+
 
     public static void main(String[] args) {
 
