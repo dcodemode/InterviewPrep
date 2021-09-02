@@ -1,11 +1,22 @@
 package learn.ds.graph;
 
 /**
- * Union by Rank of Disjoint Set
+ * Union by Rank and Path Compression Disjoint Set
+ *
+ *
+ * The main idea of a “disjoint set” is to have all connected vertices have the same parent node or root node,
+ * whether directly or indirectly connected. To check if two vertices are connected, we only need to check if they have the same root node.
+ *
+ * The two most important functions for the “disjoint set” data structure are the find function and the union function.
+ * The find function locates the root node of a given vertex.
+ * The union function connects two previously unconnected vertices by equating their root node.
+ * There is another important function named connected, which checks the “connectivity” of two vertices.
+ * The find and union functions are essential for any question requiring the “disjoint set” data structure,
+ * while only some of the questions need the connected function.
  *
  * Time Complexity: O(N)
  *
- * https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3840/
+ * https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3844/
  */
 public class UnionFind2 {
 
@@ -25,19 +36,21 @@ public class UnionFind2 {
     }
 
     /**
-     * Time Complexity: O(log N)
+     * Time Complexity:  O(⍺(N))  | ⍺ refers to the Inverse Ackermann function.
+     *
+     * In practice, we assume it's a constant. In other words, O(⍺(N)) is regarded as O(1) on average.
      * @param x
      * @return
      */
     public int find(int x){
-        while (root[x] != x){
-            x  = root[x];
+        if (x == root[x]){
+            return x;
         }
-        return root[x];
+        return root[x] = find(root[x]);
     }
 
     /**
-     * Time Complexity: O(log N)
+     * Time Complexity:  O(⍺(N))
      * @param x
      * @param y
      */
@@ -58,7 +71,7 @@ public class UnionFind2 {
     }
 
     /**
-     * Time Complexity: O(log N)
+     * Time Complexity: O(⍺(N))
      * @param x
      * @param y
      * @return
