@@ -19,4 +19,5 @@ package learn.algo.bitmanipulations;
  * https://www.geeksforgeeks.org/add-1-to-a-given-number/
  */
 public class Add1 {
+    
 }
