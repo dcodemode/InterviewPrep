@@ -1,4 +1,4 @@
-package learn.ds.graph;
+package learn.ds.unionfind;
 
 /**
  * Union by Rank and Path Compression Disjoint Set
@@ -18,13 +18,13 @@ package learn.ds.graph;
  *
  * https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3844/
  */
-public class UnionFind2 {
+public class UnionFind {
 
     private int[] root;
     // Use a rank array to record the height of each vertex, i.e., the "rank" of each vertex.
     private int[] rank;
 
-    public UnionFind2(int size){
+    public UnionFind(int size){
         root = new int[size];
         rank = new int[size];
 
@@ -81,7 +81,7 @@ public class UnionFind2 {
     }
 
     public static void main(String[] args) {
-        UnionFind2 uf = new UnionFind2(10);
+        UnionFind uf = new UnionFind(10);
 
         // 1-2-5-6-7   3-8-9   4
         uf.union(1, 2);
@@ -94,6 +94,7 @@ public class UnionFind2 {
         System.out.println(uf.connected(1, 5)); // true
         System.out.println(uf.connected(5, 7)); // true
         System.out.println(uf.connected(4, 9)); // false
+
 
         // 1-2-5-6-7   3-8-9-4
         uf.union(9, 4);

@@ -1,4 +1,4 @@
-package learn.ds.graph;
+package learn.ds.unionfind;
 
 
 /**

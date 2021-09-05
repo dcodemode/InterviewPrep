@@ -1,4 +1,4 @@
-package learn.ds.graph;
+package learn.ds.unionfind;
 
 /**
  * Quick Find Version of Disjoint Set
@@ -7,14 +7,14 @@ package learn.ds.graph;
  *
  * https://leetcode.com/explore/learn/card/graph/618/disjoint-set/3878/
  */
-public class UnionFind {
+public class UnionFindQuickFind {
     private int[] root;
 
     /**
      * Time Complexity: O(n)
      * @param size
      */
-    public UnionFind(int size){
+    public UnionFindQuickFind(int size){
         root = new int[size];
         for(int i = 0 ; i < size; i++){
             root[i] = i;
@@ -54,7 +54,7 @@ public class UnionFind {
     }
 
     public static void main(String[] args) {
-        UnionFind uf = new UnionFind(10);
+        UnionFindQuickFind uf = new UnionFindQuickFind(10);
         // 1-2-5-6-7     3-8-9        4
         uf.union(1, 2);
         uf.union(2, 5);
