@@ -1,5 +1,8 @@
 package learn.util;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class ArrayUtil {
@@ -34,5 +37,15 @@ public class ArrayUtil {
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
+    }
+
+    public static List<List<String>> twoDStringArrayToList(String[][] arr) {
+        int n = arr.length;
+        List<List<String>> result = new ArrayList<>(n);
+
+        for (int i = 0; i < n; i++) {
+            result.add(new ArrayList<>(Arrays.asList(arr[i])));
+        }
+        return result;
     }
 }
