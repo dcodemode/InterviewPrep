@@ -48,4 +48,18 @@ public class ArrayUtil {
         }
         return result;
     }
+
+    public static List<List<Integer>> twoDIntArrayToList(int[][] arr) {
+        int n = arr.length;
+        List<List<Integer>> result = new ArrayList<>(n);
+
+        for (int[] a : arr) {
+            List<Integer> list = new ArrayList<>(a.length);
+            for(int i : a){
+                list.add(i);
+            }
+            result.add(list);
+        }
+        return result;
+    }
 }
