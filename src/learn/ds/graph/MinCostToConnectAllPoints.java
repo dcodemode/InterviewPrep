@@ -48,6 +48,8 @@ public class MinCostToConnectAllPoints {
 
 
     /**
+     * 
+     * Kruskal' Algo
      * Time Complexity : O(ElogE), E represents the number of edges.
      * Space Complexity : O(V)
      */
@@ -132,4 +134,64 @@ public class MinCostToConnectAllPoints {
         return cost;
     }
     
+
+    /**
+     * Prem's Algo
+     * 
+     */
+
+    class Edge {
+        int point1;
+        int point2;
+        int cost;
+
+        Edge(int point1, int point2, int cost) {
+            this.point1 = point1;
+            this.point2 = point2;
+            this.cost = cost;
+        }
+    }
+
+    public int minCostConnectPoints2(int[][] points) {
+        if (points == null || points.length == 0) {
+            return 0;
+        }
+        int size = points.length;
+        PriorityQueue<Edge> pq = new PriorityQueue<>((x, y) -> x.cost - y.cost);
+        boolean[] visited = new boolean[size];
+
+        int result = 0;
+        int count = size - 1;
+        // Add all edges from points[0] vertexs
+        for (int i = 1; i < size; i++) {
+            // Calculate the distance between two coordinates.
+            int[] coordinate1 = points[0];
+            int[] coordinate2 = points[i];
+            int cost = Math.abs(coordinate1[0] - coordinate2[0]) + Math.abs(coordinate1[1] - coordinate2[1]);
+            Edge edge = new Edge(0, i, cost);
+            pq.add(edge);
+        }
+        visited[0] = true;
+
+        while (!pq.isEmpty() && count > 0) {
+            Edge e = pq.poll();
+            
+            int point1 = e.point1;
+            int point2 = e.point2;
+            int cost = e.cost;
+
+            if ( !visited[point2] ) {
+                result += cost;
+                visited[point2] = true;
+                for (int i = 0; i < size; i++ ) {
+                    if (!visited[i]) {
+                        int distance = Math.abs(points[point2][0] - points[i][0]) + Math.abs(points[point2][1] - points[i][1]);
+                        pq.add(new Edge(point2, i, distance));
+                    }
+                }
+                count--;
+            }
+        }
+        return result;
+    }
 }
