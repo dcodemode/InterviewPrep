@@ -64,7 +64,7 @@ public class KWeakestRowsinMatrix {
 
 
     /**
-     * Time Complexity: O(M * N)
+     * Time Complexity: O(M log (M * N))
      * Space Complexity: O(K)
      * @param mat
      * @param k
@@ -77,7 +77,6 @@ public class KWeakestRowsinMatrix {
         }
         
         int m = mat.length;
-        int n = mat[0].length;
         PriorityQueue<int[]> pq = new PriorityQueue<>((a, b) -> (a[1] != b[1] ? b[1] - a[1] : b[0] - a[0]));
 
         
