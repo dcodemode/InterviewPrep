@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Varma Penmetsa
  *
  * Insert/delete/search into trie data structure
  *
