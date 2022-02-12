@@ -45,6 +45,12 @@ n: length of the badge records array
 
 public class BadgeAccessMergeIntervals {
 
+    /**
+     * Time Complexity: O(n log n)
+     * Space Complexity: O(n)
+     * @param input
+     * @return
+     */
     public static Map<String, List<Integer>> countIntervals(String[][] input) {
         Map<String, List<Integer>> map = new HashMap<>();
 
