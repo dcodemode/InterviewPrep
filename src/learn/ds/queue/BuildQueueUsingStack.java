@@ -18,8 +18,10 @@ public class BuildQueueUsingStack {
     }
 
     public String deQueue(){
-        while(!tStack.isEmpty()){
-            qStack.push(tStack.pop());
+        if(qStack.isEmpty()){
+            while(!tStack.isEmpty()){
+                qStack.push(tStack.pop());
+            }
         }
         return qStack.pop();
     }
@@ -32,6 +34,8 @@ public class BuildQueueUsingStack {
         q.enQueue("C");
         q.enQueue("K");
 
+        System.out.println(q.deQueue());
+        q.enQueue("1");
         System.out.println(q.deQueue());
         System.out.println(q.deQueue());
         System.out.println(q.deQueue());
