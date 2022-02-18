@@ -12,3 +12,4 @@
 * [Graph](https://github.com/dcodemode/InterviewPrep/wiki/Graph)
 * [Heap](https://github.com/dcodemode/InterviewPrep/wiki/Heap)
 * [Dynamic Programing](https://github.com/dcodemode/InterviewPrep/wiki/Dynamic-Programing)
+* [Blind 75](https://github.com/dcodemode/InterviewPrep/wiki/Blind-75-List)
