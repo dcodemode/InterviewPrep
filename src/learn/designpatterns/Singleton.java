@@ -1,4 +1,4 @@
-package crackingcode.array;
+package learn.designpatterns;
 
 public class Singleton {
     
