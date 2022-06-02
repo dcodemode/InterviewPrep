@@ -9,30 +9,41 @@ import java.util.Map;
 public class PersonInstance {
     
     private static PersonInstance instance;
-    
-    private Map<Integer, List<Person>> map = new HashMap<>();
-    private List<Person> personList;
+
+    private Map<Integer, List<Person>> departmentMap = new HashMap<>();
+    private Map<Integer, Person> personMap = new HashMap<>();
 
     private PersonInstance(List<Person> personList){
-        this.personList = personList;
         for(Person person : personList){
-            this.map.putIfAbsent(person.getDepartment().getDepatmentId(), new ArrayList<>());
-            this.map.get(person.getDepartment().getDepatmentId()).add(person);
+            this.departmentMap.putIfAbsent(person.getDepartment().getDepatmentId(), new ArrayList<>());
+            this.departmentMap.get(person.getDepartment().getDepatmentId()).add(person);
+
+            if(!this.personMap.containsKey(person.getPersonId())){
+                personMap.put(person.getPersonId(), person);
+            }
         }
     }
 
-    public List<Person> getPersonByDepartment(int departmentId){
-        if(this.map.containsKey(departmentId)){
-            return this.map.get(departmentId);
+    /**
+     * Time Complexity: O(1)
+     * @param departmentId
+     * @return
+     */
+    public List<Person> getPersonByDepartmentId(int departmentId){
+        if(this.departmentMap.containsKey(departmentId)){
+            return this.departmentMap.get(departmentId);
         }
         return new ArrayList<>();
     }
 
-    public Person getPerson(Integer personId){
-        for(Person person : this.personList){
-            if(person.getPersonId().equals(personId)) {
-                return person;
-            }
+    /**
+     * Time Complexity: O(1)
+     * @param personId
+     * @return
+     */
+    public Person getPersonByPersonId(Integer personId){
+        if(this.personMap.containsKey(personId)){
+            return this.personMap.get(personId);
         }
         return null;
     }
