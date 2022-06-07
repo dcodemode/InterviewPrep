@@ -30,10 +30,7 @@ public class PersonInstance {
      * @return
      */
     public List<Person> getPersonByDepartmentId(int departmentId){
-        if(this.departmentMap.containsKey(departmentId)){
-            return this.departmentMap.get(departmentId);
-        }
-        return new ArrayList<>();
+        return this.departmentMap.get(departmentId);
     }
 
     /**
@@ -42,10 +39,7 @@ public class PersonInstance {
      * @return
      */
     public Person getPersonByPersonId(Integer personId){
-        if(this.personMap.containsKey(personId)){
-            return this.personMap.get(personId);
-        }
-        return null;
+        return this.personMap.get(personId);
     }
 
     private static PersonInstance getInstance(List<Person> personList){
@@ -57,8 +51,11 @@ public class PersonInstance {
 
     public static void main(String[] args) {
         List<Person> personList = new ArrayList<>();
+        
         PersonInstance obj = PersonInstance.getInstance(personList);
 
+        obj.getPersonByDepartmentId(11);
+        obj.getPersonByPersonId(11);
     }
 
 }
