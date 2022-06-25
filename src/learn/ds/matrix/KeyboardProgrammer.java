@@ -62,21 +62,20 @@ public class KeyboardProgrammer {
                         row--;
                     }
                 }
-
                 
             }
         }
         return sb.toString();
     }
 
-    public static int[][] createGrid(int rowLength){
+    public static int[][] createGrid(int cols){
         
-        int colLength = 26 / rowLength;
-        int[][] grid = new int[colLength + 1][rowLength];
+        int rows = 26 / cols;
+        int[][] grid = new int[rows + 1][cols];
         
         int index  = 0;
-        for(int row = 0 ; row <= colLength ; row++){
-            for(int col = 0 ; col < rowLength ; col++ ){
+        for(int row = 0 ; row <= rows ; row++){
+            for(int col = 0 ; col < cols ; col++ ){
                 if(index > 25){
                     grid[row][col] = -1;
                 }else{
@@ -89,7 +88,7 @@ public class KeyboardProgrammer {
     }
 
     public static void main(String[] args) {
-        System.out.println(keyboardCommands("capsdasdas", 5));
+        System.out.println(keyboardCommands("can", 5));
 
     }
 }
