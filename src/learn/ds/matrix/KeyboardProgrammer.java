@@ -25,7 +25,7 @@ package learn.ds.matrix;
 public class KeyboardProgrammer {
 
     public static String keyboardCommands(String word, int rowLength){
-        // To-Do
+  
         int[][] grid = createGrid(rowLength);
 
         StringBuilder sb = new StringBuilder();
