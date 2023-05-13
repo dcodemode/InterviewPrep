@@ -1,5 +1,8 @@
 package learn.algo.random;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.util.Arrays;
 import java.util.Random;
 
 public class ReservoirSampling {
@@ -10,7 +13,8 @@ public class ReservoirSampling {
      * @param k random samples
      * @return random samples
      */
-    public static int[] generateSamples(int[] nums, int k){
+
+   public int[] generateSamples(int[] nums, int k) throws NoSuchAlgorithmException{
         // Create a reservoir array of k samples
         int[] reservoir = new int[k];
 
@@ -20,8 +24,9 @@ public class ReservoirSampling {
             reservoir[i] = nums[i];
         }
 
-        Random random = new Random();
-
+        //Using SecureRandom over Random for random number generation consistancy
+        Random random = SecureRandom.getInstanceStrong();
+        
         // Iterate from the (k+1)th element to nth element
         for( ; i < nums.length ; i++){
             // Pick a random index from 0 to i.
@@ -35,14 +40,21 @@ public class ReservoirSampling {
             }
         }
 
+        System.out.println("Reservoir : " + Arrays.toString(reservoir));
         return reservoir;
     }
 
     public static void main(String[] args) {
+        ReservoirSampling rs = new ReservoirSampling();
+
         int[] nums = {1,2,3,4,5,6,7,8,9,10};
-        for(int i : generateSamples(nums, 5)){
-            System.out.print(i + " ");
+        int k = 5;
+
+        try {
+           rs.generateSamples(nums, k);
+        } catch (Exception e) {
+            System.out.println(e);
         }
-        System.out.println();
+        
     }
 }
