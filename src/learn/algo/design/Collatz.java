@@ -23,7 +23,7 @@ public class Collatz {
 
     private Collatz(){
         System.out.println("Creating Collatz class");
-        memo = new HashMap<>();
+memo = new HashMap<>();
     }
 
     public static Collatz getInstance(){
@@ -46,7 +46,12 @@ public class Collatz {
             }else{
                 num = (3 * num ) + 1;
             }
-            stepCount++;
+            if(memo.containsKey(num)) {
+                System.out.println("Retrving " + num + " from memo");
+                stepCount += memo.get(num);
+            }else{
+                stepCount++;
+            }
         }
         memo.put(orig, stepCount);
         return stepCount;
