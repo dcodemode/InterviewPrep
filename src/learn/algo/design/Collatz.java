@@ -49,6 +49,7 @@ memo = new HashMap<>();
             if(memo.containsKey(num)) {
                 System.out.println("Retrving " + num + " from memo");
                 stepCount += memo.get(num);
+                break;
             }else{
                 stepCount++;
             }
