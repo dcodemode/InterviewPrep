@@ -12,4 +12,13 @@ public interface FlightEnabled {
     void land();
 
     void fly();
+
+    /**
+     * Default method to allow an interface method to provide an implementation used as default in the
+     * event that a concrete class doesn't provide an implementation for that method.
+     */
+    default FlightStages transition(FlightStages stage){
+        System.out.println("transition not implemented on " + getClass().getName());
+        return  null;
+    }
 }
