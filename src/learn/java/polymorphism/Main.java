@@ -18,5 +18,10 @@ public class Main {
         Movie baahubali = Movie.getMovie("Fantasy", "Baahubali");
         baahubali.watchMovie();
 
+        // Introduced in Java 10, Type inference is used in var keyword in which it detects automatically
+        // the datatype of a variable based on the surrounding context
+        var kgf = Movie.getMovie("Action", "KGF");
+        kgf.watchMovie();
+
     }
 }
