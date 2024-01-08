@@ -1,4 +1,4 @@
-package learn.java.encasulation;
+package learn.java.encapsulation;
 
 public class Player {
 
